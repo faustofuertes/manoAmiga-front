@@ -1,0 +1,164 @@
+.container {
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 48px;
+}
+
+.desc {
+    width: 80%;
+    margin-top: 1rem;
+    font-size: 16px;
+}
+
+.container-icons {
+    margin-top: 7rem;
+    width: 50%;
+    transition: .3s;
+}
+
+.icon {
+    width: 100px;
+    margin: 10px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.icon:hover {
+    transform: rotate(10deg);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Teléfonos pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    .text {
+        width: 90%;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .desc {
+        font-size: 14px;
+    }
+
+    .container-icons {
+        width: 90%;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .icon {
+        width: 60px;
+        margin: 5px;
+    }
+}
+
+/* Teléfonos medianos y tablets verticales (hasta 768px) */
+@media (max-width: 768px) {
+    .text {
+        width: 80%;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .desc {
+        font-size: 15px;
+    }
+
+    .container-icons {
+        width: 80%;
+        margin-top: 4rem;
+    }
+
+    .icon {
+        width: 70px;
+    }
+}
+
+/* Tablets horizontales y laptops chicas (hasta 1024px) */
+@media (max-width: 1024px) {
+    .text {
+        width: 70%;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .desc {
+        font-size: 16px;
+    }
+
+    .container-icons {
+        width: 70%;
+        margin-top: 5rem;
+    }
+
+    .icon {
+        width: 80px;
+    }
+}
+
+/* Laptops grandes y monitores (hasta 1280px) */
+@media (max-width: 1280px) {
+    .text {
+        width: 60%;
+    }
+
+    .title {
+        font-size: 42px;
+    }
+
+    .container-icons {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1550px) {
+    .text {
+        width: 40%;
+    }
+
+    .title {
+        font-size: 72px;
+    }
+
+    .desc {
+        margin-top: 2rem;
+        font-size: 32px;
+    }
+
+    .container-icons {
+        width: 30%;
+    }
+
+    .icon {
+        width: 150px;
+    }
+}

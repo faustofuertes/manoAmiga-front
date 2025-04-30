@@ -1,0 +1,17 @@
+<header class="header">
+    <div class="container">
+        <div class="left"><img class="icon" src="assets/images/logo.png" alt="Logo"></div>
+        <div class="center" [class.abierto]="menuAbierto">
+            <ul>
+                <li [routerLink]="['/categorias']">Servicios</li>
+                <li><a href="">Contacto</a></li>
+                <li><a href="">Visión</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn-iniciarSesion">Iniciar sesion</button>
+            <button class="btn-publicar">Publicar</button>
+            <button class="burger" (click)="toggleMenu()">&#9776;</button>
+        </div>
+    </div>
+</header>
