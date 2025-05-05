@@ -42,7 +42,7 @@
 }
 
 .icon {
-    width: 100px;
+    width: 80px;
 }
 
 /* ---------- MENÚ ---------- */
@@ -74,15 +74,15 @@
 }
 
 .btn-publicar {
-    background-color: #f3a83e;
+    background-color: #806545;
     color: white;
     border: 1px solid transparent;
     transition: 0.2s;
 }
 
 .btn-iniciarSesion {
-    color: #f3a83e;
-    border: 1px solid #f3a83e;
+    color: #806545;
+    border: 1px solid #806545;
     background-color: white;
     transition: 0.2s;
 }
@@ -131,42 +131,42 @@ a:hover {
     background: none;
     border: none;
     cursor: pointer;
-  }
-  
-  /* Estilo normal del menú */
-  .center ul {
+}
+
+/* Estilo normal del menú */
+.center ul {
     display: flex;
     list-style: none;
     gap: 2rem;
-  }
+}
 
 /* Teléfonos normales y tablets verticales */
 @media (max-width: 768px) {
     .center ul {
-      display: none;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 -4px 10px rgba(0, 0, 0, 0);
-      background: white;
-      position: absolute;
-      top: 5rem;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      padding: 1rem 0;
+        display: none;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 -4px 10px rgba(0, 0, 0, 0);
+        background: white;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
     }
-  
+
     .center.abierto ul {
-      display: flex;
+        display: flex;
     }
-  
+
     .burger {
-      display: block;
+        display: block;
     }
-  
+
     .right {
-      justify-content: flex-end;
+        justify-content: flex-end;
     }
-  }
+}
 
 /* Tablets en horizontal */
 @media (max-width: 1024px) {

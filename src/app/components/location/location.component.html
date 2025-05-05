@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="wrapper">
+        
+    </div>
+    <i class="fas fa-map-marker-alt"></i>
+    
+    <select class="selector" id="ciudad" [(ngModel)]="ciudadSeleccionada" (change)="seleccionarCiudad(ciudadSeleccionada)">
+        <option value="" disabled selected>Selecciona tu ciudad</option>
+        <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ ciudad }}</option>
+    </select>
+
+    <button class="done">Listo</button>
+</div>

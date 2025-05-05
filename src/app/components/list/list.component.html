@@ -1,82 +1,16 @@
 <div class="container">
 
-    <div class="card" [routerLink]="['/perfil/123asd1e']">
-        <img class="icon" src="assets/images/icons/electricista.png" alt="">
+    @for (post of list; track $index) {
+
+    <div [routerLink]="['/perfil', post._id]" class="card">
+        <img class="icon" [src]="'assets/images/icons/' + post.job.toLowerCase() + '.png'" alt="">
         <div class="text">
-            <span class="name">Ruben</span>
-            <span class="job">Electricista</span>
-            <span class="location">Mar del plata, La Perla</span>
+            <span class="name">{{post.userName}}</span>
+            <span class="job">{{post.job}}</span>
+            <span class="location"><i class="fas fa-map-marker-alt"></i>{{post.location}}</span>
         </div>
     </div>
 
-    <div class="card">
-        <img class="icon" src="assets/images/icons/electricista.png" alt="">
-        <div class="text">
-            <span class="name">Ruben</span>
-            <span class="job">Electricista</span>
-            <span class="location">Mar del plata, La Perla</span>
-        </div>
-
-    </div>
-
-    <div class="card">
-        <img class="icon" src="assets/images/icons/electricista.png" alt="">
-        <div class="text">
-            <span class="name">Ruben</span>
-            <span class="job">Electricista</span>
-            <span class="location">Mar del plata, La Perla</span>
-        </div>
-
-    </div>
-
-    <div class="card">
-        <img class="icon" src="assets/images/icons/electricista.png" alt="">
-        <div class="text">
-            <span class="name">Ruben</span>
-            <span class="job">Electricista</span>
-            <span class="location">Mar del plata, La Perla</span>
-        </div>
-
-    </div>
-
-    <div class="card">
-        <img class="icon" src="assets/images/icons/electricista.png" alt="">
-        <div class="text">
-            <span class="name">Ruben</span>
-            <span class="job">Electricista</span>
-            <span class="location">Mar del plata, La Perla</span>
-        </div>
-
-    </div>
-
-    <div class="card">
-        <img class="icon" src="assets/images/icons/electricista.png" alt="">
-        <div class="text">
-            <span class="name">Ruben</span>
-            <span class="job">Electricista</span>
-            <span class="location">Mar del plata, La Perla</span>
-        </div>
-
-    </div>
-
-    <div class="card">
-        <img class="icon" src="assets/images/icons/electricista.png" alt="">
-        <div class="text">
-            <span class="name">Ruben</span>
-            <span class="job">Electricista</span>
-            <span class="location">Mar del plata, La Perla</span>
-        </div>
-
-    </div>
-
-    <div class="card">
-        <img class="icon" src="assets/images/icons/electricista.png" alt="">
-        <div class="text">
-            <span class="name">Ruben</span>
-            <span class="job">Electricista</span>
-            <span class="location">Mar del plata, La Perla</span>
-        </div>
-
-    </div>
+    }
 
 </div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <h3>Mis publicaciones.</h3>
+    @for (publi of publicaciones; track $index) {
+    <div class="post">
+        <div class="left">
+            <img class="icon" [src]="'assets/images/icons/' + publi.job.toLowerCase() + '.png'" alt="">
+        </div>
+        <div class="right">
+            <span class="job">{{publi.job}}</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+    }
+
+    <div [routerLink]="['/crear-publicacion']" class="add-post">
+        <span>Crear publicacion</span>
+        <i class="fas fa-plus-circle"></i>
+    </div>
+</div>

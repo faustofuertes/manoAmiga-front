@@ -9,8 +9,14 @@
             </ul>
         </div>
         <div class="right">
-            <button class="btn-iniciarSesion">Iniciar sesion</button>
+            @if(!isAuthenticated){
+            <button (click)="logIn()" class="btn-iniciarSesion">Iniciar sesion</button>
             <button class="btn-publicar">Publicar</button>
+            }
+            @if(isAuthenticated){
+            <button (click)="logOut()" class="btn-iniciarSesion">Cerrar sesion</button>
+            <button [routerLink]="['/mi-perfil']" class="btn-publicar">Mi perfil</button>
+            }
             <button class="burger" (click)="toggleMenu()">&#9776;</button>
         </div>
     </div>

@@ -1,0 +1,189 @@
+<div class="form-container">
+
+    @if(currentStep ===1){
+
+    <div class="left">
+        <h2><i class="fas fa-lightbulb"></i>A saber</h2>
+        <p>En este paso, ingresa el tipo de trabajo que ofreces y la ubicación donde se realizará. Recuerda que de
+            momento Mano Amiga © esta disponible unicamente en Mar del Plata.</p>
+    </div>
+
+    <div class="right">
+
+        <div class="bar-progres">
+            <div class="bar bar-1 bar-color"></div>
+            <div class="bar bar-2"></div>
+            <div class="bar bar-3"></div>
+            <div class="bar bar-4"></div>
+            <div class="bar bar-5"></div>
+        </div>
+
+        <form [formGroup]="step1Form">
+            <div class="form-group">
+                <label for="job">¿Que <span class="color">servicio</span> ofreces? <i
+                        class="fa-solid fa-toolbox"></i></label>
+                <select id="job" formControlName="job" name="job">
+                    <option value="" disabled selected>Selecciona un trabajo</option>
+                    <option *ngFor="let job of jobs" [value]="job">{{ job }}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location">¿En <span class="color">donde</span>? <i
+                        class="fas fa-map-marker-alt"></i></label>
+                <select id="location" formControlName="location" name="location">
+                    <option value="" disabled selected>Selecciona un trabajo</option>
+                    <option *ngFor="let location of locations" [value]="location">{{ locations }}</option>
+                </select>
+            </div>
+
+            <button class="btn-forward" type="button" (click)="nextStep()"
+                [disabled]="step1Form.invalid">Siguiente</button>
+        </form>
+
+    </div>
+    }
+
+    @if(currentStep ===2){
+
+    <div class="left">
+        <h2><i class="fas fa-lightbulb"></i>A saber</h2>
+        <p>La descripción es lo primero que el usuario lee antes de decidir si va a contactarte. Es tu oportunidad para
+            mostrar qué sabés hacer, tu experiencia y cómo trabajás. Una buena descripción genera confianza y te
+            diferencia del resto. No hace falta repetir la zona ni el precio, eso ya se muestra aparte.
+        </p>
+    </div>
+
+    <div class="right">
+
+        <div class="bar-progres">
+            <div class="bar bar-1 bar-color"></div>
+            <div class="bar bar-2 bar-color"></div>
+            <div class="bar bar-3"></div>
+            <div class="bar bar-4"></div>
+            <div class="bar bar-5"></div>
+        </div>
+
+        <form [formGroup]="step2Form">
+
+            <div class="form-group">
+                <label for="description"><span class="color">Descripcion</span> de tu aviso</label>
+                <label class="min" for="">(Mínimo 20 palabras)</label>
+                <textarea
+                    placeholder="Ej: Plomero con más de 10 años de experiencia en reparaciones, instalaciones y mantenimiento de cañerías, sanitarios y sistemas de agua potable. Puntual, responsable y con atención a los detalles."
+                    id="description" formControlName="description"></textarea>
+            </div>
+
+        </form>
+        <div class="btn-container">
+            <button class="btn-back" type="button" (click)="previousStep()">Volver</button>
+            <button class="btn-forward" type="button" (click)="nextStep()"
+                [disabled]="step2Form.invalid">Siguiente</button>
+        </div>
+    </div>
+    }
+
+    @if(currentStep === 3){
+
+    <div class="left">
+        <h2><i class="fas fa-lightbulb"></i>A saber</h2>
+        <p>Sos libre de elegir tu tarifa de visita y de cambiarla cuando quieras.</p>
+    </div>
+
+    <div class="right">
+
+        <div class="bar-progres">
+            <div class="bar bar-1 bar-color"></div>
+            <div class="bar bar-2 bar-color"></div>
+            <div class="bar bar-3 bar-color"></div>
+            <div class="bar bar-4"></div>
+            <div class="bar bar-5"></div>
+        </div>
+
+        <form [formGroup]="step3Form">
+
+            <div class="form-group">
+                <label for="pricing"><span class="color">Tarifa</span> de visita</label>
+                <input placeholder="15000" id="pricing" formControlName="pricing" type="number" />
+            </div>
+
+        </form>
+        <div class="btn-container">
+            <button class="btn-back" type="button" (click)="previousStep()">Volver</button>
+            <button class="btn-forward" type="button" (click)="nextStep()"
+                [disabled]="step3Form.invalid">Siguiente</button>
+        </div>
+    </div>
+    }
+
+    @if(currentStep === 4){
+    <div class="left">
+        <h2><i class="fas fa-lightbulb"></i>A saber</h2>
+        <p>Sos libre de elegir tus horarios de trabajo y de cambiarla cuando quieras.</p>
+    </div>
+
+    <div class="right">
+
+        <div class="bar-progres">
+            <div class="bar bar-1 bar-color"></div>
+            <div class="bar bar-2 bar-color"></div>
+            <div class="bar bar-3 bar-color"></div>
+            <div class="bar bar-4 bar-color"></div>
+            <div class="bar bar-5"></div>
+        </div>
+
+        <form [formGroup]="step4Form">
+
+            <div class="form-group">
+                <label for="schedule"><span class="color">Horarios</span> de trabajo</label>
+                <input id="schedule" formControlName="schedule" type="text" placeholder="Ej: Lunes a Viernes 8:00 a 16:00"/>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Años de <span class="color">experiencia</span></label>
+                <input id="experience" formControlName="experience" type="number" placeholder="Ej: 10" />
+            </div>
+
+        </form>
+
+        <div class="btn-container">
+            <button class="btn-back" type="button" (click)="previousStep()">Volver</button>
+            <button class="btn-forward" type="button" (click)="nextStep()"
+                [disabled]="step4Form.invalid">Siguiente</button>
+        </div>
+    </div>
+    }
+
+    @if(currentStep === 5){
+    <div class="left">
+        <h2><i class="fas fa-lightbulb"></i>A saber</h2>
+        <p>A este numero se contactaron tus potenciales clientes.</p>
+    </div>
+
+    <div class="right">
+
+        <div class="bar-progres">
+            <div class="bar bar-1 bar-color"></div>
+            <div class="bar bar-2 bar-color"></div>
+            <div class="bar bar-3 bar-color"></div>
+            <div class="bar bar-4 bar-color"></div>
+            <div class="bar bar-5 bar-color"></div>
+        </div>
+
+        <form [formGroup]="step5Form">
+
+            <div class="form-group">
+                <label for="phone"><span class="color">Número</span> de contacto</label>
+                <input id="phone" formControlName="phone" type="text" placeholder="2231234567"/>
+            </div>
+
+        </form>
+        <div class="btn-container">
+            <button class="btn-back" type="button" (click)="previousStep()">Volver</button>
+            <button class="btn-forward" type="button" (click)="onSubmit()"
+                [disabled]="step5Form.invalid">Publicar</button>
+        </div>
+    </div>
+    }
+
+</div>

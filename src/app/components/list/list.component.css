@@ -1,20 +1,23 @@
 .container {
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
 .card {
     width: 200px;
     height: 250px;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
+    margin: 10px;
     cursor: pointer;
+    text-align: center;
 }
 
 .icon{
@@ -41,4 +44,23 @@
 .location{
     font-size: 14px;
     margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 45%
+    }
 }

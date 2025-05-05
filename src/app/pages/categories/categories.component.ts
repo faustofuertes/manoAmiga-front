@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ListComponent } from "../../components/list/list.component";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -7,6 +8,13 @@ import { ListComponent } from "../../components/list/list.component";
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })
-export class CategoriesComponent {
+export class CategoriesComponent implements OnInit {
 
+  job = ''
+
+  constructor(private _ar: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.job = this._ar.snapshot.paramMap.get('trabajo')!;
+  }
 }

@@ -1,5 +1,8 @@
 .container{
     margin: auto;
+    margin: 5rem;
+}
+
+.container-cards{
     margin-top: 5rem;
-    width: 80%;
 }

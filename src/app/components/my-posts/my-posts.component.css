@@ -1,0 +1,116 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post {
+    width: 200px;
+    height: 60px;
+    border-radius: 50px;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: .2s;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 5px;
+}
+
+.post:hover {
+    transform: scale(.9);
+}
+
+.icon {
+    width: 35px;
+}
+
+.job {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.add-post {
+    width: 200px;
+    height: 60px;
+    border-radius: 50px;
+    border: 1px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 5px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.add-post:hover {
+    transform: scale(.9);
+}
+
+.add-post span {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.fa-plus-circle {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 12px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 11px;
+    width: 11px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #4CAF50;
+}
+
+input:checked+.slider::before {
+    transform: translateX(13px);
+}

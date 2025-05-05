@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
+    margin-top: 5rem;
+}
+
+/* Orden específico para móviles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    app-profile-card {
+        order: 1;
+        width: 100%;
+    }
+
+    app-personal-info {
+        order: 2;
+        width: 100%;
+    }
+
+    app-my-posts {
+        order: 3;
+        width: 100%;
+    }
+}
