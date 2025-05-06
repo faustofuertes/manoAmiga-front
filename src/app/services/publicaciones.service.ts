@@ -8,6 +8,7 @@ import { Publicacion } from '../interfaces/publicacion';
 })
 export class PublicacionesService {
 
+  //baseURL = 'http://localhost:4000/api/publicaciones'
   baseURL = 'https://manoamiga-back.onrender.com/api/publicaciones'
 
   constructor(private _http: HttpClient) { }

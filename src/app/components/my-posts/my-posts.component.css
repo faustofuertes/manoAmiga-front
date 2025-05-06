@@ -114,3 +114,25 @@ input:checked+.slider {
 input:checked+.slider::before {
     transform: translateX(13px);
 }
+
+.status {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el punto y el texto */
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Hacerlo redondo */
+    display: inline-block;
+}
+
+.online {
+    background-color: green; /* Verde para en línea */
+}
+
+.offline {
+    background-color: red; /* Rojo para fuera de línea */
+}

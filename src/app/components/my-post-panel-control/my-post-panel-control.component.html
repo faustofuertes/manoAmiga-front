@@ -1,0 +1,15 @@
+<div class="container">
+
+    <div class="posts">
+        <app-my-posts (postClickedEmitter)="recivePost($event)" [usuario]="usuario">
+        </app-my-posts>
+    </div>
+
+    <div class="separator"></div>
+    
+    <div class="form">
+        <app-my-post-edit-form [post]="postRecived">
+        </app-my-post-edit-form>
+    </div>
+
+</div>

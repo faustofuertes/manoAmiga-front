@@ -1,0 +1,51 @@
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Cambia la dirección para que los elementos estén en columna */
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 1.5rem; /* Aumenta espacio entre cada campo */
+    padding: 0 2rem; /* Agrega espacio horizontal interno */
+}
+
+.form-group label {
+    text-align: left; /* Alinea la etiqueta a la izquierda */
+    margin-bottom: 0.5rem; /* Espacio entre la etiqueta y el input/select/textarea */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 500px; /* Hace que los campos ocupen el 100% del ancho disponible */
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #f0f0f0;
+    border: 1px solid transparent;
+    font-size: 18px;
+    text-align: center;
+    transition: .2s;
+}
+
+/* Focus para los inputs */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border: 1px solid #806545;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.color {
+    color: #806545;
+}
+
+.min {
+    align-self: flex-start;
+    font-size: 16px;
+    font-weight: 100;
+}

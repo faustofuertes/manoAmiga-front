@@ -1,0 +1,42 @@
+@if(post){
+<form [formGroup]="form">
+
+    <div class="form-group">
+        <label class="color" for="location">Ubicacion</label>
+        <select id="location" formControlName="location" name="location">
+            <option value="" disabled selected>Selecciona una ciudad</option>
+            <option *ngFor="let location of locations" [value]="location">{{ locations }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="color" for="phone">Número de contacto</label>
+        <input id="phone" formControlName="phone" type="text" placeholder="2231234567" />
+    </div>
+
+    <div class="form-group">
+        <label class="color" for="description">Descripcion</label>
+        <textarea id="description" formControlName="description"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label class="color" for="schedule">Horarios</label>
+        <input id="schedule" formControlName="schedule" type="text" placeholder="Ej: Lunes a Viernes 8:00 a 16:00" />
+    </div>
+
+    <div class="form-group">
+        <label class="color" for="pricing">Tarifa de visita</label>
+        <input placeholder="15000" id="pricing" formControlName="pricing" type="number" />
+    </div>
+
+    <div class="form-group">
+        <label class="color" for="experience">Años de experiencia</label>
+        <input id="experience" formControlName="experience" type="number" placeholder="Ej: 10" />
+    </div>
+
+
+
+</form>
+}@else {
+<h2>Porfavor seleccione una publicacion para editarla.</h2>
+}

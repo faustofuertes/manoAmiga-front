@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { Publicacion } from '../../interfaces/publicacion';
@@ -12,6 +12,8 @@ import { RouterLink } from '@angular/router';
 })
 export class MyPostsComponent implements OnInit {
   @Input() usuario?: Usuario;
+  @Output() postClickedEmitter = new EventEmitter<Publicacion>();
+
   publicaciones?: Publicacion[];
 
   constructor(private _myPubliService: PublicacionesService) { }
@@ -24,5 +26,8 @@ export class MyPostsComponent implements OnInit {
     }
   }
 
-  
+
+  emitPostClicked(post: Publicacion) {
+    this.postClickedEmitter.emit(post);
+  }
 }

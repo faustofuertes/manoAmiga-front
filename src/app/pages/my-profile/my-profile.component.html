@@ -1,7 +1,12 @@
+<div class="header">
+    <app-user-header (optionSelected)="recivedSelectedOption($event)"></app-user-header>
+</div>
+
 <div class="container">
-    @if(usuario){
-    <app-my-posts [usuario]="usuario"></app-my-posts>
+    @if(selectedOption === 'controlPanel'){
     <app-profile-card [usuario]="usuario"></app-profile-card>
     <app-personal-info [usuario]="usuario"></app-personal-info>
+    }@else if (selectedOption ==='myPosts') {
+    <app-my-post-panel-control [usuario]="usuario"></app-my-post-panel-control>
     }
 </div>
