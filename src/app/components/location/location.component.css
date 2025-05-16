@@ -24,6 +24,15 @@
     border: none;
     font-size: 20px;
     text-align: center;
+    color: black;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.selector option {
+    color: black;
+    background-color: #f0f0f0;
 }
 
 select:focus {
