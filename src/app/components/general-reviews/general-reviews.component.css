@@ -46,6 +46,10 @@
     color: #3e3e3e;
 }
 
+img{
+    border-radius: 50px;
+}
+
 .card.active {
     opacity: 1;
     transform: scale(1);

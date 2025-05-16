@@ -1,8 +1,21 @@
-.container{
+.container {
     margin: auto;
     margin: 5rem;
 }
 
-.container-cards{
+.container-cards {
     margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+        margin: 3rem auto;
+        
+    }
+
+    .container-cards {
+        margin-top: 2rem;
+
+    }
 }
