@@ -132,6 +132,11 @@ a:hover {
   z-index: 1100;
 }
 
+.fa-bars,
+.fa-times {
+  font-size: 22px;
+}
+
 /* ---------- RESPONSIVE ---------- */
 
 /* Teléfonos pequeños */
@@ -162,27 +167,32 @@ a:hover {
 /* Teléfonos normales y tablets verticales */
 @media (max-width: 768px) {
   .center ul {
-    display: none;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 5rem);
+    background: white;
+    z-index: 1050;
+
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background: white;
-    position: fixed;
-    top: 5rem; /* debajo del header */
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - 5rem);
-    z-index: 1050;
+
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
   }
 
   .center.abierto ul {
-    display: flex;
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .burger {

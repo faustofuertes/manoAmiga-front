@@ -1,7 +1,7 @@
 <header class="header">
     <div class="container">
       <div class="left">
-        <img class="icon" src="assets/images/logo.png" alt="Logo">
+        <img [routerLink]="['']" class="icon" src="assets/images/logo.png" alt="Logo">
       </div>
   
       <div class="center" [class.abierto]="menuAbierto">
@@ -29,7 +29,10 @@
         <button (click)="logOut()" class="btn-iniciarSesion desktop-only">Cerrar sesión</button>
         <button [routerLink]="['/mi-perfil']" class="btn-publicar desktop-only">Mi perfil</button>
         }
-        <button class="burger" (click)="toggleMenu()">&#9776;</button>
+        <button class="burger" (click)="toggleMenu()">
+          <i class="fas" [ngClass]="menuAbierto ? 'fa-times' : 'fa-bars'"></i>
+        </button>
+        
       </div>
     </div>
   </header>
