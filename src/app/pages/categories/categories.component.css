@@ -9,14 +9,13 @@
 
 @media (max-width: 768px) {
     .container {
-        width: 80%;
-        margin: 3rem auto;
-        
+        width: 100%;
+        margin: 3rem 0;
+        text-align: center;
     }
 
     .container-cards {
         margin-top: 2rem;
-
     }
 
     h2{

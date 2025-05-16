@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ListComponent } from "../../components/list/list.component";
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-categories',
-  imports: [ListComponent],
+  imports: [ListComponent, CommonModule],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })

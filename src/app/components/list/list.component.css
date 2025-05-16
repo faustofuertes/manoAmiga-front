@@ -54,18 +54,20 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
     .card {
-        width: 100%;
+        width: 50%;
     }
 }
 
 @media (max-width: 768px) {
     .card {
-        width: 100%;
+        width:50%;
     }
 }
 
 @media (max-width: 480px) {
     .card {
-        width: 100%;
+        width: 180px;
+        margin: 5px;
+        border-radius: 10px;
     }
 }
