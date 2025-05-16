@@ -4,7 +4,7 @@
     padding: 10px;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-                rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -43,95 +43,27 @@ select:focus {
     font-size: 16px;
 }
 
-/* Teléfonos pequeños (hasta 480px) */
-@media (max-width: 480px) {
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
     .container {
-        flex-direction: column;
         margin: 2rem 1rem;
-        padding: 15px;
+        padding: 10px;
+        gap: 8px;
     }
 
     .fa-map-marker-alt {
         font-size: 20px;
-        margin: 0;
+        margin-left: 10px;
     }
 
     .selector {
-        width: 100%;
         font-size: 16px;
-        margin: 10px 0;
+        margin: 0 10px;
     }
 
     .done {
-        width: 100%;
-        font-size: 16px;
-        padding: 12px 0;
-        margin: 10px 0 0 0;
-    }
-}
-
-/* Teléfonos medianos y tablets verticales (481px a 767px) */
-@media (min-width: 481px) and (max-width: 767px) {
-    .container {
-        flex-direction: column;
-        margin: 2rem;
-        padding: 20px;
-    }
-
-    .selector,
-    .done {
-        width: 100%;
-        font-size: 17px;
-        margin: 10px 0;
-    }
-}
-
-/* Tablets horizontales y laptops chicas (768px a 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 20px;
-        gap: 15px;
-    }
-
-    .selector {
-        font-size: 18px;
-    }
-
-    .done {
-        font-size: 16px;
-    }
-}
-
-/* Laptops grandes (1025px a 1549px) */
-@media (min-width: 1025px) and (max-width: 1549px) {
-    .selector {
-        font-size: 20px;
-    }
-
-    .done {
-        font-size: 17px;
-    }
-}
-
-/* Pantallas grandes (1550px en adelante) */
-@media (min-width: 1550px) {
-    .container {
-        padding: 30px;
-        gap: 20px;
-    }
-
-    .fa-map-marker-alt {
-        font-size: 30px;
-    }
-
-    .selector {
-        font-size: 24px;
-    }
-
-    .done {
-        font-size: 20px;
-        padding: 12px 20px;
+        font-size: 14px;
+        padding: 8px 12px;
+        margin-left: 10px;
     }
 }

@@ -10,11 +10,11 @@ export class UserHeaderComponent {
   @Output() optionSelected = new EventEmitter();
 
   emitControlPanel() {
-    this.optionSelected.emit('controlPanel');
+    this.optionSelected.emit(1);
   }
 
   emitMyPosts() {
-    this.optionSelected.emit('myPosts');
+    this.optionSelected.emit(2);
   }
 
 }

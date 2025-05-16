@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LocationComponent } from "../../components/location/location.component";
+import { UsersCardsComponent } from "../../components/users-cards/users-cards.component";
+import { GeneralReviewsComponent } from "../../components/general-reviews/general-reviews.component";
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, LocationComponent],
+  imports: [RouterLink, LocationComponent, UsersCardsComponent, GeneralReviewsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
 
-  jobs: string[] = ['plomeros', 'electricistas', 'albañiles', 'carpinteros', 'herreros', 'pintores', 'mecanicos', 'técnicos'];
+  jobs: string[] = ['plomeros', 'electricistas', 'jardineros', 'pintores', 'cerrajeros', 'carpinteros', 'tecnicos', 'limpieza'];
   currentJob: string = this.jobs[0];
   private index: number = 0;
   animate: boolean = false;

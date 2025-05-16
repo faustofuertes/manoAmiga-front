@@ -136,3 +136,34 @@ input:checked+.slider::before {
 .offline {
     background-color: red; /* Rojo para fuera de línea */
 }
+
+@media (max-width: 768px) {
+
+    h3{
+        display: none;
+    }
+
+    .container {
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .right{
+        display: none;
+    }
+
+    .post{
+        width: 80px;
+        margin-top: 1rem;
+    }
+
+    .add-post{
+        width: 80px;
+    }
+
+    .add-post span{
+        display: none;
+    }
+}

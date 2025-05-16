@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Publicacion } from '../../interfaces/publicacion';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PublicacionesService } from '../../services/publicaciones.service';
 
 @Component({
   selector: 'app-my-post-edit-form',
@@ -15,7 +16,10 @@ export class MyPostEditFormComponent implements OnChanges {
   locations: string[] = ['Mar del Plata'];
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private _myPubliService: PublicacionesService
+  ) {
     this.form = this.fb.group({
       location: ['', Validators.required],
       phone: ['', Validators.required],
@@ -39,5 +43,27 @@ export class MyPostEditFormComponent implements OnChanges {
     }
   }
 
+  actualizarProducto() {
+    if (this.post) {
 
+      const publiActualizada: Publicacion = {
+        userId: this.post.userId,
+        userName: this.post.userName,
+        job: this.post.job,
+        location: this.form.value.location,
+        phone: this.form.value.phone,
+        description: this.form.value.description,
+        schedule: this.form.value.schedule,
+        pricing: this.form.value.pricing,
+        experience: this.form.value.experience
+      }
+
+      this._myPubliService.putPublicacion(this.post._id, publiActualizada).subscribe();
+    }
+
+  }
+
+  eliminarProducto() {
+    this._myPubliService.deletePublicacion(this.post?._id).subscribe();
+  }
 }

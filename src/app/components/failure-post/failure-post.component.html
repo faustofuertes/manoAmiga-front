@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="card">
+        <div class="lef">
+            <img src="assets/images/icons/fallida.png" alt="" class="icon">
+        </div>
+        <div class="right">
+            <h2 class="status">Error al crear la publicación.</h2>
+            <p>Ya tenés una publicación activa para este oficio. Recordá que solo se permite una publicación por tipo de
+                trabajo (por ejemplo, solo una como pintor, otra como plomero, etc.).
+                Si querés actualizar tu publicación, podés editar la existente desde tus publicaciones.</p>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button [routerLink]="['']" class="btn-home">Inicio</button>
+        <button [routerLink]="['/mi-perfil']" class="btn-posts">Mis publicaciones</button>
+    </div>
+</div>

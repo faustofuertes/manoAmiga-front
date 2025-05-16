@@ -1,0 +1,110 @@
+.container {
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 600px;
+    min-height: 250px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    background-color: white;
+    gap: 1rem;
+  }
+  
+  .icon {
+    width: 120px;
+    max-width: 100%;
+  }
+  
+  .left {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .right {
+    width: 70%;
+    text-align: justify;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .status {
+    text-align: center;
+  }
+  
+  .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .btn-container button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #806545, #a67c52);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .btn-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-container button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* 📱 Responsive (para pantallas menores a 768px) */
+  @media screen and (max-width: 768px) {
+    .card {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem;
+    }
+  
+    .left,
+    .right {
+      width: 100%;
+      padding: 0;
+    }
+  
+    .icon {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+  
+    .right p {
+      font-size: 0.95rem;
+    }
+  
+    .status {
+      font-size: 1.1rem;
+    }
+  }
+  

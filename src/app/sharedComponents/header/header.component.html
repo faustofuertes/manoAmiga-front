@@ -1,23 +1,36 @@
 <header class="header">
     <div class="container">
-        <div class="left"><img class="icon" src="assets/images/logo.png" alt="Logo"></div>
-        <div class="center" [class.abierto]="menuAbierto">
-            <ul>
-                <li [routerLink]="['/categorias']">Servicios</li>
-                <li><a href="">Contacto</a></li>
-                <li><a href="">Visión</a></li>
-            </ul>
-        </div>
-        <div class="right">
-            @if(!isAuthenticated){
-            <button (click)="logIn()" class="btn-iniciarSesion">Iniciar sesion</button>
-            <button class="btn-publicar">Publicar</button>
-            }
-            @if(isAuthenticated){
-            <button (click)="logOut()" class="btn-iniciarSesion">Cerrar sesion</button>
+      <div class="left">
+        <img class="icon" src="assets/images/logo.png" alt="Logo">
+      </div>
+  
+      <div class="center" [class.abierto]="menuAbierto">
+        <ul>
+          <li [routerLink]="['/categorias']">Servicios</li>
+          <li (click)="logIn()"><a href="">Publicitate ya!</a></li>
+          <li><a href="">Contacto</a></li>
+  
+          <!-- Botones solo visibles en mobile -->
+          <li class="mobile-only" *ngIf="!isAuthenticated">
+            <button (click)="logIn()" class="btn-publicar">Iniciar sesión</button>
+          </li>
+          <li class="mobile-only" *ngIf="isAuthenticated">
+            <button (click)="logOut()" class="btn-iniciarSesion">Cerrar sesión</button>
             <button [routerLink]="['/mi-perfil']" class="btn-publicar">Mi perfil</button>
-            }
-            <button class="burger" (click)="toggleMenu()">&#9776;</button>
-        </div>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="right">
+        @if(!isAuthenticated){
+        <button (click)="logIn()" class="btn-publicar desktop-only">Iniciar sesión</button>
+        }
+        @if(isAuthenticated){
+        <button (click)="logOut()" class="btn-iniciarSesion desktop-only">Cerrar sesión</button>
+        <button [routerLink]="['/mi-perfil']" class="btn-publicar desktop-only">Mi perfil</button>
+        }
+        <button class="burger" (click)="toggleMenu()">&#9776;</button>
+      </div>
     </div>
-</header>
+  </header>
+  

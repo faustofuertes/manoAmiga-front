@@ -13,9 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./post-form.component.css']
 })
 export class PostFormComponent {
-  jobs: string[] = ['plomero', 'electricista', 'albanil', 'carpintero', 'herrero', 'pintor', 'mecanico', 'tecnicoAA', 'tecnicoLR'];
+  jobs: string[] = ['Electricista', 'Plomero', 'Jardinero', 'Pintor', 'Cerrajero', 'Tecnico', 'Carpintero', 'Limpieza'];
   locations: string[] = ['Mar del Plata'];
-
   currentStep = 1;
 
   step1Form: FormGroup;
@@ -90,7 +89,9 @@ export class PostFormComponent {
       };
 
       this._myPubliService.postPublicacion(publicacion).subscribe(() => {
-        this._router.navigate([''])
+        this._router.navigate(['publicacion-exitosa']);
+      }, error => {
+        this._router.navigate(['publicacion-fallida']);
       });
     }
   }

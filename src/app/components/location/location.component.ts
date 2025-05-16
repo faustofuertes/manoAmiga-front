@@ -12,16 +12,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 })
 export class LocationComponent {
   ciudades: string[] = [
-    'Mar del Plata',
-    'Buenos Aires',
-    'Córdoba',
-    'Rosario',
-    'Mendoza',
-    'La Plata',
-    'San Miguel de Tucumán',
-    'Salta',
-    'Santa Fe',
-    'San Juan'
+    'Mar del Plata'
   ];
 
   ciudadSeleccionada: string = '';

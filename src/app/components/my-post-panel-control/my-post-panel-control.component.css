@@ -1,13 +1,25 @@
 .container {
-    margin-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.separator{
+.separator {
     background-color: #f0f0f0;
     width: 3px;
     height: 500px;
-    margin: 5rem;
+    margin: 0 5rem;
+}
+
+@media (max-width: 768px) {
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .separator{
+        display: none;
+    }
 }

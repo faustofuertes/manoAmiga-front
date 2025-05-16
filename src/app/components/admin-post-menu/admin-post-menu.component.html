@@ -1,0 +1,60 @@
+<div class="container">
+    <h3>{{ cant }} publicaciones pendientes.</h3>
+  
+    <form [formGroup]="form" class="card-container">
+      <div class="left">
+        @if (post) {
+          <img class="icon" [src]="'assets/images/icons/' + post.job.toLowerCase() + '.png'" alt="">
+        }
+        <span class="email">{{post?.userName}}</span>
+        <textarea class="desc" id="description" formControlName="description"></textarea>
+      </div>
+  
+      <div class="right">
+        <div class="form-group">
+          <label for="">Ubicación</label>
+          <input id="location" formControlName="location" type="text" />
+        </div>
+  
+        <div class="form-group">
+          <label for="">Nombre</label>
+          <input id="name" formControlName="name" type="text" />
+        </div>
+  
+        <div class="form-group">
+          <label for="">Servicio</label>
+          <input id="job" formControlName="job" type="text" />
+        </div>
+  
+        <div class="form-group">
+          <label for="">Número</label>
+          <input id="phone" formControlName="phone" type="text" />
+        </div>
+  
+        <div class="form-group">
+          <label for="">Horarios</label>
+          <input id="schedule" formControlName="schedule" type="text" />
+        </div>
+  
+        <div class="form-group">
+          <label for="">Precio</label>
+          <input id="pricing" formControlName="pricing" type="text" />
+        </div>
+  
+        <div class="form-group">
+          <label for="">Experiencia</label>
+          <input id="experience" formControlName="experience" type="text" />
+        </div>
+      </div>
+    </form>
+  
+    <div class="btn-container">
+      <button (click)="acceptPost()" class="btn-accept">
+        <i class="fa-solid fa-check"></i>
+      </button>
+      <button (click)="deletePost()" class="btn-decline">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+  

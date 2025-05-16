@@ -11,14 +11,14 @@
 
             <div class="profile-icon">
                 @if(publicacion){
-                <img class="icon" [src]="'assets/images/icons/' + publicacion.job + '.png'" alt="">
+                <img class="icon" [src]="'assets/images/icons/' + publicacion.job.toLowerCase() + '.png'" alt="">
                 }
             </div>
 
             <div class="profile-name">
                 <span class="name">{{publicacion?.userName}}</span>
                 <span class="job">{{publicacion?.phone}}</span>
-                <span class="location"><i class="fas fa-map-marker-alt"></i>{{publicacion?.location}}</span>
+                <span class="location"><i class="fas fa-map-marker-alt"></i> {{publicacion?.location}}</span>
             </div>
 
         </div>
@@ -36,28 +36,29 @@
         <div class="schedule-time">
             <h3>Horarios de trabajo</h3>
             <br>
-            <span>Lunes a Viernes</span>
+            <span>Lunes a Viernes 8:00 a 16:00</span>
         </div>
 
         <div class="tags">
-            <span class="tag">TAG</span>
-            <span class="tag">TAG</span>
-            <span class="tag">TAG</span>
-            <span class="tag">TAG</span>
-            <span class="tag">TAG</span>
-            <span class="tag">TAG</span>
-            <span class="tag">TAG</span>
-            <span class="tag">TAG</span>
-            <span class="tag">TAG</span>
-            <span class="tag">TAG</span>
+            <span class="tag">Rápido</span>
+            <span class="tag">Confiable</span>
+            <span class="tag">Económico</span>
+            <span class="tag">24hs</span>
+            <span class="tag">Garantía</span>
+            <span class="tag">Profesional</span>
+            <span class="tag">Urgencias</span>
+            <span class="tag">Certificado</span>
+            <span class="tag">Experto</span>
+            <span class="tag">Local</span>
         </div>
+
 
     </div>
 
     <div class="pricing">
 
         <div class="box">
-            <h4 class="price">$ 54334</h4>
+            <h4 class="price">$10000</h4>
             <span>Precio visita.</span>
         </div>
 
@@ -68,11 +69,11 @@
                     d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
             </svg>
 
-            <span>(5.0)</span>
+            <span>(5.0) opiniones</span>
         </div>
 
         <div class="box">
-            <h4 class="price">+10 (CAMBIAR)</h4>
+            <h4 class="price">+10</h4>
             <span>Años de experiencia.</span>
         </div>
 
