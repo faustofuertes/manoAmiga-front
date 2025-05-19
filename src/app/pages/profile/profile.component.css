@@ -32,6 +32,11 @@
     color: white;
 }
 
+.call-me{
+    background-color: grey;
+    color: white;
+}
+
 .profile-icon-box {
     width: 100%;
     display: flex;
