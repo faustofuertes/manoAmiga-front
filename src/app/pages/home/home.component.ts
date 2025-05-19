@@ -7,7 +7,7 @@ import { FAQComponent } from "../../components/faq/faq.component";
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, LocationComponent, UsersCardsComponent, GeneralReviewsComponent],
+  imports: [RouterLink, LocationComponent, UsersCardsComponent, GeneralReviewsComponent, FAQComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

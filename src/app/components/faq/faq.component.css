@@ -1,8 +1,25 @@
 .container{
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     margin-top: 5rem;
+    gap: 1rem;
+}
+
+.container-faq{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.faq{
+    text-align: center;
+    width: 290px;
+    border: 1px solid lightgrey;
+    padding: 1rem;
+    border-radius: 10px;
 }
