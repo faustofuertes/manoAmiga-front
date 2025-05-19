@@ -1,30 +1,31 @@
 <div class="container">
     <h3>Mis publicaciones.</h3>
-
-    <div [routerLink]="['/crear-publicacion']" class="add-post">
+  
+    <div class="scroll-wrapper">
+      <div class="add-post" [routerLink]="['/crear-publicacion']">
         <span>Crear publicacion</span>
         <i class="fas fa-plus-circle"></i>
-    </div>
-
-    @for (publi of publicaciones; track $index) {
-    <div (click)="emitPostClicked(publi)" class="post">
-        <div class="left">
+      </div>
+  
+      @for (publi of publicaciones; track $index) {
+        <div (click)="emitPostClicked(publi)" class="post">
+          <div class="left">
             <img class="icon" [src]="'assets/images/icons/' + publi.job.toLowerCase() + '.png'" alt="">
-        </div>
-        <div class="right">
+          </div>
+          <div class="right">
             <span class="job">{{publi.job}}</span>
             @if(publi.isActive === true){
-            <div class="status">
+              <div class="status">
                 En línea <span class="status-dot online"></span>
-            </div>
-            }@else {
-            <div class="status">
+              </div>
+            } @else {
+              <div class="status">
                 Fuera de línea <span class="status-dot offline"></span>
-            </div>
+              </div>
             }
-
-
+          </div>
         </div>
+      }
     </div>
-    }
-</div>
+  </div>
+  

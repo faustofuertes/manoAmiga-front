@@ -5,6 +5,18 @@
     align-items: center;
 }
 
+/* Contenedor de publicaciones */
+.scroll-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    max-height: 300px;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* Publicación */
 .post {
     width: 200px;
     height: 60px;
@@ -16,23 +28,27 @@
     gap: 2rem;
     transition: .2s;
     cursor: pointer;
-    margin-top: 1rem;
     padding: 5px;
+    flex-shrink: 0; /* importante para mobile */
 }
 
+/* Hover */
 .post:hover {
     transform: scale(.9);
 }
 
+/* Icono */
 .icon {
     width: 35px;
 }
 
+/* Nombre del oficio */
 .job {
     font-size: 14px;
     font-weight: 600;
 }
 
+/* Botón de crear publicación */
 .add-post {
     width: 200px;
     height: 60px;
@@ -44,16 +60,8 @@
     align-items: center;
     transition: .2s;
     cursor: pointer;
-    margin-top: 1rem;
     padding: 5px;
-}
-
-.right{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
+    flex-shrink: 0; /* importante para scroll horizontal */
 }
 
 .add-post:hover {
@@ -70,6 +78,15 @@
     margin-top: 5px;
 }
 
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* Switch */
 .switch {
     position: relative;
     display: inline-block;
@@ -107,63 +124,71 @@
     border-radius: 50%;
 }
 
-input:checked+.slider {
+input:checked + .slider {
     background-color: #4CAF50;
 }
 
-input:checked+.slider::before {
+input:checked + .slider::before {
     transform: translateX(13px);
 }
 
+/* Estado en línea */
 .status {
     font-size: 12px;
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre el punto y el texto */
+    gap: 10px;
 }
 
 .status-dot {
     width: 10px;
     height: 10px;
-    border-radius: 50%; /* Hacerlo redondo */
+    border-radius: 50%;
     display: inline-block;
 }
 
 .online {
-    background-color: green; /* Verde para en línea */
+    background-color: green;
 }
 
 .offline {
-    background-color: red; /* Rojo para fuera de línea */
+    background-color: red;
 }
 
+/* ========== VERSIÓN MOBILE ========== */
 @media (max-width: 768px) {
-
-    h3{
+    h3 {
         display: none;
     }
 
     .container {
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        gap: 1rem;
+        align-items: flex-start;
     }
 
-    .right{
+    .scroll-wrapper {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-height: none;
+        max-width: 90vw;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .post,
+    .add-post {
+        width: 80px;
+        height: 60px;
+        margin-top: 0;
+    }
+
+    .right {
         display: none;
     }
 
-    .post{
-        width: 80px;
-        margin-top: 1rem;
-    }
-
-    .add-post{
-        width: 80px;
-    }
-
-    .add-post span{
+    .add-post span {
         display: none;
     }
 }
