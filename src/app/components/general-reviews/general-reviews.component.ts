@@ -61,8 +61,6 @@ export class GeneralReviewsComponent implements OnInit, OnDestroy {
     }
   ];
 
-
-
   current = 0;
   intervalId: any;
   isMobile = false;
@@ -82,7 +80,7 @@ export class GeneralReviewsComponent implements OnInit, OnDestroy {
   startAutoSlide() {
     this.intervalId = setInterval(() => {
       this.siguiente();
-    }, 3000);
+    }, 4000);
   }
 
   siguiente() {

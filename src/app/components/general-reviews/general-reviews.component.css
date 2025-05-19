@@ -30,7 +30,7 @@
 
 .card {
     position: absolute;
-    width: 300px;
+    width: 290px;
     height: 300px;
     border-radius: 30px;
     border: 1px solid #d1bfa6;
@@ -144,8 +144,7 @@ img{
     }
 
     .carousel-container {
-        width: 500px;
-        padding: 0 1rem;
+        width: 90%;
     }
 
     .card.prev,

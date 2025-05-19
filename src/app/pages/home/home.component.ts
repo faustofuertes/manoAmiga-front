@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { LocationComponent } from "../../components/location/location.component";
 import { UsersCardsComponent } from "../../components/users-cards/users-cards.component";
 import { GeneralReviewsComponent } from "../../components/general-reviews/general-reviews.component";
+import { FAQComponent } from "../../components/faq/faq.component";
 
 @Component({
   selector: 'app-home',

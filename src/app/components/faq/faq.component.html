@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Preguntas frecuentes.</h2>
+    <div class="container-faq">
+        @for (f of faqList; track $index) {
+        <div class="faq">
+            <label (click)="toggleOption(f.id)" for="">{{f.pregunta}}</label>
+            @if(f.abierta === true){
+            <p>{{f.respuesta}}</p>
+            }
+        </div>
+        }
+    </div>
+</div>
