@@ -3,8 +3,8 @@
     <div class="profile-info">
 
         <div class="action-buttons">
-            <button class="whatsapp">WhatsApp<i class="fab fa-whatsapp"></i></button>
-            <button class="call-me">Llamame<i class="fas fa-phone-alt"></i></button>
+            <button (click)="abrirWhatsApp()" class="whatsapp">WhatsApp<i class="fab fa-whatsapp"></i></button>
+            <button (click)="llamar()" class="call-me">Llamame<i class="fas fa-phone-alt"></i></button>
         </div>
 
         <div class="profile-icon-box">
@@ -15,19 +15,17 @@
                 }
             </div>
 
+            
+
             <div class="profile-name">
                 <span class="name">{{publicacion?.userName}}</span>
-                <span class="job">{{publicacion?.phone}}</span>
+                <span class="job">{{publicacion?.job}}</span>
                 <span class="location"><i class="fas fa-map-marker-alt"></i> {{publicacion?.location}}</span>
             </div>
 
         </div>
 
-        <p class="profile-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis repellat
-            reprehenderit, nemo obcaecati porro dolorum dicta nisi, dolor molestiae ullam nam. Atque doloremque quod
-            omnis tenetur magnam veritatis sit ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-            quod dolorem et. Cum, assumenda repudiandae quidem ducimus dignissimos pariatur placeat alias, est illo
-            minima provident ipsa, possimus commodi perferendis? Nesciunt.</p>
+        <p class="profile-description">{{publicacion?.description}}</p>
     </div>
 
 
@@ -36,7 +34,7 @@
         <div class="schedule-time">
             <h3>Horarios de trabajo</h3>
             <br>
-            <span>Lunes a Viernes 8:00 a 16:00</span>
+            <span>{{publicacion?.schedule}}</span>
         </div>
 
         <div class="tags">
@@ -58,7 +56,7 @@
     <div class="pricing">
 
         <div class="box">
-            <h4 class="price">$10000</h4>
+            <h4 class="price">{{publicacion?.pricing}}</h4>
             <span>Precio visita.</span>
         </div>
 
@@ -73,7 +71,7 @@
         </div>
 
         <div class="box">
-            <h4 class="price">+10</h4>
+            <h4 class="price">{{publicacion?.experience}}</h4>
             <span>Años de experiencia.</span>
         </div>
 

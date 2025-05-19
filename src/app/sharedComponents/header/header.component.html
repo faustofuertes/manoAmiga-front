@@ -5,7 +5,7 @@
       </div>
   
       <div class="center" [class.abierto]="menuAbierto">
-        <ul>
+        <ul (click)="toggleMenu()">
           <li [routerLink]="['/categorias']">Servicios</li>
           <li (click)="logIn()"><a href="">Publicitate ya!</a></li>
           <li><a href="">Contacto</a></li>

@@ -27,4 +27,17 @@ export class ProfileComponent implements OnInit {
       console.log(this.publicacion)
     })
   }
+
+  abrirWhatsApp() {
+    const numero = `549${this.publicacion?.phone}`;
+    const mensaje = `Hola ${this.publicacion?.userName} vi tu publicacion de ${this.publicacion?.job} en Mano Amiga y me gustaría hacerte una consulta...`;
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, '_blank');
+  }
+
+  llamar() {
+    window.location.href = 'tel:3517660669';
+  }
+
 }
