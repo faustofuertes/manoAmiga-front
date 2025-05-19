@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
   }
 
   llamar() {
-    window.location.href = 'tel:3517660669';
+    window.location.href = `tel:549${this.publicacion?.phone}`;
   }
 
 }
