@@ -14,6 +14,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    height: auto;
 }
 
 .faq{
@@ -23,3 +24,21 @@
     padding: 1rem;
     border-radius: 10px;
 }
+
+p{
+    display: block;
+    margin-top: 1rem;
+}
+
+.respuesta {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+  
+  .respuesta.abierta {
+    max-height: 500px; /* valor suficientemente grande */
+    opacity: 1;
+  }
+  
