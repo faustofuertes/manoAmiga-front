@@ -1,14 +1,15 @@
 <div class="container">
-    <h2>Preguntas frecuentes.</h2>
-    <div class="container-faq">
-      @for (f of faqList; track $index) {
-        <div class="faq">
-          <label (click)="toggleOption(f.id)">{{ f.pregunta }}</label>
-          <div class="respuesta" [class.abierta]="f.abierta">
-            <p>{{ f.respuesta }}</p>
-          </div>
-        </div>
-      }
+  <h2>Preguntas frecuentes.</h2>
+
+  @for (f of faqList; track $index) {
+  <div (click)="toggleOption(f.id)" class="container-faq">
+    <div class="faq">
+      <label>{{ f.pregunta }}</label>
+      <div class="respuesta" [class.abierta]="f.abierta">
+        <p>{{ f.respuesta }}</p>
+      </div>
     </div>
   </div>
-  
+  }
+
+</div>

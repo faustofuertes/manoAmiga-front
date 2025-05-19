@@ -1,14 +1,14 @@
-.container{
+.container {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    margin-top: 1.5rem;
+    margin-top: 5rem;
     gap: 1rem;
 }
 
-.container-faq{
+.container-faq {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,17 +17,21 @@
     height: auto;
 }
 
-.faq{
+/* ✅ VERSIÓN DESKTOP por defecto */
+.faq {
     text-align: center;
-    width: 290px;
+    width: 600px;
     border: 1px solid lightgrey;
     padding: 1rem;
     border-radius: 10px;
+    font-size: 18px;
 }
 
-p{
+p {
     display: block;
     margin-top: 1rem;
+    text-align: left;
+    font-size: 16px;
 }
 
 .respuesta {
@@ -35,10 +39,26 @@ p{
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.4s ease, opacity 0.4s ease;
-  }
-  
-  .respuesta.abierta {
-    max-height: 500px; /* valor suficientemente grande */
+}
+
+.respuesta.abierta {
+    max-height: 500px;
     opacity: 1;
-  }
-  
+}
+
+/* ✅ VERSIÓN MOBILE */
+@media (max-width: 768px) {
+    .faq {
+        width: 290px;
+        /* AHORA sí con unidad px */
+        font-size: 16px;
+    }
+
+    .container {
+        margin-top: 1rem;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
