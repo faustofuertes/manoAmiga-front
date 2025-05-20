@@ -61,8 +61,9 @@
                 <div class="form-group">
                     <label for="description"><span class="color">Descripción</span> de tu aviso</label>
                     <label class="min" for="description">(Minimo 20 palabras)</label>
-                    <textarea placeholder="Ej: Plomero con más de 10 años de experiencia en reparaciones, instalaciones y mantenimiento de cañerías, sanitarios y sistemas de agua potable. Puntual, responsable y con atención a los detalles." id="description"
-                        formControlName="description"></textarea>
+                    <textarea
+                        placeholder="Ej: Plomero con más de 10 años de experiencia en reparaciones, instalaciones y mantenimiento de cañerías, sanitarios y sistemas de agua potable. Puntual, responsable y con atención a los detalles."
+                        id="description" formControlName="description"></textarea>
                 </div>
             </form>
             <div class="btn-container">
@@ -163,7 +164,11 @@
             <div class="btn-container">
                 <button class="btn-back" type="button" (click)="previousStep()">Volver</button>
                 <button class="btn-forward" type="button" (click)="onSubmit()"
-                    [disabled]="step5Form.invalid">Publicar</button>
+                    [disabled]="step5Form.invalid || isSubmitting" [class.loading]="isSubmitting">
+                    <span class="btn-text" *ngIf="!isSubmitting">Publicar</span>
+                    <span class="btn-text" *ngIf="isSubmitting">Publicando...</span>
+                    <span class="progress-bar" *ngIf="isSubmitting"></span>
+                </button>
             </div>
         </div>
         }

@@ -16,6 +16,7 @@ export class PostFormComponent {
   jobs: string[] = ['Electricista', 'Plomero', 'Jardinero', 'Pintor', 'Cerrajero', 'Tecnico', 'Carpintero', 'Limpieza'];
   locations: string[] = ['Mar del Plata'];
   currentStep = 1;
+  isSubmitting = false;
 
   step1Form: FormGroup;
   step2Form: FormGroup;
@@ -73,6 +74,7 @@ export class PostFormComponent {
   }
 
   onSubmit() {
+    this.isSubmitting = true;
 
     if (this.step1Form.valid && this.step2Form.valid) {
 
