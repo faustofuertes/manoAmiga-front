@@ -94,19 +94,6 @@
     font-size: 20px;
 }
 
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.tag {
-    background-color: #f0f0f0;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 10px;
-    font-size: 12px;
-}
-
 .pricing {
     display: flex;
     flex-direction: column;
@@ -229,13 +216,6 @@ i {
 
     .schedule-time {
         font-size: 30px;
-    }
-
-    .tag {
-        padding: 10px;
-        margin: 10px;
-        border-radius: 20px;
-        font-size: 22px;
     }
 
     .pricing {
