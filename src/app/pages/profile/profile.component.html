@@ -15,7 +15,7 @@
                 }
             </div>
 
-            
+
 
             <div class="profile-name">
                 <span class="name">{{publicacion?.userName}}</span>
@@ -56,7 +56,7 @@
     <div class="pricing">
 
         <div class="box">
-            <h4 class="price">{{publicacion?.pricing}}</h4>
+            <h4 class="price">${{publicacion?.pricing}}</h4>
             <span>Precio visita.</span>
         </div>
 
@@ -78,3 +78,5 @@
     </div>
 
 </div>
+
+<app-personal-reviews [postId]="id"></app-personal-reviews>

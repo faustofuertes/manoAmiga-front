@@ -140,6 +140,10 @@ i {
     font-size: 14px;
 }
 
+.fa-map-marker-alt{
+    color: #806545;
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;

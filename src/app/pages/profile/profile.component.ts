@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { Publicacion } from '../../interfaces/publicacion';
+import { PersonalReviewsComponent } from "../../components/personal-reviews/personal-reviews.component";
 
 @Component({
   selector: 'app-profile',
-  imports: [],
+  imports: [PersonalReviewsComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
@@ -24,7 +25,6 @@ export class ProfileComponent implements OnInit {
 
     this._publiService.getPublicacionxId(this.id).subscribe(data => {
       this.publicacion = data;
-      console.log(this.publicacion)
     })
   }
 

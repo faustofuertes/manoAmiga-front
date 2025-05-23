@@ -1,0 +1,35 @@
+<div class="container">
+    @for (r of reviews; track $index) {
+    <article class="review">
+        <figure class="left">
+            <img src="assets/images/icons/userMan.png" alt="Avatar" class="icon">
+        </figure>
+
+        <div class="right">
+            <header class="top">
+                <div class="top-left">
+                    <strong class="name">{{r.userName}}</strong>
+                    <time class="date" [attr.datetime]="r.dateAdded">{{ r.dateAdded | date:'dd/MM/yyyy' }}</time>
+                </div>
+                <div class="stars" [attr.aria-label]="'Puntuación: ' + r.score + ' estrellas'">
+                    <ng-container *ngFor="let star of [1,2,3,4,5]">
+                        <svg xmlns="http://www.w3.org/2000/svg" [attr.fill]="star <= r.score ? '#ffc107' : '#e0e0e0'"
+                            viewBox="0 0 24 24" stroke="#ffc107" width="20" height="20" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 
+                             9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                    </ng-container>
+                </div>
+
+            </header>
+
+            <section class="bottom">
+                <p class="text">{{r.textReview}}</p>
+            </section>
+        </div>
+    </article>
+    }
+
+
+
+</div>
