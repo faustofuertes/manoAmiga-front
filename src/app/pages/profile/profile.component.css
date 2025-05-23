@@ -32,7 +32,7 @@
     color: white;
 }
 
-.call-me{
+.call-me {
     background-color: grey;
     color: white;
 }
@@ -140,7 +140,7 @@ i {
     font-size: 14px;
 }
 
-.fa-map-marker-alt{
+.fa-map-marker-alt {
     color: #806545;
 }
 
@@ -158,6 +158,25 @@ i {
     .box {
         width: 100%;
         max-width: 300px;
+    }
+
+    .pricing {
+        flex-direction: row;
+    }
+
+    .box{
+        padding: 0 1rem;
+        text-align: center;
+        width: 60px;
+        height: 100px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .pricing span {
+        font-size: 12px;
     }
 }
 
