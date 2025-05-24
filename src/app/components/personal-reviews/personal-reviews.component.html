@@ -1,4 +1,7 @@
 <div class="container">
+    <button (click)="toggleReview()" class="btn-review"><img class="icon-review" src="assets/images/icons/review.png"
+            alt="">Hacer
+        reseña</button>
     @for (r of reviews; track $index) {
     <article class="review">
         <figure class="left">
@@ -30,6 +33,24 @@
     </article>
     }
 
+    @if(isAdding){
+        <div class="overlay" (click)="closeIfOutside($event)">
+          <div class="form-container" (click)="$event.stopPropagation()">
+              <h3>Valoración</h3>
+              <select name="" id=""></select>
+              <textarea name="" id=""></textarea>
+              <button>Publicar</button>
+          </div>
+        </div>
+        }
 
+    @if(needLogin){
+    <div class="overlay" (click)="closeIfOutside($event)">
+        <div class="login-container">
+            <h4>Iniciá sesión para dejar una reseña.</h4>
+            <button (click)="login()">Iniciar sesion</button>
+        </div>
+    </div>
+    }
 
 </div>

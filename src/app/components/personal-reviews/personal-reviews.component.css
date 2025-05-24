@@ -68,6 +68,107 @@
     align-items: center;
 }
 
+.icon-review {
+    width: 40px;
+}
+
+.btn-review {
+    background-color: #806545;
+    color: #c4ebeb;
+    padding: .5rem 1rem;
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 3rem;
+    gap: 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* fondo oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* que quede por encima de todo */
+}
+
+.form-container {
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    height: 400px;
+    width: 350px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.form-container select {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 50px;
+}
+
+.form-container textarea {
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    width: 70%;
+    height: 50%;
+    resize: none;
+    transition: .3s;
+    padding: 1rem;
+}
+
+.form-container textarea:focus{
+    outline: none;
+    border: 1px solid #806545;
+}
+
+.form-container button{
+    border: none;
+    padding: .5rem 1rem;
+    color: white;
+    font-weight: bold;
+    background-color: #806545;
+    border-radius: 30px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    border-radius: 30px;
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.login-container button{
+    border: none;
+    padding: .5rem 1rem;
+    color: white;
+    font-weight: bold;
+    background-color: #806545;
+    border-radius: 30px;
+}
+
 /* 🟢 Responsive para móviles */
 @media (max-width: 600px) {
     .review {
