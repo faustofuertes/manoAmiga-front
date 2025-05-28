@@ -65,8 +65,11 @@
     @if(needLogin){
     <div class="overlay" (click)="closeIfOutside($event)">
         <div class="login-container" (click)="$event.stopPropagation()">
+            <header class="top-login">
+                <button (click)="toggleReview()" class="btn-close"><i class="fas fa-times"></i></button>
+            </header>
             <h4>Iniciá sesión para dejar una reseña.</h4>
-            <button (click)="login()">Iniciar sesion</button>
+            <button class="btn-login" (click)="login()">Iniciar sesion</button>
         </div>
     </div>
     }
