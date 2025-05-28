@@ -1,138 +1,155 @@
 .form-group {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    padding: 0 2rem;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding: 0 2rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.form-group label {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 95%;
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  border: 1px solid transparent;
+  font-size: 18px;
+  text-align: center;
+  transition: .2s;
+}
+
+select {
+  color: black;
+  -webkit-text-fill-color: black;
+  /* fuerza color en Safari/iOS */
+  background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border: 1px solid #806545;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+.color {
+  color: #806545;
+}
+
+.min {
+  align-self: flex-start;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-update,
+.btn-delete {
+  border: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: 200px;
+  max-width: 95%;
+}
+
+.btn-update {
+  background-color: green;
+  color: white;
+  transition: 0.2s;
+}
+
+.btn-delete {
+  background-color: #806545;
+  color: white;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .form-group {
+    padding: 0 1rem;
+    font-size: 16px;
   }
-  
-  .form-group label {
-    text-align: left;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    max-width: 600px;
-  }
-  
+
   .form-group input,
   .form-group select,
   .form-group textarea {
-    width: 95%;
-    max-width: 600px;
-    padding: 10px;
-    border-radius: 30px;
-    background-color: #f0f0f0;
-    border: 1px solid transparent;
-    font-size: 18px;
-    text-align: center;
-    transition: .2s;
-  }
-  
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border: 1px solid #806545;
-  }
-  
-  .form-group textarea {
-    height: 100px;
-    resize: none;
-  }
-  
-  .color {
-    color: #806545;
-  }
-  
-  .min {
-    align-self: flex-start;
-    font-size: 16px;
-    font-weight: 100;
-  }
-  
-  .btn-container {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    max-width: 600px;
+    font-size: 16px;
   }
-  
+
   .btn-update,
   .btn-delete {
-    border: none;
-    padding: 12px 16px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    width: 200px;
-    max-width: 95%;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    width: 90%;
   }
-  
-  .btn-update {
-    background-color: green;
-    color: white;
-    transition: 0.2s;
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  .form-group {
+    font-size: 14px;
+    padding: 0;
+    width: 80vw;
+    margin-top: 2rem;
   }
-  
+
+  label {
+    font-size: 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 300px;
+    font-size: 14px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .form-group textarea {
+    height: 100px;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-update,
   .btn-delete {
-    background-color: #806545;
-    color: white;
+    width: 90%;
+    margin-left: 0;
   }
-  
-  /* Tablet */
-  @media (max-width: 768px) {
-    .form-group {
-      padding: 0 1rem;
-      font-size: 16px;
-    }
-  
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 95%;
-      max-width: 600px;
-      font-size: 16px;
-    }
-  
-    .btn-update,
-    .btn-delete {
-      padding: 10px 14px;
-      font-size: 0.85rem;
-      width: 90%;
-    }
-  }
-  
-  /* Celular */
-  @media (max-width: 480px) {
-    .form-group {
-      font-size: 14px;
-      padding: 0;
-      width: 80vw;
-      margin-top: 2rem;
-    }
-  
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      max-width: 100%;
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-    .btn-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-  
-    .btn-update,
-    .btn-delete {
-      width: 90%;
-      margin-left: 0;
-    }
-  }
-  
+}

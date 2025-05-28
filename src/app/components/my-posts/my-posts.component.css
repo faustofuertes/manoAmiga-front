@@ -20,7 +20,7 @@
 .post {
     width: 200px;
     height: 60px;
-    border-radius: 50px;
+    border-radius: 30px;
     border: 1px solid lightgrey;
     display: flex;
     justify-content: center;
@@ -52,7 +52,7 @@
 .add-post {
     width: 200px;
     height: 60px;
-    border-radius: 50px;
+    border-radius: 30px;
     border: 1px solid lightgrey;
     display: flex;
     flex-direction: column;
