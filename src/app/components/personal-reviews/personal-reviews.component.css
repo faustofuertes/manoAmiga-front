@@ -223,6 +223,10 @@
     border-radius: 20px;
 }
 
+.fa-times{
+    color: black;
+}
+
 /* 🟢 Responsive para móviles */
 @media (max-width: 600px) {
     .review {
