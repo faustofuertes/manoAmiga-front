@@ -34,19 +34,37 @@
     }
 
     @if(isAdding){
-        <div class="overlay" (click)="closeIfOutside($event)">
-          <div class="form-container" (click)="$event.stopPropagation()">
-              <h3>Valoración</h3>
-              <select name="" id=""></select>
-              <textarea name="" id=""></textarea>
-              <button>Publicar</button>
-          </div>
-        </div>
-        }
+    <div class="overlay" (click)="closeIfOutside($event)">
+        <form [formGroup]="form" class="form-container" (click)="$event.stopPropagation()">
+            <header class="top">
+                <h3>Valoración</h3>
+                <button (click)="toggleReview()" class="btn-close"><i class="fas fa-times"></i></button>
+            </header>
+            <div class="mid">
+                <select formControlName="score" name="score" id="">
+                    <option value="" disabled selected hidden></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24"
+                    height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+            </div>
+            <textarea formControlName="review" name="review" id=""
+                placeholder="Contanos cómo fue tu experiencia con este profesional."></textarea>
+            <button (click)="submitReview()" class="btn-share" [disabled]="form.invalid">Publicar</button>
+        </form>
+    </div>
+    }
 
     @if(needLogin){
     <div class="overlay" (click)="closeIfOutside($event)">
-        <div class="login-container">
+        <div class="login-container" (click)="$event.stopPropagation()">
             <h4>Iniciá sesión para dejar una reseña.</h4>
             <button (click)="login()">Iniciar sesion</button>
         </div>

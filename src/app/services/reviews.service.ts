@@ -13,6 +13,10 @@ export class ReviewsService {
 
   constructor(private _http: HttpClient) { }
 
+  postReview(review: Review): Observable<Review> {
+    return this._http.post<Review>(this.baseURL, review);
+  }
+
   getReviewPerPost(postId: string | undefined): Observable<Review[]> {
     return this._http.get<Review[]>(`${this.baseURL}/${postId}`);
   }

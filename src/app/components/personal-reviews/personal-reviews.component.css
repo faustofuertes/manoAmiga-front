@@ -88,17 +88,33 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.top {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+
+.mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* fondo oscuro */
+    background-color: rgba(0, 0, 0, .2);
+    /* fondo oscuro */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999; /* que quede por encima de todo */
+    z-index: 999;
+    /* que quede por encima de todo */
 }
 
 .form-container {
@@ -113,12 +129,22 @@
     border-radius: 30px;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
 }
 
 .form-container select {
     border: 1px solid lightgray;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 50px;
+    height: 25px;
+    margin: 1rem;
+    text-align: center;
+    transition: .3s;
+}
+
+.form-container select:focus {
+    outline: none;
+    border: 1px solid #806545;
 }
 
 .form-container textarea {
@@ -129,21 +155,35 @@
     resize: none;
     transition: .3s;
     padding: 1rem;
+    margin: 1rem;
 }
 
-.form-container textarea:focus{
+.form-container textarea:focus {
     outline: none;
     border: 1px solid #806545;
 }
 
-.form-container button{
+.btn-share {
     border: none;
     padding: .5rem 1rem;
     color: white;
     font-weight: bold;
-    background-color: #806545;
+    background-color: black;
     border-radius: 30px;
+    margin: 1rem;
 }
+
+.btn-share:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.btn-close {
+    border: none;
+    background-color: white;
+    font-size: 18px;
+}
+
 
 .login-container {
     display: flex;
@@ -160,7 +200,7 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.login-container button{
+.login-container button {
     border: none;
     padding: .5rem 1rem;
     color: white;

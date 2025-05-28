@@ -1,9 +1,9 @@
 export interface Review {
-    authorId: string;
-    targetId: string;
-    postId: string;
-    userName: string;
+    authorId: string | null;
+    targetId: string | undefined | null;
+    postId: string | undefined;
+    userName: string | null;
     score: number;
     textReview: string;
-    dateAdded: Date;
+    dateAdded?: Date;
 }
