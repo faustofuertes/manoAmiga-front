@@ -15,15 +15,14 @@
 
 .card-container {
   width: 400px;
-  height: 253px;
+  height: 269px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  border: 1px solid #d1bfa6;
+  border: 1px solid #806545;
   padding: 0 1rem 1rem 1rem;
-  gap: .5rem;
   margin: 1rem;
   cursor: pointer;
   transition: .4s;
@@ -90,6 +89,8 @@
 }
 
 .bottom {
+  height: 100%;
+  margin-top: 1rem;
   text-align: justify;
   font-size: 14px;
   padding: 0 1rem 1rem 1rem;
@@ -102,6 +103,10 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+}
+
+.fa-map-marker-alt{
+  color: #806545;
 }
 
 .logo {
@@ -128,8 +133,6 @@
 @media (max-width: 768px) {
   .card-container {
     width: 90%;
-    padding: 0.5rem;
-    margin: 1rem 1rem;
   }
 
   .mid {

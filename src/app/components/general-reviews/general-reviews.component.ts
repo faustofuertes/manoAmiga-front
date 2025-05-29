@@ -10,60 +10,64 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 export class GeneralReviewsComponent implements OnInit, OnDestroy {
   testimonios = [
     {
-      nombre: 'Juan Salvo',
-      icono: 'assets/images/icons/plomero.png',
-      texto: 'La verdad que la app está buenísima, encontré un plomero en minutos y me resolvió todo al toque. Súper práctica y fácil de usar. Me salvó en una emergencia con una pérdida de agua.'
+      nombre: 'Lucas Pereyra',
+      icono: 'assets/images/icons/userMan.png',
+      texto: 'Una masa la app. Puse que necesitaba un plomero y al toque me escribió uno. Me resolvió la pérdida en menos de una hora. Súper práctica, te saca del apuro sin vueltas.'
     },
     {
-      nombre: 'Pedro Gómez',
-      icono: 'assets/images/icons/electricista.png',
-      texto: 'Muy buena idea la de esta app. Busqué un electricista y al rato ya me estaba escribiendo. Todo desde el celu, sin vueltas. Me encantó que podés ver las opiniones de otros también.'
+      nombre: 'Tomás Herrera',
+      icono: 'assets/images/icons/userMan.png',
+      texto: 'Muy buena onda todo. Busqué un electricista un sábado a la tarde y conseguí sin problema. Me gustó que podés ver las opiniones, te da más confianza para elegir.'
     },
     {
-      nombre: 'Luis Fernández',
-      icono: 'assets/images/icons/pintor.png',
-      texto: 'Re bien la app. Pedí un pintor para arreglar el departamento y todo salió joya. Me gustó que no tuve que andar preguntando en grupos ni nada raro. Todo directo desde Mano Amiga.'
+      nombre: 'Nicolás Rivas',
+      icono: 'assets/images/icons/userMan.png',
+      texto: 'Me re salvó Mano Amiga. Estaba buscando un pintor para arreglar unas paredes del depto y apareció uno de la zona. Coordinamos por WhatsApp y vino al día siguiente.'
     },
     {
-      nombre: 'Carlos Martínez',
-      icono: 'assets/images/icons/jardinero.png',
-      texto: 'Muy copada la app, encontré un jardinero de confianza cerca de casa. Todo fue fácil, desde el contacto hasta que vino. Está buena la idea de ayudar a los que laburan por su cuenta.'
+      nombre: 'Fabián Quiroga',
+      icono: 'assets/images/icons/userMan.png',
+      texto: 'Está buenísima la idea. Necesitaba un jardinero para limpiar el fondo y encontré uno cerca de casa que labura joya. Todo fue rápido y directo, sin vueltas.'
     },
     {
-      nombre: 'Eduardo Ramos',
-      icono: 'assets/images/icons/tecnico.png',
-      texto: 'Excelente. Me conecté con un técnico para revisar el lavarropas y a la hora ya estaba en casa. Mano Amiga es una solución re útil, sobre todo si no conocés a nadie de confianza.'
+      nombre: 'Gustavo Medina',
+      icono: 'assets/images/icons/userMan.png',
+      texto: 'Busqué un técnico para el lavarropas y en una hora ya lo tenía en casa. Mano Amiga funciona bárbaro, es ideal si no tenés a nadie de confianza a mano.'
     },
     {
-      nombre: 'Martina López',
-      icono: 'assets/images/icons/limpieza.png',
-      texto: 'La usé para conseguir alguien que me ayude con la limpieza y fue un golazo. La chica que vino un amor, re puntual y dejó todo impecable. Me encantó poder coordinar todo por la app.'
+      nombre: 'Florencia Acosta',
+      icono: 'assets/images/icons/userWoman.png',
+      texto: 'La usé para conseguir alguien que me ayude con la limpieza y fue lo más. La chica un amor, puntual y laburadora. Todo impecable, la volvería a llamar sin dudas.'
     },
     {
-      nombre: 'Ramiro Torres',
-      icono: 'assets/images/icons/carpintero.png',
-      texto: 'Busqué un carpintero para arreglar una puerta y en una hora ya estaba charlando con uno. Mano Amiga es muy intuitiva, y encima los perfiles tienen reseñas reales. Muy buena experiencia.'
+      nombre: 'Matías Aguirre',
+      icono: 'assets/images/icons/userMan.png',
+      texto: 'Tuve que arreglar una puerta del placard y encontré un carpintero que vino ese mismo día. Muy buena experiencia, la app es clara y no te hace perder tiempo.'
     },
     {
-      nombre: 'Sofía Acuña',
-      icono: 'assets/images/icons/tecnico.png',
-      texto: 'Tuve un problema con el calefón y gracias a la app lo pude resolver en el día. Todo bien claro, sin vueltas. Muy útil para encontrar profesionales cerca sin tener que andar preguntando.'
+      nombre: 'Carla Roldán',
+      icono: 'assets/images/icons/userWoman.png',
+      texto: 'Se me rompió el calefón y estaba desesperada. Encontré un gasista cerca y al ratito ya estaba viendo el tema. Mano Amiga fue la salvación, posta.'
     },
     {
-      nombre: 'Diego Navarro',
-      icono: 'assets/images/icons/cerrajero.png',
-      texto: 'Se me rompió la cerradura y con Mano Amiga encontré un cerrajero al toque. Muy recomendable la app, fácil, rápida y me gustó que podés ver el precio antes de llamar.'
+      nombre: 'Santiago Ferreyra',
+      icono: 'assets/images/icons/userMan.png',
+      texto: 'Cerradura rota y sin llaves, un bajón. Entré a Mano Amiga y encontré un cerrajero de toque. Rápido, buena onda y precio justo. Recomendado.'
     },
     {
-      nombre: 'Andrea Morales',
-      icono: 'assets/images/icons/pintor.png',
-      texto: 'Me ayudó un montón. Coordiné con un pintor por la app, vino en horario, súper respetuoso. Mano Amiga es ideal si no conocés a nadie que te recomiende y querés algo confiable.'
+      nombre: 'Juliana Vázquez',
+      icono: 'assets/images/icons/userWoman.png',
+      texto: 'Coordiné con un pintor para hacer unos arreglos en casa y salió todo diez puntos. Muy prolijo y cumplidor. Me encantó que desde la app ves todo fácil.'
     }
   ];
+  
 
   current = 0;
   intervalId: any;
   isMobile = false;
+  progress = 0;
+  private progressTimer: any;
+
 
   ngOnInit() {
     this.isMobile = window.innerWidth <= 768;
@@ -75,17 +79,41 @@ export class GeneralReviewsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     clearInterval(this.intervalId);
+    clearInterval(this.progressTimer);
   }
 
   startAutoSlide() {
+    this.resetProgress();
     this.intervalId = setInterval(() => {
       this.siguiente();
+      this.resetProgress();
     }, 4000);
+
+    this.progressTimer = setInterval(() => {
+      if (this.progress < 100) {
+        this.progress += 2.5; // 100 / (4000ms / 100ms) = 2.5 cada 100ms
+      }
+    }, 100);
   }
 
+
   siguiente() {
-    this.current = (this.current + 1) % this.testimonios.length;
+    const total = this.testimonios.length;
+    const currentCard = document.querySelector('.card.active');
+  
+    if (currentCard) {
+      currentCard.classList.remove('active');
+      currentCard.classList.add('fade-out');
+  
+      setTimeout(() => {
+        currentCard?.classList.remove('fade-out');
+        this.current = (this.current + 1) % total;
+      }, 600); // mismo tiempo que la animación de salida
+    } else {
+      this.current = (this.current + 1) % total;
+    }
   }
+  
 
   anterior() {
     this.current = (this.current - 1 + this.testimonios.length) % this.testimonios.length;
@@ -108,4 +136,9 @@ export class GeneralReviewsComponent implements OnInit, OnDestroy {
       this.startAutoSlide();
     }
   }
+
+  resetProgress() {
+    this.progress = 0;
+  }
+
 }

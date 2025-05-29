@@ -1,3 +1,7 @@
+.container{
+  width: 750px;
+}
+
 .form-group {
   width: 100%;
   display: flex;
@@ -92,6 +96,10 @@ select {
 
 /* Tablet */
 @media (max-width: 768px) {
+
+  .container{
+    width: 100%;
+  }
   .form-group {
     padding: 0 1rem;
     font-size: 16px;
