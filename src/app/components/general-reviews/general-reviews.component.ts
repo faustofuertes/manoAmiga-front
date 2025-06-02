@@ -60,13 +60,17 @@ export class GeneralReviewsComponent implements OnInit, OnDestroy {
       texto: 'Coordiné con un pintor para hacer unos arreglos en casa y salió todo diez puntos. Muy prolijo y cumplidor. Me encantó que desde la app ves todo fácil.'
     }
   ];
-  
+
 
   current = 0;
   intervalId: any;
   isMobile = false;
   progress = 0;
   private progressTimer: any;
+  previous = 0;
+slideDirection: 'left' | 'right' = 'right';
+
+
 
 
   ngOnInit() {
@@ -76,6 +80,8 @@ export class GeneralReviewsComponent implements OnInit, OnDestroy {
       this.startAutoSlide();
     }
   }
+
+
 
   ngOnDestroy() {
     clearInterval(this.intervalId);
@@ -98,34 +104,34 @@ export class GeneralReviewsComponent implements OnInit, OnDestroy {
 
 
   siguiente() {
-    const total = this.testimonios.length;
-    const currentCard = document.querySelector('.card.active');
-  
-    if (currentCard) {
-      currentCard.classList.remove('active');
-      currentCard.classList.add('fade-out');
-  
-      setTimeout(() => {
-        currentCard?.classList.remove('fade-out');
-        this.current = (this.current + 1) % total;
-      }, 600); // mismo tiempo que la animación de salida
-    } else {
-      this.current = (this.current + 1) % total;
-    }
+    this.slideDirection = 'right';
+    this.previous = this.current;
+    this.current = (this.current + 1) % this.testimonios.length;
   }
   
-
   anterior() {
+    this.slideDirection = 'left';
+    this.previous = this.current;
     this.current = (this.current - 1 + this.testimonios.length) % this.testimonios.length;
   }
-
+  
+  
   getClass(index: number): string {
     const total = this.testimonios.length;
+  
     if (index === this.current) return 'active';
-    if (index === (this.current - 1 + total) % total) return 'prev';
-    if (index === (this.current + 1) % total) return 'next';
+  
+    const prevIndex = (this.current - 1 + total) % total;
+    const nextIndex = (this.current + 1) % total;
+  
+    if (index === prevIndex) return 'prev';
+    if (index === nextIndex) return 'next';
+  
     return 'hidden';
   }
+  
+  
+  
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -134,6 +140,11 @@ export class GeneralReviewsComponent implements OnInit, OnDestroy {
     if (isNowMobile && !this.isMobile) {
       this.isMobile = true;
       this.startAutoSlide();
+    } else if (!isNowMobile && this.isMobile) {
+      this.isMobile = false;
+      clearInterval(this.intervalId);
+      clearInterval(this.progressTimer);
+      this.progress = 0;
     }
   }
 
