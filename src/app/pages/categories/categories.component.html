@@ -1,5 +1,19 @@
 <div class="container">
-    <h2 class="type">{{ job | titlecase }}s en Mar del Plata</h2>
+
+    <div class="header">
+        <div class="left">
+            <button [routerLink]="['/']" class="btn-back"><i class="fas fa-chevron-left"></i></button>
+        </div>
+
+        <div class="center">
+            <h2 class="type">{{ job | titlecase }}s en Mar del Plata</h2>
+            <label for="">1133 profesionales disponibles</label>
+        </div>
+
+        <div class="right">
+        </div>
+    </div>
+
 
     <div class="container-cards">
         <app-list></app-list>

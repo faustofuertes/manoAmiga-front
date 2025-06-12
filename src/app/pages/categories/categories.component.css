@@ -4,7 +4,30 @@
 }
 
 .container-cards {
-    margin-top: 5rem;
+    margin-top: 3rem;
+}
+
+i{
+    color: #806545;
+    font-size: 28px;
+}
+
+label{
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #806545;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1rem;
+}
+
+.btn-back{
+    background-color: white;
+    border: none;
 }
 
 @media (max-width: 768px) {
@@ -20,5 +43,9 @@
 
     h2{
         font-size: 20px;
+    }
+
+    .header{
+        justify-content: center;
     }
 }

@@ -1,7 +1,6 @@
 .container {
     width: 80%;
     margin: auto;
-    margin-top: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -111,7 +110,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
@@ -130,6 +128,31 @@ i {
 
 .fa-map-marker-alt {
     color: #806545;
+}
+
+.fa-chevron-left{
+    color: #806545;
+    font-size: 28px;
+}
+
+label{
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #806545;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1rem;
+    margin-top: 5rem;
+    margin-left: 8rem;
+}
+
+.btn-back{
+    background-color: white;
+    border: none;
 }
 
 @media (max-width: 768px) {
@@ -166,6 +189,11 @@ i {
 
     .pricing span {
         font-size: 12px;
+    }
+
+    .header{
+        margin-top: 3rem;
+        margin-left: 1rem;
     }
 }
 

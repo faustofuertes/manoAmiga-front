@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { Publicacion } from '../../interfaces/publicacion';
 import { PersonalReviewsComponent } from "../../components/personal-reviews/personal-reviews.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
-  imports: [PersonalReviewsComponent],
+  imports: [PersonalReviewsComponent, RouterLink, CommonModule],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
