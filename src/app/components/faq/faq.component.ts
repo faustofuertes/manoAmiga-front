@@ -31,12 +31,6 @@ export class FAQComponent {
       respuesta: 'Podés ver opiniones de otros usuarios y la experiencia que detalla cada trabajador en su perfil.',
       abierta: false,
       id: 3
-    },
-    {
-      pregunta: '¿Qué hago si tengo un problema con un servicio?',
-      respuesta: 'Podés dejar una reseña negativa y reportar el perfil desde la app para que lo revisemos.',
-      abierta: false,
-      id: 4
     }
   ];
 

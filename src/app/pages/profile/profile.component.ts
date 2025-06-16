@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.id = this._ar.snapshot.paramMap.get('id')!;
 
     this._publiService.getPublicacionxId(this.id).subscribe(data => {

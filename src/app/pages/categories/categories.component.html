@@ -1,21 +1,31 @@
 <div class="container">
 
-    <div class="header">
+    <div class="nav-bar">
         <div class="left">
             <button [routerLink]="['/']" class="btn-back"><i class="fas fa-chevron-left"></i></button>
         </div>
 
         <div class="center">
             <h2 class="type">{{ job | titlecase }}s en Mar del Plata</h2>
-            <label for="">1133 profesionales disponibles</label>
+            <label for="">{{list?.length}} profesionales disponibles</label>
         </div>
 
         <div class="right">
-        </div>
+            <img (click)="switchJob('plomero')" [ngClass]="{'active': job === 'plomero'}" src="assets/images/icons/plomero.png" alt="" class="icon">
+            <img (click)="switchJob('electricista')" [ngClass]="{'active': job === 'electricista'}" src="assets/images/icons/electricista.png" alt="" class="icon">
+            <img (click)="switchJob('jardinero')" [ngClass]="{'active': job === 'jardinero'}" src="assets/images/icons/jardinero.png" alt="" class="icon">
+            <img (click)="switchJob('pintor')" [ngClass]="{'active': job === 'pintor'}" src="assets/images/icons/pintor.png" alt="" class="icon">
+            <img (click)="switchJob('cerrajero')" [ngClass]="{'active': job === 'cerrajero'}" src="assets/images/icons/cerrajero.png" alt="" class="icon">
+            <img (click)="switchJob('carpintero')" [ngClass]="{'active': job === 'carpintero'}" src="assets/images/icons/carpintero.png" alt="" class="icon">
+            <img (click)="switchJob('limpieza')" [ngClass]="{'active': job === 'limpieza'}" src="assets/images/icons/limpieza.png" alt="" class="icon">
+            <img (click)="switchJob('tecnico')" [ngClass]="{'active': job === 'tecnico'}" src="assets/images/icons/tecnico.png" alt="" class="icon">
+          </div>
+          
+          
     </div>
 
 
     <div class="container-cards">
-        <app-list></app-list>
+        <app-list [list]="list"></app-list>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { Publicacion } from '../../interfaces/publicacion';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -9,21 +9,13 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
-export class ListComponent implements OnInit {
-  list?: Publicacion[];
-  ubicacion: string | null = '';
-  trabajo: string | null = '';
+export class ListComponent implements OnChanges {
+  @Input() list?: Publicacion[];
 
-  constructor(
-    private _publiService: PublicacionesService,
-    private _ar: ActivatedRoute
-  ) { }
-
-  ngOnInit(): void {
-    this.ubicacion = this._ar.snapshot.paramMap.get('ubicacion');
-    this.trabajo = this._ar.snapshot.paramMap.get('trabajo');
-    this._publiService.getPublicacionesPorTrabajoYUbi(this.trabajo, this.ubicacion).subscribe(data => {
-      this.list = data;
-    })
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['list']) {
+      // Usar changes['list'].currentValue o hacer algo para actualizar vista o lógica
+      this.list = changes['list'].currentValue;
+    }
   }
 }
