@@ -144,14 +144,12 @@ h1 {
     position: relative;
     height: 1.2em;
     overflow: hidden;
-    min-width: 10rem;
     text-align: center;
     color: #806545;
     justify-content: center;
     align-items: center;
-    min-width: 11ch;
-    width: 11ch;
-    ;
+    min-width: 10ch;
+    width: 10ch;
 }
 
 .job-container span {
@@ -186,10 +184,18 @@ h1 {
 }
 
 .desktop-title {
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 600;
     text-align: center;
     line-height: 1.2;
+}
+
+.card label {
+    font-weight: 500;
+    padding: .2rem 1rem;
+    border-radius: 50px;
+    font-size: 14px;
+    border: 1px solid lightgray;
 }
 
 /* Teléfonos medianos y tablets verticales (hasta 768px) */

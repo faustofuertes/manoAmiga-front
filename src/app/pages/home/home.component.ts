@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./home.component.css'] // corregí styleUrl a styleUrls (plural)
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  jobs: string[] = ['Electricistas', 'Plomeros', 'Jardineros', 'Pintores', 'Cerrajeros', 'Tecnicos', 'Carpinteros', 'Limpieza'];
+  jobs: string[] = ['electricistas', 'plomeros', 'jardineros', 'pintores', 'cerrajeros', 'técnicos', 'carpinteros', 'limpieza'];
   currentJob: string = this.jobs[0];
   private index: number = 0;
   animate: boolean = true;

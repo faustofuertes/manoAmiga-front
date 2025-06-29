@@ -6,9 +6,6 @@
   
       <div class="center" [class.abierto]="menuAbierto">
         <ul (click)="toggleMenu()">
-          <li [routerLink]="['/categorias']">Servicios</li>
-          <li (click)="logIn()"><a href="">Publicitate ya!</a></li>
-          <li><a href="">Contacto</a></li>
   
           <!-- Botones solo visibles en mobile -->
           <li class="mobile-only" *ngIf="!isAuthenticated">
@@ -23,7 +20,7 @@
   
       <div class="right">
         @if(!isAuthenticated){
-        <button (click)="logIn()" class="btn-publicar desktop-only">Iniciar sesión</button>
+        <button (click)="logIn()" class="btn-publicar desktop-only">Ingresar</button>
         }
         @if(isAuthenticated){
         <button (click)="logOut()" class="btn-iniciarSesion desktop-only">Cerrar sesión</button>
