@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
     RouterModule,
     provideAuth0({
       domain: 'dev-q4rgvh0zqbt4ga7n.us.auth0.com',
-      clientId: 'AiyJu9ZvrLWp3akv7NBrTH7caZRfHjmb',
+      clientId: 'tLoSa4vUQ78DszYukPsRUvENYGlQuZPE',
       authorizationParams: {
         redirect_uri: window.location.origin
       }

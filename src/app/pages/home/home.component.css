@@ -198,6 +198,28 @@ h1 {
     border: 1px solid lightgray;
 }
 
+.btn-post {
+    width: 400px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    color: white;
+    background-color: #806545;
+    height: 100%;
+    margin: 4rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(128, 101, 69, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-post:hover {
+    color: #806545;
+    background-color: white;
+    border: 1px solid #806545;
+    transform: translateY(-2px);
+}
+
 /* Teléfonos medianos y tablets verticales (hasta 768px) */
 @media (max-width: 768px) {
     .container {
@@ -225,6 +247,12 @@ h1 {
         width: calc(50% - 20px);
         max-width: 120px;
         margin: 10px;
+    }
+
+    .btn-post {
+        margin: 1.8rem 0;
+        width: 330px;
+        font-size: 19px;
     }
 }
 

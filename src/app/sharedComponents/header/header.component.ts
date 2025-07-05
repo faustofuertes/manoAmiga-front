@@ -21,9 +21,6 @@ export class HeaderComponent {
   ngOnInit(): void {
     this._auth.isAuthenticated$.subscribe(result => {
       this.isAuthenticated = result;
-      if (this.isAuthenticated) {
-        this._router.navigate(['']);
-      }
     })
   }
 
