@@ -19,13 +19,22 @@ export class PersonalReviewsComponent implements OnInit {
   needLogin = false;
   form: FormGroup;
 
+  stars = [1, 2, 3, 4, 5];
+  rating = 0; // valor seleccionado
+
+  rate(value: number) {
+    this.rating = value;
+    this.form.get('rating')?.setValue(value); // si querés guardarlo en el formulario
+  }
+
+
   constructor(
     private _myReviewService: ReviewsService,
     private _auth: AuthService,
     private fb: FormBuilder
   ) {
     this.form = this.fb.group({
-      score: ['', Validators.required],
+      rating: [0, Validators.required],
       review: ['', Validators.required]
     })
   }
@@ -70,15 +79,18 @@ export class PersonalReviewsComponent implements OnInit {
       targetId: this.posterId,
       postId: this.postId,
       userName: localStorage.getItem('userName'),
-      score: this.form.value.score,
+      score: this.form.value.rating,
       textReview: this.form.value.review
     }
 
     this._myReviewService.postReview(newReview).subscribe(() => {
       this.loadReviews();
       this.isAdding = !this.isAdding;
+      this.form.get('rating')?.setValue(0);
+      this.form.get('review')?.setValue('');      
     }, error => {
       console.log('Error al agregar la review.')
     })
+
   }
 }

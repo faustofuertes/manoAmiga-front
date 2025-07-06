@@ -1,11 +1,11 @@
 <div class="container">
-    <button (click)="toggleReview()" class="btn-review"><img class="icon-review" src="assets/images/icons/review.png"
-            alt="">Hacer
+    <button (click)="toggleReview()" class="btn-review">
+        <img class="icon-make-review" src="assets/images/icons/review.png" alt="">Hacer
         reseña</button>
     @for (r of reviews; track $index) {
     <article class="review">
         <figure class="left">
-            <img src="assets/images/icons/userMan.png" alt="Avatar" class="icon">
+            <img class="icon-reviewer" src="assets/images/icons/userMan.png" alt="Avatar">
         </figure>
 
         <div class="right">
@@ -36,28 +36,37 @@
     @if(isAdding){
     <div class="overlay" (click)="closeIfOutside($event)">
         <form [formGroup]="form" class="form-container" (click)="$event.stopPropagation()">
-            <header class="top">
-                <h3>Valoración</h3>
+            <header class="header-review">
                 <button (click)="toggleReview()" class="btn-close"><i class="fas fa-times"></i></button>
             </header>
-            <div class="mid">
-                <select formControlName="score" name="score" id="">
-                    <option value="" disabled selected hidden></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24"
-                    height="24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
+
+            <div class="top-review">
+                <img src="assets/images/icons/electricista.png" alt="" class="icon-review">
+                <h3>¿Como fue el servicio de Matias?</h3>
+
+                <div class="star-rating">
+                    <ng-container *ngFor="let star of stars; index as i">
+                        <svg (click)="rate(i + 1)" [ngClass]="{ filled: i < rating }" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" width="30" height="30" class="star">
+                            <path d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 
+                             9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                    </ng-container>
+                </div>
+
+
             </div>
-            <textarea formControlName="review" name="review" id=""
-                placeholder="Contanos cómo fue tu experiencia con este profesional."></textarea>
-            <button (click)="submitReview()" class="btn-share" [disabled]="form.invalid">Publicar</button>
+
+            <div class="mid-review">
+                <label for=""> (Minimo 20 caracteres)</label>
+                <textarea minlength="20" class="textarea-review" formControlName="review" name="review" id=""
+                    placeholder="Contanos cómo fue tu experiencia con este profesional."></textarea>
+            </div>
+
+            <div class="bottom-review">
+                <button (click)="submitReview()" class="btn-share" [disabled]="form.invalid">Publicar</button>
+            </div>
+
         </form>
     </div>
     }
