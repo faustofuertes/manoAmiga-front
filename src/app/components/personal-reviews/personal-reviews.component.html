@@ -65,11 +65,18 @@
     @if(needLogin){
     <div class="overlay" (click)="closeIfOutside($event)">
         <div class="login-container" (click)="$event.stopPropagation()">
-            <header class="top-login">
+            <header class="header-login">
                 <button (click)="toggleReview()" class="btn-close"><i class="fas fa-times"></i></button>
             </header>
-            <h4>Iniciá sesión para dejar una reseña.</h4>
-            <button class="btn-login" (click)="login()">Iniciar sesion</button>
+            <div class="top-login"><img class="loginIcon" src="assets/images/icons/logIn.png" alt="loginIcon"></div>
+            <div class="mid-login">
+                <h3>Contanos tu experiencia con Matias</h3>
+                <p>Deja tu reseña registrandote o iniciando sesión.</p>
+            </div>
+            <div class="bottom-login">
+                <button (click)="authenticate()" class="btn-register">Registrate en Mano Amiga</button>
+                <button (click)="authenticate()" class="btn-login">Iniciar sesión</button>
+            </div>
         </div>
     </div>
     }

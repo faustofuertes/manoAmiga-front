@@ -51,8 +51,13 @@ export class PersonalReviewsComponent implements OnInit {
     })
   }
 
-  login() {
-    this._auth.loginWithRedirect();
+  authenticate() {
+    this._auth.loginWithRedirect({
+      authorizationParams: {
+        redirect_uri: window.location.origin, // ← http://localhost:4200
+      },
+      appState: { target: '/perfil/' + this.postId } // ← correcta forma
+    });
   }
 
   closeIfOutside(event: MouseEvent) {

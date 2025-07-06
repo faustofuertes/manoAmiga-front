@@ -142,7 +142,8 @@
     text-align-last: center;
     transition: .3s;
     color: black;
-    -webkit-text-fill-color: black; /* fuerza color en Safari/iOS */
+    -webkit-text-fill-color: black;
+    /* fuerza color en Safari/iOS */
     background-color: white;
 }
 
@@ -187,6 +188,7 @@
     border: none;
     background-color: white;
     font-size: 18px;
+    color: white;
 }
 
 
@@ -196,35 +198,68 @@
     align-items: center;
     justify-content: space-between;
     position: absolute;
-    height: 150px;
-    width: 200px;
-    border-radius: 30px;
+    height: 400px;
+    width: 400px;
+    border-radius: 20px;
     background-color: white;
     padding: 1rem;
-    text-align: center;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    gap: 1rem;
-    text-align: center;
 }
 
-.top-login {
+.header-login {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.btn-login {
-    border: none;
-    padding: .5rem 1rem;
-    color: white;
-    font-weight: bold;
-    background-color: black;
-    border-radius: 20px;
+.fa-times {
+    color: lightgray;
+    font-size: 24px;
 }
 
-.fa-times{
-    color: black;
+.loginIcon {
+    height: 120px;
+    background-color: #f0f0f0;
+    border-radius: 100px;
+    padding: .5rem;
+}
+
+.mid-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    text-align: center;
+    gap: .5rem;
+}
+
+.mid-login p {
+    font-size: 14px;
+}
+
+.bottom-login {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.bottom-login button {
+    width: 350px;
+    border: none;
+    padding: .5rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.btn-register {
+    background-color: #806545;
+    color: white;
 }
 
 /* 🟢 Responsive para móviles */
@@ -260,6 +295,32 @@
 
     .stars {
         justify-content: flex-start;
+    }
+
+    .loginIcon {
+        background: none;
+    }
+
+    .login-container {
+        width: 80%;
+        height: 400px;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .top-login {
+        align-self: flex-start;
+    }
+
+    .mid-login {
+        text-align: left;
+        width: 80%;
+    }
+
+    .bottom-login button {
+        align-self: center;
+        justify-self: center;
+        width: 250px;
     }
 }
 

@@ -296,26 +296,3 @@ h1 {
     }
 }
 
-/* Monitores muy grandes */
-@media (min-width: 1550px) {
-    .text {
-        width: 40%;
-    }
-
-    .title {
-        font-size: 72px;
-    }
-
-    .desc {
-        margin-top: 2rem;
-        font-size: 32px;
-    }
-
-    .container-icons {
-        width: 30%;
-    }
-
-    .icon {
-        width: 150px;
-    }
-}
