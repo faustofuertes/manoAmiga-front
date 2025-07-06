@@ -108,7 +108,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .9);
     /* fondo oscuro */
     display: flex;
     justify-content: center;
@@ -260,6 +260,10 @@
 .btn-register {
     background-color: #806545;
     color: white;
+}
+
+.btn-login{
+    color: black;
 }
 
 /* 🟢 Responsive para móviles */
