@@ -1,20 +1,18 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, RouterModule } from '@angular/router';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
 import { provideAuth0 } from '@auth0/auth0-angular';
-
 import { routes } from './app.routes';
-import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
-
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    importProvidersFrom(HttpClientModule),
-    RouterModule,
+    provideHttpClient(), // ✅ ESTA ES LA CORRECTA
     provideAuth0({
       domain: 'dev-q4rgvh0zqbt4ga7n.us.auth0.com',
       clientId: 'tLoSa4vUQ78DszYukPsRUvENYGlQuZPE',
@@ -33,6 +31,7 @@ export const appConfig: ApplicationConfig = {
         measurementId: "G-DTP5H0M8XK"
       })
     ),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+    HttpClientModule
   ]
 };
