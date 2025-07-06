@@ -14,6 +14,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class PersonalReviewsComponent implements OnInit {
   reviews?: Review[];
   @Input() postId?: string;
+  @Input() postUserName?: string | null;
   @Input() posterId?: string | null;
   isAdding = false;
   needLogin = false;

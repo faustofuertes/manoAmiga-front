@@ -1,6 +1,7 @@
 <nav class="nav-bar">
     <div class="left">
-        <button [routerLink]="[`/categorias/${publicacion?.location}/${publicacion?.job}`]" class="btn-back"><i class="fas fa-chevron-left"></i></button>
+        <button [routerLink]="[`/categorias/${publicacion?.location}/${publicacion?.job}`]" class="btn-back"><i
+                class="fas fa-chevron-left"></i></button>
     </div>
 
     <div class="center">
@@ -79,4 +80,7 @@
 
 </div>
 
-<app-personal-reviews [postId]="id" [posterId]="publicacion?.userId"></app-personal-reviews>
+<app-personal-reviews 
+[postId]="id" 
+[posterId]="publicacion?.userId"
+[postUserName]="publicacion?.userName"></app-personal-reviews>

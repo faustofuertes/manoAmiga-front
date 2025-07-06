@@ -42,7 +42,7 @@
 
             <div class="top-review">
                 <img src="assets/images/icons/electricista.png" alt="" class="icon-review">
-                <h3>¿Como fue el servicio de Matias?</h3>
+                <h3>¿Como fue el servicio de {{postUserName}}?</h3>
 
                 <div class="star-rating">
                     <ng-container *ngFor="let star of stars; index as i">
@@ -79,7 +79,7 @@
             </header>
             <div class="top-login"><img class="loginIcon" src="assets/images/icons/logIn.png" alt="loginIcon"></div>
             <div class="mid-login">
-                <h3>Contanos tu experiencia con Matias</h3>
+                <h3>Contanos tu experiencia con {{postUserName}}</h3>
                 <p>Deja tu reseña registrandote o iniciando sesión.</p>
             </div>
             <div class="bottom-login">
