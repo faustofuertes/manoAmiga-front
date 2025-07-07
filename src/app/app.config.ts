@@ -14,7 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(), // ✅ ESTA ES LA CORRECTA
     provideAuth0({
-      domain: 'dev-q4rgvh0zqbt4ga7n.us.auth0.com',
+      domain: 'auth.manoamiga.com.ar',
       clientId: 'tLoSa4vUQ78DszYukPsRUvENYGlQuZPE',
       authorizationParams: {
         redirect_uri: window.location.origin

@@ -8,8 +8,8 @@ import { Review } from '../interfaces/review';
 })
 export class ReviewsService {
 
-  //baseURL = 'http://localhost:4000/api/reviews'
-  baseURL = 'https://manoamiga-back.onrender.com/api/reviews'
+  baseURL = 'http://localhost:4000/api/reviews'
+  //baseURL = 'https://manoamiga-back.onrender.com/api/reviews'
 
   constructor(private _http: HttpClient) { }
 
