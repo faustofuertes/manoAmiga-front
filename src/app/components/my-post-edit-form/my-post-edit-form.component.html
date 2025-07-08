@@ -1,52 +1,52 @@
 @if(post){
-<div class="container">
-    <form [formGroup]="form">
-
+    <div class="container" role="form" aria-label="Formulario para editar publicación">
+  
+      <form [formGroup]="form" novalidate>
+  
         <div class="form-group">
-            <label class="color" for="location">Ubicación</label>
-            <select id="location" formControlName="location" name="location">
-                <option value="" disabled selected>Selecciona una ciudad</option>
-                <option *ngFor="let location of locations" [value]="location">{{ locations }}</option>
-            </select>
+          <label class="color" for="location">Ubicación</label>
+          <select id="location" formControlName="location" name="location" aria-required="true">
+            <option value="" disabled selected>Selecciona una ciudad</option>
+            <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+          </select>
         </div>
-
+  
         <div class="form-group">
-            <label class="color" for="phone">Número de contacto</label>
-            <input id="phone" formControlName="phone" type="text" placeholder="2231234567" />
+          <label class="color" for="phone">Número de contacto</label>
+          <input id="phone" formControlName="phone" type="text" placeholder="2231234567" aria-required="true" />
         </div>
-
+  
         <div class="form-group">
-            <label class="color" for="schedule">Horarios</label>
-            <input id="schedule" formControlName="schedule" type="text"
-                placeholder="Ej: Lunes a Viernes 8:00 a 16:00" />
+          <label class="color" for="schedule">Horarios</label>
+          <input id="schedule" formControlName="schedule" type="text" placeholder="Ej: Lunes a Viernes 8:00 a 16:00" />
         </div>
-
+  
         <div class="form-group">
-            <label class="color" for="pricing">Tarifa de visita</label>
-            <input placeholder="15000" id="pricing" formControlName="pricing" type="number" />
+          <label class="color" for="pricing">Tarifa de visita</label>
+          <input id="pricing" placeholder="15000" formControlName="pricing" type="number" min="0" aria-required="true" />
         </div>
-
+  
         <div class="form-group">
-            <label class="color" for="experience">Años de experiencia</label>
-            <input id="experience" formControlName="experience" type="number" placeholder="Ej: 10" />
+          <label class="color" for="experience">Años de experiencia</label>
+          <input id="experience" formControlName="experience" type="number" min="0" placeholder="Ej: 10" />
         </div>
-
+  
         <div class="form-group">
-            <label class="color" for="description">Descripción</label>
-            <textarea id="description" formControlName="description"></textarea>
+          <label class="color" for="description">Descripción</label>
+          <textarea id="description" formControlName="description" aria-multiline="true"></textarea>
         </div>
-
+  
         <div class="btn-container">
-            <button (click)="eliminarProducto()" class="btn-delete">Eliminar</button>
-            <button (click)="actualizarProducto()" class="btn-update">Guardar</button>
+          <button type="button" (click)="eliminarProducto()" class="btn-delete" aria-label="Eliminar publicación">Eliminar</button>
+          <button type="button" (click)="actualizarProducto()" class="btn-update" aria-label="Guardar cambios en publicación">Guardar</button>
         </div>
-
-
-    </form>
-</div>
-
-}@else {
-<div class="container">
-    <h2>Porfavor seleccione una publicacion para editarla.</h2>
-</div>
-}
+  
+      </form>
+  
+    </div>
+  }@else{
+    <div class="container" role="alert" aria-live="polite">
+      <h2>Por favor seleccione una publicación para editarla.</h2>
+    </div>
+  }
+  

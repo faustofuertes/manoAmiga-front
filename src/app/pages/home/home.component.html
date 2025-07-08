@@ -1,6 +1,4 @@
-
-
-<div class="container">
+<main class="container">
 
     <!-- Desktop: título con palabra dinámica animada -->
     <h1 *ngIf="isDesktop" class="desktop-title">
@@ -15,58 +13,59 @@
     <h1 *ngIf="!isDesktop" class="mobile-title">
       Encontrá profesionales cerca tuyo.
     </h1>
-    
-    <button (click)="register()" class="btn-post">¡Publicá tu servicio ahora!</button>
   
-    <!-- Resto del código -->
-    <div class="container-icons">
-        <div class="card">
-            <img [routerLink]="['/categorias', location, 'plomero']" src="assets/images/icons/plomero.png" alt=""
-                class="icon">
-            <label>Plomeros</label>
-        </div>
-        <div class="card">
-            <img [routerLink]="['/categorias', location, 'electricista']" src="assets/images/icons/electricista.png"
-                alt="" class="icon">
-            <label>Electricistas</label>
-        </div>
-        <div class="card">
-            <img [routerLink]="['/categorias', location, 'jardinero']" src="assets/images/icons/jardinero.png" alt=""
-                class="icon">
-            <label>Jardineros</label>
-        </div>
-        <div class="card">
-            <img [routerLink]="['/categorias', location, 'pintor']" src="assets/images/icons/plomero.png" alt=""
-                class="icon">
-            <label>Pintores</label>
-        </div>
-        <div class="card">
-            <img [routerLink]="['/categorias', location, 'cerrajero']" src="assets/images/icons/cerrajero.png" alt=""
-                class="icon">
-            <label>Cerrajeros</label>
-        </div>
-        <div class="card">
-            <img [routerLink]="['/categorias', location, 'carpintero']" src="assets/images/icons/plomero.png" alt=""
-                class="icon">
-            <label>Carpinteros</label>
-        </div>
-        <div class="card">
-            <img [routerLink]="['/categorias', location, 'limpieza']" src="assets/images/icons/limpieza.png" alt=""
-                class="icon">
-            <label>Limpieza</label>
-        </div>
-        <div class="card">
-            <img [routerLink]="['/categorias', location, 'tecnico']" src="assets/images/icons/plomero.png" alt=""
-                class="icon">
-            <label>Técnicos</label>
-        </div>
-    </div>
+    <button (click)="register()" class="btn-post" aria-label="Publicar tu servicio ahora">
+      ¡Publicá tu servicio ahora!
+    </button>
   
-    <app-users-cards></app-users-cards>
+    <!-- Sección de categorías -->
+    <section class="container-icons" aria-label="Categorías de servicios profesionales">
+      <a [routerLink]="['/categorias', location, 'plomero']" class="card" aria-label="Categoría Plomeros">
+        <img src="assets/images/icons/plomero.png" alt="Icono Plomero" class="icon" />
+        <span>Plomeros</span>
+      </a>
+      <a [routerLink]="['/categorias', location, 'electricista']" class="card" aria-label="Categoría Electricistas">
+        <img src="assets/images/icons/electricista.png" alt="Icono Electricista" class="icon" />
+        <span>Electricistas</span>
+      </a>
+      <a [routerLink]="['/categorias', location, 'jardinero']" class="card" aria-label="Categoría Jardineros">
+        <img src="assets/images/icons/jardinero.png" alt="Icono Jardinero" class="icon" />
+        <span>Jardineros</span>
+      </a>
+      <a [routerLink]="['/categorias', location, 'pintor']" class="card" aria-label="Categoría Pintores">
+        <img src="assets/images/icons/pintor.png" alt="Icono Pintor" class="icon" />
+        <span>Pintores</span>
+      </a>
+      <a [routerLink]="['/categorias', location, 'cerrajero']" class="card" aria-label="Categoría Cerrajeros">
+        <img src="assets/images/icons/cerrajero.png" alt="Icono Cerrajero" class="icon" />
+        <span>Cerrajeros</span>
+      </a>
+      <a [routerLink]="['/categorias', location, 'carpintero']" class="card" aria-label="Categoría Carpinteros">
+        <img src="assets/images/icons/carpintero.png" alt="Icono Carpintero" class="icon" />
+        <span>Carpinteros</span>
+      </a>
+      <a [routerLink]="['/categorias', location, 'limpieza']" class="card" aria-label="Categoría Limpieza">
+        <img src="assets/images/icons/limpieza.png" alt="Icono Limpieza" class="icon" />
+        <span>Limpieza</span>
+      </a>
+      <a [routerLink]="['/categorias', location, 'tecnico']" class="card" aria-label="Categoría Técnicos">
+        <img src="assets/images/icons/tecnico.png" alt="Icono Técnico" class="icon" />
+        <span>Técnicos</span>
+      </a>
+    </section>
   
-    <app-general-reviews></app-general-reviews>
+    <!-- Secciones con título y contenido -->
+    <section aria-label="Usuarios destacados">
+      <app-users-cards></app-users-cards>
+    </section>
   
-    <app-faq></app-faq>
+    <section aria-label="Reseñas generales">
+      <app-general-reviews></app-general-reviews>
+    </section>
   
-  </div>
+    <section aria-label="Preguntas frecuentes">
+      <app-faq></app-faq>
+    </section>
+  
+  </main>
   

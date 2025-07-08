@@ -1,6 +1,11 @@
-<nav class="header">
+<nav class="header" aria-label="Navegación principal">
     <ul>
-        <li (click)="emitControlPanel()">Panel de control</li>
-        <li (click)="emitMyPosts()">Mis avisos</li>
+      <li>
+        <button type="button" (click)="emitControlPanel()" class="nav-button">Panel de control</button>
+      </li>
+      <li>
+        <button type="button" (click)="emitMyPosts()" class="nav-button">Mis avisos</button>
+      </li>
     </ul>
-</nav>
+  </nav>
+  

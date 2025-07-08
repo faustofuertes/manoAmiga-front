@@ -28,3 +28,10 @@ li{
     margin: 0 2rem;
     cursor: pointer;
 }
+
+button{
+  color: white;
+  font-weight: bold;
+  background-color: #191919;
+  border: none;
+}

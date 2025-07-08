@@ -72,9 +72,6 @@ body {
   cursor: pointer;
 }
 
-.center li:hover {
-  color: grey;
-}
 
 /* ---------- BOTONES ---------- */
 .btn-iniciarSesion,
@@ -108,9 +105,6 @@ a {
   cursor: pointer;
 }
 
-a:hover {
-  color: grey;
-}
 
 /* ---------- VISIBILIDAD RESPONSIVE ---------- */
 .mobile-only {

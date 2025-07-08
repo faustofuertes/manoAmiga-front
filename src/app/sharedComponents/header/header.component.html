@@ -1,36 +1,44 @@
-<header class="header">
-    <div class="container">
-      <div class="left">
-        <img [routerLink]="['']" class="icon" src="assets/images/logo.png" alt="Logo">
-      </div>
-  
-      <div class="center" [class.abierto]="menuAbierto">
-        <ul (click)="toggleMenu()">
-  
-          <!-- Botones solo visibles en mobile -->
-          <li class="mobile-only" *ngIf="!isAuthenticated">
+<header class="header" role="banner">
+  <div class="container">
+    <div class="left">
+      <!-- El logo debe ser un enlace real para SEO -->
+      <a [routerLink]="['']" aria-label="Ir a la página principal">
+        <img src="assets/images/logo.png" alt="Logo Mano Amiga" class="icon" />
+      </a>
+    </div>
+
+    <nav class="center" [class.abierto]="menuAbierto" role="navigation" aria-label="Menú principal">
+      <ul (click)="toggleMenu()">
+        <!-- Botones solo visibles en mobile -->
+        @if(!isAuthenticated){
+          <li class="mobile-only">
             <button (click)="logIn()" class="btn-publicar">Iniciar sesión</button>
           </li>
-          <li class="mobile-only" *ngIf="isAuthenticated">
-            <button (click)="logOut()" class="btn-iniciarSesion">Cerrar sesión</button>
-            <button [routerLink]="['/mi-perfil']" class="btn-publicar">Mi perfil</button>
-          </li>
-        </ul>
-      </div>
-  
-      <div class="right">
-        @if(!isAuthenticated){
-        <button (click)="logIn()" class="btn-publicar desktop-only">Ingresar</button>
         }
         @if(isAuthenticated){
-        <button (click)="logOut()" class="btn-iniciarSesion desktop-only">Cerrar sesión</button>
-        <button [routerLink]="['/mi-perfil']" class="btn-publicar desktop-only">Mi perfil</button>
+          <li class="mobile-only">
+            <button (click)="logOut()" class="btn-iniciarSesion">Cerrar sesión</button>
+          </li>
+          <li class="mobile-only">
+            <a [routerLink]="['/mi-perfil']" class="btn-publicar">Mi perfil</a>
+          </li>
         }
-        <button class="burger" (click)="toggleMenu()">
-          <i class="fas" [ngClass]="menuAbierto ? 'fa-times' : 'fa-bars'"></i>
-        </button>
-        
-      </div>
+               
+      </ul>
+    </nav>
+
+    <div class="right">
+      @if(!isAuthenticated){
+        <button (click)="logIn()" class="btn-publicar desktop-only" aria-label="Iniciar sesión">Ingresar</button>
+      }
+      @if(isAuthenticated){
+        <button (click)="logOut()" class="btn-iniciarSesion desktop-only" aria-label="Cerrar sesión">Cerrar sesión</button>
+        <a [routerLink]="['/mi-perfil']" class="btn-publicar desktop-only" aria-label="Ir a mi perfil">Mi perfil</a>
+      }
+      <button class="burger" (click)="toggleMenu()" aria-controls="menu">
+        <i class="fas" [ngClass]="menuAbierto ? 'fa-times' : 'fa-bars'" aria-hidden="true"></i>
+        <span class="sr-only">Menú</span>
+      </button>
     </div>
-  </header>
-  
+  </div>
+</header>

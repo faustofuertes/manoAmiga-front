@@ -1,86 +1,85 @@
-<nav class="nav-bar">
+<nav class="nav-bar" role="navigation" aria-label="Navegación de perfil">
     <div class="left">
-        <button [routerLink]="[`/categorias/${publicacion?.location}/${publicacion?.job}`]" class="btn-back"><i
-                class="fas fa-chevron-left"></i></button>
+      <button 
+        [routerLink]="[`/categorias/${publicacion?.location}/${publicacion?.job}`]" 
+        class="btn-back" 
+        aria-label="Volver a categorías">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
     </div>
-
+  
     <div class="center">
-        <h4 class="type">{{ publicacion?.job| titlecase }}s / Mar del Plata / {{ publicacion?.userName| titlecase }}
-        </h4>
+      <h1 class="type">
+        {{ publicacion?.job | titlecase }}s / Mar del Plata / {{ publicacion?.userName | titlecase }}
+      </h1>
     </div>
-
-    <div class="right">
-    </div>
-</nav>
-
-<div class="container">
-
-    <div class="profile-info">
-
-        <div class="action-buttons">
-            <button (click)="abrirWhatsApp()" class="whatsapp">WhatsApp<i class="fab fa-whatsapp"></i></button>
-            <button (click)="llamar()" class="call-me">Llamame<i class="fas fa-phone-alt"></i></button>
+  
+    <div class="right"></div>
+  </nav>
+  
+  <div class="container">
+    <section class="profile-info" aria-label="Información del profesional">
+  
+      <div class="action-buttons" role="group" aria-label="Acciones de contacto">
+        <button (click)="abrirWhatsApp()" class="whatsapp" aria-label="Contactar por WhatsApp">
+          WhatsApp <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </button>
+        <button (click)="llamar()" class="call-me" aria-label="Llamar por teléfono">
+          Llamame <i class="fas fa-phone-alt" aria-hidden="true"></i>
+        </button>
+      </div>
+  
+      <div class="profile-icon-box">
+        <div class="profile-icon">
+          @if(publicacion){
+            <img 
+              class="icon" 
+              [src]="'assets/images/icons/' + publicacion.job.toLowerCase() + '.png'" 
+              alt="{{publicacion.job}} icono"
+            />
+          }
         </div>
-
-        <div class="profile-icon-box">
-
-            <div class="profile-icon">
-                @if(publicacion){
-                <img class="icon" [src]="'assets/images/icons/' + publicacion.job.toLowerCase() + '.png'" alt="">
-                }
-            </div>
-
-
-
-            <div class="profile-name">
-                <span class="name">{{publicacion?.userName}}</span>
-                <span class="job">{{publicacion?.job}}</span>
-                <span class="location"><i class="fas fa-map-marker-alt"></i> {{publicacion?.location}}</span>
-            </div>
-
+  
+        <div class="profile-name">
+          <span class="name">{{ publicacion?.userName }}</span>
+          <span class="job">{{ publicacion?.job }}</span>
+          <span class="location">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ publicacion?.location }}
+          </span>
         </div>
-
-        <p class="profile-description">{{publicacion?.description}}</p>
-    </div>
-
-
-    <div class="schedule">
-
-        <div class="schedule-time">
-            <h3>Horarios de trabajo</h3>
-            <br>
-            <span>{{publicacion?.schedule}}</span>
-        </div>
-
-    </div>
-
-    <div class="pricing">
-
-        <div class="box">
-            <h4 class="price">${{publicacion?.pricing}}</h4>
-            <span>Precio visita.</span>
-        </div>
-
-        <div class="box">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24"
-                height="24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-            </svg>
-
-            <span>(5.0) opiniones</span>
-        </div>
-
-        <div class="box">
-            <h4 class="price">{{publicacion?.experience}}</h4>
-            <span>Años de experiencia.</span>
-        </div>
-
-    </div>
-
-</div>
-
-<app-personal-reviews 
-[postId]="id" 
-[posterId]="publicacion?.userId"
-[postUserName]="publicacion?.userName"></app-personal-reviews>
+      </div>
+  
+      <p class="profile-description">{{ publicacion?.description }}</p>
+    </section>
+  
+    <section class="schedule" aria-label="Horarios de trabajo">
+      <h2>Horarios de trabajo</h2>
+      <p>{{ publicacion?.schedule }}</p>
+    </section>
+  
+    <section class="pricing" aria-label="Información de precios y experiencia">
+      <div class="box" role="group" aria-label="Precio de la visita">
+        <h3 class="price">${{ publicacion?.pricing }}</h3>
+        <span>Precio visita.</span>
+      </div>
+  
+      <div class="box" role="group" aria-label="Calificación del profesional">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true" focusable="false">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+        <span>(5.0) opiniones</span>
+      </div>
+  
+      <div class="box" role="group" aria-label="Años de experiencia">
+        <h3 class="price">{{ publicacion?.experience }}</h3>
+        <span>Años de experiencia.</span>
+      </div>
+    </section>
+  </div>
+  
+  <app-personal-reviews 
+    [postId]="id" 
+    [posterId]="publicacion?.userId"
+    [postUserName]="publicacion?.userName">
+  </app-personal-reviews>
+  

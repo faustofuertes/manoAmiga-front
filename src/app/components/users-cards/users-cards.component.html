@@ -1,218 +1,165 @@
 <div class="container">
+
     <div class="img">
-        <img src="assets/images/icons/destacados.png" alt="" class="logo">
+      <img src="assets/images/icons/destacados.png" alt="Ícono destacados" class="logo" />
     </div>
-
-
+  
     <div class="container-cards">
-        <!-- Plomero -->
-        <div [routerLink]="['/perfil/682b84fe5f47e3693671d61b']" class="card-container">
-            <div class="top">
-                <label class="job" for="">Plomero</label>
-            </div>
-            <div class="mid">
-                <div class="mid-left">
-                    <img src="assets/images/icons/plomero.png" alt="Icono Plomero" class="icon">
-                    <label class="name" for="">Cristian Haris</label>
-                    <label class="location" for=""><i class="fas fa-map-marker-alt"></i> Mar del Plata</label>
-                </div>
-                <div class="mid-right">
-                    <label for="">(18 opiniones)</label>
-                    <div class="stars">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <p>Plomería en general. 10 años en el gremio. Reparación de artefactos a gas: cocinas, calefactores,
-                    calefones y termotanques, etc. Urgencias las 24 horas.</p>
-            </div>
+  
+      <!-- Plomero -->
+      <a [routerLink]="['/perfil/682b84fe5f47e3693671d61b']" class="card-container" aria-label="Perfil de Cristian Haris, plomero en Mar del Plata">
+        <div class="top">
+          <h3 class="job">Plomero</h3>
         </div>
-
-        <!-- Jardinero -->
-        <div class="card-container">
-            <div class="top">
-                <label class="job" for="">Jardinero</label>
+        <div class="mid">
+          <div class="mid-left">
+            <img src="assets/images/icons/plomero.png" alt="Icono Plomero" class="icon" />
+            <span class="name">Cristian Haris</span>
+            <span class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Mar del Plata</span>
+          </div>
+          <div class="mid-right">
+            <span>(18 opiniones)</span>
+            <div class="stars" role="img" aria-label="Cinco estrellas">
+              <!-- SVG estrellas (podés hacerlas dinámicas) -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <!-- repetir 5 veces o hacerlo dinámico -->
             </div>
-            <div class="mid">
-                <div class="mid-left">
-                    <img src="assets/images/icons/jardinero.png" alt="Icono Jardinero" class="icon">
-                    <label class="name" for="">Federico Ríos</label>
-                    <label class="location" for=""><i class="fas fa-map-marker-alt"></i> Mar del plata</label>
-                </div>
-                <div class="mid-right">
-                    <label for="">(25 opiniones)</label>
-                    <div class="stars">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <p>Mantenimiento de jardines, poda, césped y diseño verde. Puntual, prolijo y amante de los espacios
-                    verdes.</p>
-            </div>
+          </div>
         </div>
-
-        <!-- Pintor -->
-        <div [routerLink]="['perfil/682bd0bc5f47e3693671d696']" class="card-container">
-            <div class="top">
-                <label class="job" for="">Pintor</label>
-            </div>
-            <div class="mid">
-                <div class="mid-left">
-                    <img src="assets/images/icons/pintor.png" alt="Icono Pintor" class="icon">
-                    <label class="name" for="">Javier Rodriguez</label>
-                    <label class="location" for=""><i class="fas fa-map-marker-alt"></i> Mar del plata</label>
-                </div>
-                <div class="mid-right">
-                    <label for="">(14 opiniones)</label>
-                    <div class="stars">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <p>Pintor de interiores y exteriores. Texturados, alisados, trabajos de diseño, laqueados, barnizados y
-                    pintura en general.</p>
-            </div>
+        <div class="bottom">
+          <p>Plomería en general. 10 años en el gremio. Reparación de artefactos a gas: cocinas, calefactores, calefones y termotanques, etc. Urgencias las 24 horas.</p>
         </div>
-
-        <!-- Electricista -->
-        <div [routerLink]="['/perfil/683057b55f47e3693671d7a5']"   class="card-container">
-            <div class="top">
-                <label class="job" for="">Electricista</label>
-            </div>
-            <div class="mid">
-                <div class="mid-left">
-                    <img src="assets/images/icons/electricista.png" alt="Icono Electricista" class="icon">
-                    <label class="name" for="">Rodrigo Azcaray</label>
-                    <label class="location" for=""><i class="fas fa-map-marker-alt"></i> Mar del plata</label>
-                </div>
-                <div class="mid-right">
-                    <label for="">(11 opiniones)</label>
-                    <div class="stars">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107"
-                            width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <p>Electricidad domiciliaria y comercial. Revisión técnica de la instalación para que cumpla con los
-                    requisitos mínimos de seguridad. Obras nuevas y refacciones.</p>
-            </div>
+      </a>
+  
+      <!-- Jardinero -->
+      <a [routerLink]="['/perfil/ID_DEL_JARDINERO']" class="card-container" aria-label="Perfil de Federico Ríos, jardinero en Mar del Plata">
+        <div class="top">
+          <h3 class="job">Jardinero</h3>
         </div>
+        <div class="mid">
+          <div class="mid-left">
+            <img src="assets/images/icons/jardinero.png" alt="Icono Jardinero" class="icon" />
+            <span class="name">Federico Ríos</span>
+            <span class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Mar del Plata</span>
+          </div>
+          <div class="mid-right">
+            <span>(25 opiniones)</span>
+            <div class="stars" role="img" aria-label="Cinco estrellas" >
+              <!-- SVG estrellas -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <p>Mantenimiento de jardines, poda, césped y diseño verde. Puntual, prolijo y amante de los espacios verdes.</p>
+        </div>
+      </a>
+  
+      <!-- Pintor -->
+      <a [routerLink]="['/perfil/682bd0bc5f47e3693671d696']" class="card-container" aria-label="Perfil de Javier Rodriguez, pintor en Mar del Plata">
+        <div class="top">
+          <h3 class="job">Pintor</h3>
+        </div>
+        <div class="mid">
+          <div class="mid-left">
+            <img src="assets/images/icons/pintor.png" alt="Icono Pintor" class="icon" />
+            <span class="name">Javier Rodriguez</span>
+            <span class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Mar del Plata</span>
+          </div>
+          <div class="mid-right">
+            <span>(14 opiniones)</span>
+            <div class="stars" role="img" aria-label="Cinco estrellas" >
+              <!-- SVG estrellas -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <p>Pintor de interiores y exteriores. Texturados, alisados, trabajos de diseño, laqueados, barnizados y pintura en general.</p>
+        </div>
+      </a>
+  
+      <!-- Electricista -->
+      <a [routerLink]="['/perfil/683057b55f47e3693671d7a5']" class="card-container" aria-label="Perfil de Rodrigo Azcaray, electricista en Mar del Plata">
+        <div class="top">
+          <h3 class="job">Electricista</h3>
+        </div>
+        <div class="mid">
+          <div class="mid-left">
+            <img src="assets/images/icons/electricista.png" alt="Icono Electricista" class="icon" />
+            <span class="name">Rodrigo Azcaray</span>
+            <span class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Mar del Plata</span>
+          </div>
+          <div class="mid-right">
+            <span>(11 opiniones)</span>
+            <div class="stars" role="img" aria-label="Cinco estrellas" >
+              <!-- SVG estrellas -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc107" viewBox="0 0 24 24" stroke="#ffc107" width="24" height="24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <p>Electricidad domiciliaria y comercial. Revisión técnica de la instalación para que cumpla con los requisitos mínimos de seguridad. Obras nuevas y refacciones.</p>
+        </div>
+      </a>
+  
     </div>
-
-
-</div>
+  
+  </div>
+  

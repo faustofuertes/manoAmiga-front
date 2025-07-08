@@ -1,6 +1,11 @@
-<nav class="header">
+<nav class="header" aria-label="Navegación principal">
     <ul>
-        <li (click)="emitPublicaciones()">Publicaciones</li>
-        <li (click)="emitUsuarios()">Usuarios</li>
+      <li>
+        <button type="button" (click)="emitPublicaciones()">Publicaciones</button>
+      </li>
+      <li>
+        <button type="button" (click)="emitUsuarios()">Usuarios</button>
+      </li>
     </ul>
-</nav>
+  </nav>
+  

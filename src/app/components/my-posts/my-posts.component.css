@@ -5,6 +5,11 @@
     align-items: center;
 }
 
+a{
+    color: black;
+    text-decoration: none;
+}
+
 /* Contenedor de publicaciones */
 .scroll-wrapper {
     display: flex;

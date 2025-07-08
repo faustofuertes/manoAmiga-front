@@ -1,34 +1,25 @@
 @if(userRoles.includes('admin')){
-
 <div class="header">
     <app-admin-header (optionSelected)="recivedSelectedOption($event)"></app-admin-header>
 </div>
 
 <div class="container">
-
     @if(selectedOption === 1){
     <app-admin-post-menu></app-admin-post-menu>
-    }@else if (selectedOption === 2) {
-
+    } @else if (selectedOption === 2) {
+    <!-- Aquí va contenido para opción 2 si existe -->
     }
 </div>
-}@else {
-
+} @else {
 <div class="header">
     <app-user-header (optionSelected)="recivedSelectedOption($event)"></app-user-header>
 </div>
 
 <div class="container">
-
-
     @if(selectedOption === 1){
-
     <app-profile-card [usuario]="usuario"></app-profile-card>
-
-    }@else if (selectedOption ===2) {
-
+    } @else if (selectedOption === 2) {
     <app-my-post-panel-control [usuario]="usuario"></app-my-post-panel-control>
-
     }
 </div>
 }

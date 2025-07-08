@@ -1,16 +1,19 @@
 <div class="container">
 
     @for (post of list; track $index) {
-
-    <div [routerLink]="['/perfil', post._id]" class="card">
-        <img class="icon" [src]="'assets/images/icons/' + post.job.toLowerCase() + '.png'" alt="">
+  
+      <article [routerLink]="['/perfil', post._id]" class="card" tabindex="0" role="link">
+        <img class="icon" [src]="'assets/images/icons/' + post.job.toLowerCase() + '.png'" alt="{{post.job}} icono" />
         <div class="text">
-            <span class="name">{{post.userName}}</span>
-            <span class="job">{{post.job}}</span>
-            <span class="location"><i class="fas fa-map-marker-alt"></i> {{post.location}}</span>
+          <h3 class="name">{{ post.userName }}</h3>
+          <span class="job">{{ post.job }}</span>
+          <span class="location">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ post.location }}
+          </span>
         </div>
-    </div>
-
+      </article>
+  
     }
-
-</div>
+  
+  </div>
+  
