@@ -1,27 +1,23 @@
 <main class="container" role="main">
-    <section class="card" aria-labelledby="error-title">
-      <div class="left">
-        <img
-          src="assets/images/icons/fallida.png"
-          alt="Error al crear publicación"
-          class="icon"
-        />
-      </div>
-      <div class="right">
-        <h2 id="error-title" class="status" role="alert">
-          Error al crear la publicación.
-        </h2>
-        <p>
-          Ya tenés una publicación activa para este oficio. Recordá que solo se permite
-          <strong>una publicación por tipo de trabajo</strong> (por ejemplo, solo una como pintor, otra como plomero, etc.).
-          Si querés actualizar tu publicación, podés editar la existente desde <strong>tus publicaciones</strong>.
-        </p>
-      </div>
-    </section>
-  
-    <div class="btn-container" role="navigation" aria-label="Acciones rápidas">
-      <a [routerLink]="['']" class="btn-home" role="button">Inicio</a>
-      <a [routerLink]="['/mi-perfil']" class="btn-posts" role="button">Mis publicaciones</a>
+  <section class="card" aria-labelledby="error-title">
+    <div class="left">
+      <img src="assets/images/icons/fallida.png" alt="Error al crear publicación" class="icon" />
     </div>
-  </main>
-  
+    <div class="right">
+      <h2 id="error-title" class="status" role="alert">
+        Error al crear la publicación.
+      </h2>
+      <p>
+        Ya tenés una publicación activa para este oficio. Recordá que solo se permite
+        <strong>una publicación por tipo de trabajo</strong> (por ejemplo, solo una como pintor, otra como plomero,
+        etc.).
+        Si querés actualizar tu publicación, podés editar la existente desde <strong>Mis publicaciones</strong>.
+      </p>
+    </div>
+  </section>
+
+  <div class="btn-container">
+    <button [routerLink]="['']" class="btn-home">Inicio</button>
+    <button [routerLink]="['/mi-perfil']" class="btn-posts">Mis publicaciones</button>
+  </div>
+</main>
