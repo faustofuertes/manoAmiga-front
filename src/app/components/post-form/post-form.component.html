@@ -60,8 +60,8 @@
             <form [formGroup]="step2Form">
                 <div class="form-group">
                     <label for="description"><span class="color">Descripción</span> de tu aviso</label>
-                    <label class="min" for="description">(Minimo 20 palabras)</label>
-                    <textarea
+                    <label class="min" for="description">(Minimo 20 caracteres)</label>
+                    <textarea minlength="20"
                         placeholder="Ej: Plomero con más de 10 años de experiencia en reparaciones, instalaciones y mantenimiento de cañerías, sanitarios y sistemas de agua potable. Puntual, responsable y con atención a los detalles."
                         id="description" formControlName="description"></textarea>
                 </div>

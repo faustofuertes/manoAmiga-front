@@ -35,20 +35,7 @@ export class PostFormComponent {
     });
 
     this.step2Form = this.fb.group({
-      description: [
-        '',
-        [
-          Validators.required,
-          (control: AbstractControl) => {
-            const value = control.value || '';
-            const words = value
-              .trim()
-              .split(/\s+/)
-              .filter((word: string) => word.length > 0);
-            return words.length >= 20 ? null : { minWords: true };
-          }
-        ]
-      ]
+      description: ['', Validators.required]
     });
 
     this.step3Form = this.fb.group({
