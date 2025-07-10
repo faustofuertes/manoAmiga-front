@@ -1,71 +1,70 @@
 <main class="container">
 
-    <!-- Desktop: título con palabra dinámica animada -->
-    <h1 *ngIf="isDesktop" class="desktop-title">
-      Encontrá&nbsp;
-      <span class="job-container">
-        <span [class.animate]="animate" style="color: red;">{{ currentJob }}</span>
-      </span>
-      &nbsp;cerca tuyo fácil y rápido.
-    </h1>
-  
-    <!-- Mobile: título fijo sin animación -->
-    <h1 *ngIf="!isDesktop" class="mobile-title">
-      Encontrá profesionales cerca tuyo.
-    </h1>
-  
-    <button (click)="register()" class="btn-post" aria-label="Publicar tu servicio ahora">
-      ¡Publicá tu servicio ahora!
-    </button>
-  
-    <!-- Sección de categorías -->
-    <section class="container-icons" aria-label="Categorías de servicios profesionales">
-      <a [routerLink]="['/categorias', location, 'plomero']" class="card" aria-label="Categoría Plomeros">
-        <img src="assets/images/icons/plomero.png" alt="Icono Plomero" class="icon" />
-        <span>Plomeros</span>
-      </a>
-      <a [routerLink]="['/categorias', location, 'electricista']" class="card" aria-label="Categoría Electricistas">
-        <img src="assets/images/icons/electricista.png" alt="Icono Electricista" class="icon" />
-        <span>Electricistas</span>
-      </a>
-      <a [routerLink]="['/categorias', location, 'jardinero']" class="card" aria-label="Categoría Jardineros">
-        <img src="assets/images/icons/jardinero.png" alt="Icono Jardinero" class="icon" />
-        <span>Jardineros</span>
-      </a>
-      <a [routerLink]="['/categorias', location, 'pintor']" class="card" aria-label="Categoría Pintores">
-        <img src="assets/images/icons/pintor.png" alt="Icono Pintor" class="icon" />
-        <span>Pintores</span>
-      </a>
-      <a [routerLink]="['/categorias', location, 'cerrajero']" class="card" aria-label="Categoría Cerrajeros">
-        <img src="assets/images/icons/cerrajero.png" alt="Icono Cerrajero" class="icon" />
-        <span>Cerrajeros</span>
-      </a>
-      <a [routerLink]="['/categorias', location, 'carpintero']" class="card" aria-label="Categoría Carpinteros">
-        <img src="assets/images/icons/carpintero.png" alt="Icono Carpintero" class="icon" />
-        <span>Carpinteros</span>
-      </a>
-      <a [routerLink]="['/categorias', location, 'limpieza']" class="card" aria-label="Categoría Limpieza">
-        <img src="assets/images/icons/limpieza.png" alt="Icono Limpieza" class="icon" />
-        <span>Limpieza</span>
-      </a>
-      <a [routerLink]="['/categorias', location, 'tecnico']" class="card" aria-label="Categoría Técnicos">
-        <img src="assets/images/icons/tecnico.png" alt="Icono Técnico" class="icon" />
-        <span>Técnicos</span>
-      </a>
-    </section>
-  
-    <!-- Secciones con título y contenido -->
-    <section aria-label="Usuarios destacados">
-      <app-users-cards></app-users-cards>
-    </section>
-  
-    <section aria-label="Reseñas generales">
-      <app-general-reviews></app-general-reviews>
-    </section>
-  
-    <section aria-label="Preguntas frecuentes">
-      <app-faq></app-faq>
-    </section>
-  
-  </main>
-  
+  <!-- Desktop: título con palabra dinámica animada -->
+  <h1 *ngIf="isDesktop" class="desktop-title">
+    Encontrá&nbsp;
+    <span class="job-container">
+      <span [class.animate]="animate" style="color: red;">{{ currentJob }}</span>
+    </span>
+    &nbsp;cerca tuyo fácil y rápido.
+  </h1>
+
+  <!-- Mobile: título fijo sin animación -->
+  <h1 *ngIf="!isDesktop" class="mobile-title">
+    Encontrá profesionales cerca tuyo.
+  </h1>
+
+  <button (click)="register()" class="btn-post" aria-label="Publicar tu servicio ahora">
+    ¡Publicá tu servicio ahora!
+  </button>
+
+  <!-- Sección de categorías -->
+  <section class="container-icons" aria-label="Categorías de servicios profesionales">
+    <a [routerLink]="['/categorias', location, 'plomero']" class="card" aria-label="Categoría Plomeros">
+      <img src="assets/images/icons/plomero.png" alt="Icono Plomero" class="icon" />
+      <span>Plomeros</span>
+    </a>
+    <a [routerLink]="['/categorias', location, 'electricista']" class="card" aria-label="Categoría Electricistas">
+      <img src="assets/images/icons/electricista.png" alt="Icono Electricista" class="icon" />
+      <span>Electricistas</span>
+    </a>
+    <a [routerLink]="['/categorias', location, 'jardinero']" class="card" aria-label="Categoría Jardineros">
+      <img src="assets/images/icons/jardinero.png" alt="Icono Jardinero" class="icon" />
+      <span>Jardineros</span>
+    </a>
+    <a [routerLink]="['/categorias', location, 'pintor']" class="card" aria-label="Categoría Pintores">
+      <img src="assets/images/icons/pintor.png" alt="Icono Pintor" class="icon" />
+      <span>Pintores</span>
+    </a>
+    <a [routerLink]="['/categorias', location, 'cerrajero']" class="card" aria-label="Categoría Cerrajeros">
+      <img src="assets/images/icons/cerrajero.png" alt="Icono Cerrajero" class="icon" />
+      <span>Cerrajeros</span>
+    </a>
+    <a [routerLink]="['/categorias', location, 'carpintero']" class="card" aria-label="Categoría Carpinteros">
+      <img src="assets/images/icons/carpintero.png" alt="Icono Carpintero" class="icon" />
+      <span>Carpinteros</span>
+    </a>
+    <a [routerLink]="['/categorias', location, 'limpieza']" class="card" aria-label="Categoría Limpieza">
+      <img src="assets/images/icons/limpieza.png" alt="Icono Limpieza" class="icon" />
+      <span>Limpieza</span>
+    </a>
+    <a [routerLink]="['/categorias', location, 'tecnico']" class="card" aria-label="Categoría Técnicos">
+      <img src="assets/images/icons/tecnico.png" alt="Icono Técnico" class="icon" />
+      <span>Técnicos</span>
+    </a>
+  </section>
+
+  <!-- Secciones con título y contenido -->
+  <section aria-label="Usuarios destacados">
+    <app-users-cards></app-users-cards>
+  </section>
+
+  <section aria-label="Reseñas generales">
+    <app-general-reviews></app-general-reviews>
+  </section>
+
+  <section aria-label="Preguntas frecuentes">
+    <app-faq></app-faq>
+  </section>
+
+</main>

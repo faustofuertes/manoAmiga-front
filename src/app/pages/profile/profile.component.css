@@ -198,4 +198,8 @@ label {
     .nav-bar {
         margin-top: 3rem;
     }
+
+    .type{
+        font-size: 18px;
+    }
 }
