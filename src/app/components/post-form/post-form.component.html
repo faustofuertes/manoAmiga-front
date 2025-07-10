@@ -92,7 +92,8 @@
             <form [formGroup]="step3Form">
                 <div class="form-group">
                     <label for="pricing"><span class="color">Tarifa</span> de visita</label>
-                    <input placeholder="15000" id="pricing" formControlName="pricing" type="number" />
+                    <input placeholder="15000" id="pricing" formControlName="pricing" type="number" inputmode="numeric"
+                        pattern="[0-9]*" />
                 </div>
             </form>
             <div class="btn-container">
