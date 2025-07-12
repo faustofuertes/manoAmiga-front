@@ -59,9 +59,6 @@ p {
     border: 1px solid transparent;
     transition: .2s;
     text-align: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 .form-group select:focus {
@@ -298,6 +295,7 @@ p {
     }
 
     .right {
+        margin-top: 2rem;
         min-height: 400px;
         justify-content: flex-start;
         position: relative;
@@ -340,16 +338,24 @@ p {
         font-size: 16px;
     }
 
-    .left {
-        gap: 0;
-        padding: 0 1rem 1rem 1rem;
-        border-radius: 0;
-        background-color: white;
-        border-bottom: 2px solid #f0f0f0;
+    .form-group textarea{
+        height: 250px;
+    }
+
+    .left{
+        display: none;
     }
 
     .min {
         font-size: 14px !important;
     }
 
+    select {
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="%23806545" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1rem;
+        padding-right: 2.5rem;
+    }
 }
