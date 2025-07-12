@@ -62,7 +62,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: white;
-  background: #806545;
+  background: var(--color-principal);
   border: none;
   border-radius: 10px;
   cursor: pointer;

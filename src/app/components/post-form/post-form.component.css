@@ -4,6 +4,10 @@ form {
     justify-content: center;
 }
 
+p {
+    font-weight: 500;
+}
+
 .form-container {
     margin-top: 5rem;
     display: flex;
@@ -19,7 +23,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: justify;
+    text-align: center;
     background-color: #f0f0f0;
     border-radius: 30px;
     padding: 2rem;
@@ -59,7 +63,7 @@ form {
 
 .form-group select:focus {
     outline: none;
-    border: 1px solid #806545;
+    border: 1px solid var(--color-principal);
 }
 
 .form-group select:valid {
@@ -71,7 +75,7 @@ form {
 }
 
 .color {
-    color: #806545;
+    color: var(--color-principal);
 }
 
 .form-group textarea {
@@ -88,11 +92,6 @@ form {
     font-size: 18px;
 }
 
-.form-group textarea::placeholder {
-    font-size: 14px;
-    text-align: left;
-}
-
 .min {
     align-self: flex-start;
     font-size: 16px;
@@ -101,7 +100,7 @@ form {
 
 .form-group textarea:focus {
     outline: none;
-    border: 1px solid #806545;
+    border: 1px solid var(--color-principal);
 }
 
 .form-group input {
@@ -120,7 +119,7 @@ form {
 
 .form-group input:focus {
     outline: none;
-    border: 1px solid #806545;
+    border: 1px solid var(--color-principal);
 }
 
 .btn-container {
@@ -140,7 +139,7 @@ form {
 }
 
 .btn-forward {
-    background-color: #806545;
+    background-color: var(--color-principal);
     color: white;
     border: 1px solid transparent;
     transition: 0.2s;
@@ -152,26 +151,26 @@ form {
 }
 
 .btn-back {
-    color: #806545;
-    border: 1px solid #806545;
+    color: var(--color-principal);
+    border: 1px solid var(--color-principal);
     background-color: white;
     transition: 0.2s;
 }
 
 .fa-lightbulb {
     margin: 1rem;
-    color: #806545;
+    color: var(--color-principal);
 }
 
 .fa-map-marker-alt {
     margin: 1rem;
-    color: #806545;
+    color: var(--color-principal);
     font-size: 35px;
 }
 
 .fa-toolbox {
     margin: .7rem;
-    color: #806545;
+    color: var(--color-principal);
     font-size: 35px;
 }
 
@@ -190,7 +189,7 @@ form {
 }
 
 .bar-color {
-    background-color: #806545;
+    background-color: var(--color-principal);
 }
 
 .loading-overlay {
@@ -210,7 +209,7 @@ form {
     width: 60px;
     height: 60px;
     border: 6px solid #ccc;
-    border-top-color: #806545;
+    border-top-color: var(--color-principal);
     border-radius: 50%;
     animation: spin 1s ease-in-out infinite;
 }
@@ -218,37 +217,39 @@ form {
 .btn-forward {
     position: relative;
     overflow: hidden;
-  }
-  
-  .btn-forward.loading {
+}
+
+.btn-forward.loading {
     pointer-events: none;
     opacity: 0.8;
-  }
-  
-  .btn-text {
+}
+
+.btn-text {
     position: relative;
     z-index: 2;
-  }
-  
-  .progress-bar {
+}
+
+.progress-bar {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.3); /* barra blanca transparente */
+    background-color: rgba(255, 255, 255, 0.3);
+    /* barra blanca transparente */
     width: 0%;
     z-index: 1;
     animation: fillBar 1.5s ease-in-out forwards;
-  }
-  
-  @keyframes fillBar {
+}
+
+@keyframes fillBar {
     0% {
-      width: 0%;
+        width: 0%;
     }
+
     100% {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
 
 @keyframes spin {
     to {
@@ -257,18 +258,19 @@ form {
 }
 
 .fade-slide-in {
-  animation: fadeSlideIn .5s ease forwards;
+    animation: fadeSlideIn .5s ease forwards;
 }
 
 @keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateX(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 
@@ -335,10 +337,6 @@ form {
         font-size: 16px;
     }
 
-    .form-group textarea {
-        height: 200px;
-    }
-
     .left {
         gap: 0;
         padding: 0 1rem 1rem 1rem;
@@ -350,4 +348,5 @@ form {
     .min {
         font-size: 14px !important;
     }
+
 }

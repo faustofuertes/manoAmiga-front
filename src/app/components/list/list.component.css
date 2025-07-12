@@ -53,7 +53,7 @@
 }
 
 .fa-map-marker-alt{
-    color: #806545;
+    color: var(--color-principal);
 }
 
 /* Responsive Design */

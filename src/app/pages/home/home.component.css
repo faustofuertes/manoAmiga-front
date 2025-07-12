@@ -86,7 +86,7 @@ a {
     overflow: hidden;
     min-width: 14rem;
     text-align: center;
-    color: linear-gradient(135deg, #806545, #a67c52);
+    color: linear-gradient(135deg, #FF4040, #FF6B6B);;
     text-decoration: underline;
 }
 
@@ -163,7 +163,7 @@ h1 {
     height: 1.2em;
     overflow: hidden;
     text-align: center;
-    color: #806545;
+    color: var(--color-principal);
     justify-content: center;
     align-items: center;
     min-width: 10ch;
@@ -222,7 +222,7 @@ h1 {
     font-weight: bold;
     border: 1px solid transparent;
     color: white;
-    background: linear-gradient(135deg, #806545, #a67c52);
+    background: linear-gradient(135deg, #FF4040, #FF6B6B);;
     height: 100%;
     margin: 4rem 0;
     padding: 1rem;
@@ -233,7 +233,7 @@ h1 {
 
 .btn-post:hover {
     background-color: white;
-    border: 1px solid #806545;
+    border: 1px solid var(--color-principal);
     transform: translateY(-2px);
 }
 

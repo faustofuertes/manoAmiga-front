@@ -8,14 +8,14 @@
 }
 
 i {
-    color: #806545;
+    color: var(--color-principal);
     font-size: 28px;
 }
 
 label {
     margin-top: 1rem;
     font-weight: bold;
-    color: #806545;
+    color: var(--color-principal);
 }
 
 .nav-bar {
@@ -41,7 +41,7 @@ label {
 
 .icon {
     height: 45px;
-    transition: .3s;
+    transition: .2s;
     cursor: pointer;
     filter: grayscale(100%);
     border-radius: 100px;

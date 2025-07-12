@@ -59,7 +59,7 @@
 }
 
 .btn-decline {
-    background-color: #806545;
+    background-color: var(--color-principal);
     padding: .5rem 1rem;
 }
 
@@ -92,11 +92,11 @@ textarea {
 
 .form-group input:focus {
     outline: none;
-    border: 1px solid #806545;
+    border: 1px solid var(--color-principal);
 }
 
 .color {
-    color: #806545;
+    color: var(--color-principal);
 }
 
 .min {

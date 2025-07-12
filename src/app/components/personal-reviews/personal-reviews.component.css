@@ -23,7 +23,6 @@
     flex: 1;
 }
 
-
 .top-left {
     display: flex;
     flex-wrap: wrap;
@@ -68,7 +67,7 @@
 }
 
 .btn-review {
-    background-color: #806545;
+    background-color: var(--color-principal);
     color: #c4ebeb;
     padding: .5rem 1rem;
     border-radius: 30px;
@@ -140,7 +139,7 @@
 
 .form-container select:focus {
     outline: none;
-    border: 1px solid #806545;
+    border: 1px solid var(--color-principal);
 }
 
 .textarea-review {
@@ -156,14 +155,14 @@
 
 .textarea-review:focus {
     outline: none;
-    border: 1px solid #806545;
+    border: 1px solid var(--color-principal);
 }
 
 .btn-share {
     border: none;
     padding: .7rem 1rem;
     color: white;
-    background-color: #806545;
+    background-color: var(--color-principal);
     font-weight: bold;
     border-radius: 10px;
     width: 485px;
@@ -249,7 +248,7 @@
 }
 
 .btn-register {
-    background-color: #806545;
+    background-color: var(--color-principal);
     color: white;
 }
 

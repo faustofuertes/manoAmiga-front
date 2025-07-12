@@ -85,15 +85,15 @@ body {
 }
 
 .btn-publicar {
-  background-color: #806545;
+  background-color: var(--color-principal);
   color: white;
   border: 1px solid transparent;
   transition: 0.2s;
 }
 
 .btn-iniciarSesion {
-  color: #806545;
-  border: 1px solid #806545;
+  color: var(--color-principal);
+  border: 1px solid var(--color-principal);
   background-color: white;
   transition: 0.2s;
 }
