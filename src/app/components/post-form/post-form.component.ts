@@ -84,4 +84,24 @@ export class PostFormComponent {
       });
     }
   }
+
+  get descriptionControl(): AbstractControl {
+    return this.step2Form.get('description')!;
+  }
+  
+  get descriptionErrorMessage(): string {
+    const value = this.descriptionControl.value || '';
+    const length = value.length;
+  
+    if (length === 0) {
+      return 'Mínimo 20 caracteres';
+    }
+  
+    if (length > 0 && length < 20) {
+      return `Faltan ${20 - length} caracteres`;
+    }
+  
+    return '';
+  }
+  
 }
