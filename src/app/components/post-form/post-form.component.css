@@ -59,6 +59,9 @@ p {
     border: 1px solid transparent;
     transition: .2s;
     text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .form-group select:focus {
