@@ -10,57 +10,31 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 export class GeneralReviewsComponent implements OnInit, OnDestroy {
   testimonios = [
     {
-      nombre: 'Lucas Pereyra',
+      nombre: 'Martín Galeano',
       icono: 'assets/images/icons/userMan.png',
-      texto: '"Una masa la app. Puse que necesitaba un plomero y al toque me escribió uno. Me resolvió la pérdida en menos de una hora. Súper práctica, te saca del apuro sin vueltas."'
+      texto: '"Busqué un plomero por la app, elegí uno que tenía buenas opiniones y lo contacté directo. Me respondió al toque. En menos de dos horas ya tenía todo resuelto."'
     },
     {
-      nombre: 'Tomás Herrera',
-      icono: 'assets/images/icons/userMan.png',
-      texto: '"Muy buena onda todo. Busqué un electricista un sábado a la tarde y conseguí sin problema. Me gustó que podés ver las opiniones, te da más confianza para elegir."'
-    },
-    {
-      nombre: 'Nicolás Rivas',
-      icono: 'assets/images/icons/userMan.png',
-      texto: '"Me re salvó Mano Amiga. Estaba buscando un pintor para arreglar unas paredes del depto y apareció uno de la zona. Coordinamos por WhatsApp y vino al día siguiente."'
-    },
-    {
-      nombre: 'Fabián Quiroga',
-      icono: 'assets/images/icons/userMan.png',
-      texto: '"Está buenísima la idea. Necesitaba un jardinero para limpiar el fondo y encontré uno cerca de casa que labura joya. Todo fue rápido y directo, sin vueltas."'
-    },
-    {
-      nombre: 'Gustavo Medina',
-      icono: 'assets/images/icons/userMan.png',
-      texto: '"Busqué un técnico para el lavarropas y en una hora ya lo tenía en casa. Mano Amiga funciona bárbaro, es ideal si no tenés a nadie de confianza a mano."'
-    },
-    {
-      nombre: 'Florencia Acosta',
+      nombre: 'Andrea Molina',
       icono: 'assets/images/icons/userWoman.png',
-      texto: '"La usé para conseguir alguien que me ayude con la limpieza y fue lo más. La chica un amor, puntual y laburadora. Todo impecable, la volvería a llamar sin dudas."'
+      texto: '"Me encantó la idea de Mano Amiga. No es como otras apps que te cobran o se meten en el medio. Acá los trabajadores se publican y vos los llamás directo. Conseguí una chica para limpieza y fue lo más."'
     },
     {
-      nombre: 'Matías Aguirre',
+      nombre: 'Lucas Fernández',
       icono: 'assets/images/icons/userMan.png',
-      texto: '"Tuve que arreglar una puerta del placard y encontré un carpintero que vino ese mismo día. Muy buena experiencia, la app es clara y no te hace perder tiempo."'
+      texto: '"Una vuelta necesitaba un electricista urgente, entré a Mano Amiga y encontré varios cerca de casa. Elegí uno, le mandé mensaje y vino esa misma tarde. Muy piola."'
     },
     {
-      nombre: 'Carla Roldán',
-      icono: 'assets/images/icons/userWoman.png',
-      texto: '"Se me rompió el calefón y estaba desesperada. Encontré un gasista cerca y al ratito ya estaba viendo el tema. Mano Amiga fue la salvación, posta."'
-    },
-    {
-      nombre: 'Santiago Ferreyra',
+      nombre: 'Pablo Benítez',
       icono: 'assets/images/icons/userMan.png',
-      texto: '"Cerradura rota y sin llaves, un bajón. Entré a Mano Amiga y encontré un cerrajero de toque. Rápido, buena onda y precio justo. Recomendado."'
+      texto: '"Lo bueno es que no necesitás registrarte ni nada raro. Entrás, buscás el rubro que querés y listo. Llamás o escribís al que te guste. Así encontré un técnico que me salvó con el lavarropas."'
     },
     {
-      nombre: 'Juliana Vázquez',
+      nombre: 'Soledad Rivas',
       icono: 'assets/images/icons/userWoman.png',
-      texto: '"Coordiné con un pintor para hacer unos arreglos en casa y salió todo diez puntos. Muy prolijo y cumplidor. Me encantó que desde la app ves todo fácil."'
+      texto: '"Busqué un jardinero para arreglar el patio. Me gustó que cada trabajador tiene su aviso y se nota que lo arman ellos mismos. Hablé con uno por WhatsApp y coordinamos sin drama."'
     }
   ];
-
 
   current = 0;
   intervalId: any;
@@ -68,7 +42,7 @@ export class GeneralReviewsComponent implements OnInit, OnDestroy {
   progress = 0;
   private progressTimer: any;
   previous = 0;
-slideDirection: 'left' | 'right' = 'right';
+  slideDirection: 'left' | 'right' = 'right';
 
 
 
@@ -108,30 +82,30 @@ slideDirection: 'left' | 'right' = 'right';
     this.previous = this.current;
     this.current = (this.current + 1) % this.testimonios.length;
   }
-  
+
   anterior() {
     this.slideDirection = 'left';
     this.previous = this.current;
     this.current = (this.current - 1 + this.testimonios.length) % this.testimonios.length;
   }
-  
-  
+
+
   getClass(index: number): string {
     const total = this.testimonios.length;
-  
+
     if (index === this.current) return 'active';
-  
+
     const prevIndex = (this.current - 1 + total) % total;
     const nextIndex = (this.current + 1) % total;
-  
+
     if (index === prevIndex) return 'prev';
     if (index === nextIndex) return 'next';
-  
+
     return 'hidden';
   }
-  
-  
-  
+
+
+
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
