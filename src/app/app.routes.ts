@@ -16,5 +16,8 @@ export const routes: Routes = [
     { path: 'crear-publicacion', component: PostFormComponent },
     { path: 'publicacion-exitosa', component: SuccessPostComponent },
     { path: 'publicacion-fallida', component: FailurePostComponent },
+
+    { path: 'politica-de-privacidad', component: FailurePostComponent },
+    { path: 'eliminar-cuenta', component: FailurePostComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

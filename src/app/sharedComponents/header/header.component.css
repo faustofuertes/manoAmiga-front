@@ -130,33 +130,6 @@ a {
   font-size: 22px;
 }
 
-/* ---------- RESPONSIVE ---------- */
-
-/* Teléfonos pequeños */
-@media (max-width: 480px) {
-  .container {
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .left,
-  .center,
-  .right {
-    justify-content: center;
-    margin: 0;
-  }
-
-  .center ul {
-    gap: 0.5rem;
-  }
-
-  .btn-iniciarSesion,
-  .btn-publicar {
-    padding: 10px 14px;
-    font-size: 0.8rem;
-  }
-}
-
 /* Teléfonos normales y tablets verticales */
 @media (max-width: 768px) {
   .center ul {
@@ -167,6 +140,7 @@ a {
     height: calc(100vh - 5rem);
     background: white;
     z-index: 1050;
+    padding-top: 2rem;
 
     display: flex;
     flex-direction: column;
@@ -215,39 +189,5 @@ a {
 
   .container{
     width: 100%;
-  }
-
-
-}
-
-/* Tablets en horizontal */
-@media (max-width: 1024px) {
-  .center li {
-    margin: 0 1rem;
-  }
-
-  .btn-iniciarSesion,
-  .btn-publicar {
-    padding: 10px 14px;
-  }
-}
-
-/* Laptops */
-@media (max-width: 1280px) {
-  .center li {
-    margin: 0 1.2rem;
-  }
-
-  .btn-iniciarSesion,
-  .btn-publicar {
-    padding: 12px 15px;
-  }
-}
-
-/* Monitores grandes */
-@media (min-width: 1440px) {
-  .container {
-    width: 60%;
-    margin: 0 auto;
   }
 }
