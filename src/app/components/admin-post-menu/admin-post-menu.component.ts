@@ -3,12 +3,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { scheduled } from 'rxjs';
 import { Publicacion } from '../../interfaces/publicacion';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-admin-post-menu',
-  imports: [ReactiveFormsModule
-
-  ],
+  imports: [ReactiveFormsModule],
   templateUrl: './admin-post-menu.component.html',
   styleUrl: './admin-post-menu.component.css'
 })

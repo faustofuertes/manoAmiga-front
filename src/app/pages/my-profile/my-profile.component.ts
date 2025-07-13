@@ -9,6 +9,7 @@ import { UserHeaderComponent } from '../../components/user-header/user-header.co
 import { MyPostPanelControlComponent } from '../../components/my-post-panel-control/my-post-panel-control.component';
 import { AdminHeaderComponent } from "../../components/admin-header/admin-header.component";
 import { AdminPostMenuComponent } from '../../components/admin-post-menu/admin-post-menu.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -18,8 +19,9 @@ import { AdminPostMenuComponent } from '../../components/admin-post-menu/admin-p
     ProfileCardComponent,
     UserHeaderComponent,
     AdminHeaderComponent,
-    AdminPostMenuComponent
-],
+    AdminPostMenuComponent,
+    CommonModule
+  ],
   templateUrl: './my-profile.component.html',
   styleUrl: './my-profile.component.css'
 })
@@ -28,6 +30,7 @@ export class MyProfileComponent implements OnInit {
   usuario?: Usuario;
   selectedOption = 1;
   userRoles: string[] = [];
+  isLoading = true;
 
   constructor(
     public _auth: AuthService,
@@ -49,6 +52,7 @@ export class MyProfileComponent implements OnInit {
           if (this.usuario._id && this.usuario.name) {
             localStorage.setItem('userID', this.usuario._id);
             localStorage.setItem('userName', this.usuario.name);
+            this.isLoading = false;
           }
 
 
