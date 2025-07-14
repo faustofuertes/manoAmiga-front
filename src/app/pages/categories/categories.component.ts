@@ -25,6 +25,7 @@ export class CategoriesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.getJob(); // Carga inicial
   
     this._router.events.subscribe(event => {

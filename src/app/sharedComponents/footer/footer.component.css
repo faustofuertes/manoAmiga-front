@@ -50,7 +50,6 @@
 
 .footer-links a:hover .footer-icon {
   opacity: 1;
-  transform: scale(1.1);
   filter: none;
 }
 
