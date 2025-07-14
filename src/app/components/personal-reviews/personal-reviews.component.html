@@ -1,118 +1,106 @@
 <div class="container">
 
-    <button type="button" (click)="toggleReview()" class="btn-review">
-      <img class="icon-make-review" src="assets/images/icons/review.png" alt="Icono para hacer reseña" /> Hacer reseña
-    </button>
-  
-    @for (r of reviews; track $index) {
-      <article class="review">
-        <figure class="left">
-          <img class="icon-reviewer" src="assets/images/icons/userMan.png" alt="Avatar de {{r.userName}}" />
-        </figure>
-  
-        <div class="right">
-          <header class="top">
-            <div class="top-left">
-              <strong class="name">{{r.userName}}</strong>
-              <time class="date" [attr.datetime]="r.dateAdded">{{ r.dateAdded | date:'dd/MM/yyyy' }}</time>
-            </div>
-            <div class="stars" [attr.aria-label]="'Puntuación: ' + r.score + ' estrellas'">
-              <ng-container *ngFor="let star of [1,2,3,4,5]">
-                <svg xmlns="http://www.w3.org/2000/svg" [attr.fill]="star <= r.score ? '#ffc107' : '#e0e0e0'" viewBox="0 0 24 24"
-                  stroke="#ffc107" width="20" height="20" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-              </ng-container>
-            </div>
-          </header>
-  
-          <section class="bottom">
-            <p class="text">{{r.textReview}}</p>
-          </section>
+  <button type="button" (click)="toggleReview()" class="btn-review">
+    <img class="icon-make-review" src="assets/images/icons/review.png" alt="Icono para hacer reseña" /> Hacer reseña
+  </button>
+
+  @for (r of reviews; track $index) {
+  <article class="review">
+    <figure class="left">
+      <img class="icon-reviewer" src="assets/images/icons/userMan.png" alt="Avatar de {{r.userName}}" />
+    </figure>
+
+    <div class="right">
+      <header class="top">
+        <div class="top-left">
+          <strong class="name">{{r.userName}}</strong>
+          <time class="date" [attr.datetime]="r.dateAdded">{{ r.dateAdded | date:'dd/MM/yyyy' }}</time>
         </div>
-      </article>
-    }
-  
-    @if(isAdding){
-      <div class="overlay" (click)="closeIfOutside($event)">
-        <form [formGroup]="form" class="form-container" (click)="$event.stopPropagation()">
-          <header class="header-review">
-            <button type="button" (click)="toggleReview()" class="btn-close" aria-label="Cerrar formulario de reseña">
-              <i class="fas fa-times" aria-hidden="true"></i>
-            </button>
-          </header>
-  
-          <div class="top-review">
-            <img src="assets/images/icons/electricista.png" alt="Icono del electricista" class="icon-review" />
-            <h3>¿Cómo fue el servicio de {{postUserName}}?</h3>
-  
-            <div class="star-rating" role="radiogroup" aria-label="Calificación en estrellas">
-              <ng-container *ngFor="let star of stars; index as i">
-                <svg
-                  (click)="rate(i + 1)"
-                  [attr.aria-checked]="i < rating"
-                  role="radio"
-                  tabindex="0"
-                  [ngClass]="{ filled: i < rating }"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="30"
-                  height="30"
-                  class="star"
-                  (keydown.enter)="rate(i + 1)"
-                  (keydown.space)="rate(i + 1)"
-                >
-                  <path d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-              </ng-container>
-            </div>
-          </div>
-  
-          <div class="mid-review">
-            <label for="review" class="sr-only">Mínimo 20 caracteres</label>
-            <textarea
-              id="review"
-              minlength="20"
-              class="textarea-review"
-              formControlName="review"
-              name="review"
-              placeholder="Contanos cómo fue tu experiencia con este profesional."
-              aria-required="true"
-            ></textarea>
-          </div>
-  
-          <div class="bottom-review">
-            <button type="submit" (click)="submitReview()" class="btn-share" [disabled]="form.invalid" aria-label="Publicar reseña">
-              Publicar
-            </button>
-          </div>
-        </form>
-      </div>
-    }
-  
-    @if(needLogin){
-      <div class="overlay" (click)="closeIfOutside($event)">
-        <div class="login-container" (click)="$event.stopPropagation()" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
-          <header class="header-login">
-            <button type="button" (click)="toggleReview()" class="btn-close" aria-label="Cerrar ventana de login">
-              <i class="fas fa-times" aria-hidden="true"></i>
-            </button>
-          </header>
-          <div class="top-login">
-            <img class="loginIcon" src="assets/images/icons/logIn.png" alt="Icono de login" />
-          </div>
-          <div class="mid-login">
-            <h3 id="loginTitle">Contanos tu experiencia con {{postUserName}}</h3>
-            <p>Deja tu reseña registrándote o iniciando sesión.</p>
-          </div>
-          <div class="bottom-login">
-            <button type="button" (click)="authenticate()" class="btn-register" aria-label="Registrarse en Mano Amiga">Registrate en Mano Amiga</button>
-            <button type="button" (click)="authenticate()" class="btn-login" aria-label="Iniciar sesión en Mano Amiga">Iniciar sesión</button>
-          </div>
+        <div class="stars" [attr.aria-label]="'Puntuación: ' + r.score + ' estrellas'">
+          <ng-container *ngFor="let star of [1,2,3,4,5]">
+            <svg xmlns="http://www.w3.org/2000/svg" [attr.fill]="star <= r.score ? '#ffc107' : '#e0e0e0'"
+              viewBox="0 0 24 24" stroke="#ffc107" width="20" height="20" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+          </ng-container>
+        </div>
+      </header>
+
+      <section class="bottom">
+        <p class="text">{{r.textReview}}</p>
+      </section>
+    </div>
+  </article>
+  }
+
+  @if(isAdding){
+  <div class="overlay" (click)="closeIfOutside($event)">
+    <form [formGroup]="form" class="form-container" (click)="$event.stopPropagation()">
+      <header class="header-review">
+        <button type="button" (click)="toggleReview()" class="btn-close" aria-label="Cerrar formulario de reseña">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </header>
+
+      <div class="top-review">
+        @if(job){
+        <img class="icon-review" [src]="'assets/images/icons/' + job.toLowerCase() + '.png'"
+          alt="Avatar de {{postUserName}}" />
+        }
+        <h3>¿Cómo fue el servicio de {{postUserName}}?</h3>
+
+        <div class="star-rating" role="radiogroup" aria-label="Calificación en estrellas">
+          <ng-container *ngFor="let star of stars; index as i">
+            <svg (click)="rate(i + 1)" [attr.aria-checked]="i < rating" role="radio" tabindex="0"
+              [ngClass]="{ filled: i < rating }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30"
+              height="30" class="star" (keydown.enter)="rate(i + 1)" (keydown.space)="rate(i + 1)">
+              <path d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+          </ng-container>
         </div>
       </div>
-    }
-  
+
+      <div class="mid-review">
+        <label for="review" class="sr-only">Mínimo 20 caracteres</label>
+        <textarea id="review" minlength="20" class="textarea-review" formControlName="review" name="review"
+          placeholder="Contanos cómo fue tu experiencia con este profesional." aria-required="true"></textarea>
+      </div>
+
+      <div class="bottom-review">
+        <button type="submit" (click)="submitReview()" class="btn-share" [disabled]="form.invalid"
+          aria-label="Publicar reseña">
+          Publicar
+        </button>
+      </div>
+    </form>
   </div>
-  
+  }
+
+  @if(needLogin){
+  <div class="overlay" (click)="closeIfOutside($event)">
+    <div class="login-container" (click)="$event.stopPropagation()" role="dialog" aria-modal="true"
+      aria-labelledby="loginTitle">
+      <header class="header-login">
+        <button type="button" (click)="toggleReview()" class="btn-close" aria-label="Cerrar ventana de login">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="top-login">
+        <img class="loginIcon" src="assets/images/icons/logIn.png" alt="Icono de login" />
+      </div>
+      <div class="mid-login">
+        <h3 id="loginTitle">Contanos tu experiencia con {{postUserName}}</h3>
+        <p>Deja tu reseña registrándote o iniciando sesión.</p>
+      </div>
+      <div class="bottom-login">
+        <button type="button" (click)="authenticate()" class="btn-register"
+          aria-label="Registrarse en Mano Amiga">Registrate en Mano Amiga</button>
+        <button type="button" (click)="authenticate()" class="btn-login"
+          aria-label="Iniciar sesión en Mano Amiga">Iniciar sesión</button>
+      </div>
+    </div>
+  </div>
+  }
+
+</div>

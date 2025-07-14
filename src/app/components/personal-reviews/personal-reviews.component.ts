@@ -16,6 +16,7 @@ export class PersonalReviewsComponent implements OnInit {
   @Input() postId?: string;
   @Input() postUserName?: string | null;
   @Input() posterId?: string | null;
+  @Input() job?: string | null;
   isAdding = false;
   needLogin = false;
   form: FormGroup;

@@ -356,13 +356,14 @@
         box-sizing: border-box;
         border-radius: 0;
         overflow-y: auto;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .textarea-review {
         width: 90%;
         height: 300px;
         font-size: 16px;
+        margin-top: 2rem;
     }
 
     .btn-share {
@@ -373,6 +374,7 @@
     .header-review {
         justify-content: flex-end;
         width: 100%;
+        margin-bottom: auto;
     }
 
     .top-review {
@@ -383,22 +385,17 @@
         gap: 1rem;
     }
 
-    .icon-review {
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
     .star-rating {
         justify-content: flex-start;
     }
 
     .mid-review {
+        margin-top: 0rem;
         width: 100%;
     }
 
     .bottom-review {
+        margin: 0;
         width: 100%;
     }
 
