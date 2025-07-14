@@ -16,9 +16,18 @@
 
 
   <!-- Mobile: título fijo sin animación -->
+  @if(!isDesktop){
   <h1 *ngIf="!isDesktop" class="mobile-title">
     Encontrá profesionales cerca tuyo.
   </h1>
+  <h2 class="mobile-subtitle">
+    <strong>Plomeros</strong>, <strong>electricistas</strong>, <strong>jardineros</strong> y más en <strong>Mar del
+      Plata</strong> — todo en un solo lugar.
+  </h2>
+
+
+  }
+
 
   <button (click)="register()" class="btn-post" aria-label="Publicar tu servicio ahora">
     ¡Publicá tu servicio ahora!
@@ -27,7 +36,7 @@
   <!-- Sección de categorías -->
   <section class="container-icons" aria-label="Categorías de servicios profesionales">
     <a [routerLink]="['/categorias', location, 'plomero']" class="card" aria-label="Categoría Plomeros">
-      <img src="assets/images/icons/plomero.png" alt="Icono Plomero" class="icon" />
+      <img loading="lazy" src="assets/images/icons/plomero.png" alt="Icono Plomero" class="icon" />
       <span>Plomeros</span>
     </a>
     <a [routerLink]="['/categorias', location, 'electricista']" class="card" aria-label="Categoría Electricistas">

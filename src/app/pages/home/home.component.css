@@ -9,7 +9,7 @@ a {
     align-items: center;
     padding: 0 1rem;
     border: 1px solid lightgray;
-    border-radius: 100px;
+    border-radius: 10px;
 }
 
 .container {
@@ -64,7 +64,6 @@ a {
     transition: 0.2s;
     cursor: pointer;
     background-color: #f0f0f0;
-    border-bottom: 1px solid var(--color-principal);
     border-radius: 100px;
 }
 
@@ -221,7 +220,16 @@ h1 {
         flex-direction: column;
         font-size: 2.6rem;
         text-align: left;
-        margin: 2rem;
+        margin: 2rem 2rem .5rem 2rem;
+    }
+
+    .mobile-subtitle {
+        margin: auto;
+        margin-bottom: 2rem;
+        width: 85%;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333333;
     }
 
     .container-icons {
