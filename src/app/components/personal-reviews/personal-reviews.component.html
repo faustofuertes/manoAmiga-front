@@ -7,7 +7,7 @@
   @for (r of reviews; track $index) {
   <article class="review">
     <figure class="left">
-      <img class="icon-reviewer" src="assets/images/icons/userMan.png" alt="Avatar de {{r.userName}}" />
+      <img class="icon-reviewer" src="assets/images/icons/userMan.webp" alt="Avatar de {{r.userName}}" />
     </figure>
 
     <div class="right">
@@ -45,7 +45,7 @@
 
       <div class="top-review">
         @if(job){
-        <img class="icon-review" [src]="'assets/images/icons/' + job.toLowerCase() + '.png'"
+        <img class="icon-review" [src]="'assets/images/icons/' + job.toLowerCase() + '.webp'"
           alt="Avatar de {{postUserName}}" />
         }
         <h3>¿Cómo fue el servicio de {{postUserName}}?</h3>
@@ -87,7 +87,7 @@
         </button>
       </header>
       <div class="top-login">
-        <img class="loginIcon" src="assets/images/icons/logIn.png" alt="Icono de login" />
+        <img class="loginIcon" src="assets/images/icons/logIn.webp" alt="Icono de login" />
       </div>
       <div class="mid-login">
         <h3 id="loginTitle">Contanos tu experiencia con {{postUserName}}</h3>

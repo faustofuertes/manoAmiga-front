@@ -11,27 +11,27 @@ export class GeneralReviewsComponent implements OnInit, OnDestroy {
   testimonios = [
     {
       nombre: 'Martín Galeano',
-      icono: 'assets/images/icons/userMan.png',
+      icono: 'assets/images/icons/userMan.webp',
       texto: '"Busqué un plomero por la app, elegí uno que tenía buenas opiniones y lo contacté directo. Me respondió al toque. En menos de dos horas ya tenía todo resuelto."'
     },
     {
       nombre: 'Andrea Molina',
-      icono: 'assets/images/icons/userWoman.png',
+      icono: 'assets/images/icons/userWoman.webp',
       texto: '"Me encantó la idea de Mano Amiga. No es como otras apps que te cobran o se meten en el medio. Acá los trabajadores se publican y vos los llamás directo. Conseguí una chica para limpieza y fue lo más."'
     },
     {
       nombre: 'Lucas Fernández',
-      icono: 'assets/images/icons/userMan.png',
+      icono: 'assets/images/icons/userMan.webp',
       texto: '"Una vuelta necesitaba un electricista urgente, entré a Mano Amiga y encontré varios cerca de casa. Elegí uno, le mandé mensaje y vino esa misma tarde. Muy piola."'
     },
     {
       nombre: 'Pablo Benítez',
-      icono: 'assets/images/icons/userMan.png',
+      icono: 'assets/images/icons/userMan.webp',
       texto: '"Lo bueno es que no necesitás registrarte ni nada raro. Entrás, buscás el rubro que querés y listo. Llamás o escribís al que te guste. Así encontré un técnico que me salvó con el lavarropas."'
     },
     {
       nombre: 'Soledad Rivas',
-      icono: 'assets/images/icons/userWoman.png',
+      icono: 'assets/images/icons/userWoman.webp',
       texto: '"Busqué un jardinero para arreglar el patio. Me gustó que cada trabajador tiene su aviso y se nota que lo arman ellos mismos. Hablé con uno por WhatsApp y coordinamos sin drama."'
     }
   ];

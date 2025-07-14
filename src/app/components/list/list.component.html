@@ -3,7 +3,7 @@
     @for (post of list; track $index) {
   
       <article [routerLink]="['/perfil', post._id]" class="card" tabindex="0" role="link">
-        <img class="icon" [src]="'assets/images/icons/' + post.job.toLowerCase() + '.png'" alt="{{post.job}} icono" />
+        <img class="icon" [src]="'assets/images/icons/' + post.job.toLowerCase() + '.webp'" alt="{{post.job}} icono" />
         <div class="text">
           <h3 class="name">{{ post.userName }}</h3>
           <span class="job">{{ post.job }}</span>
