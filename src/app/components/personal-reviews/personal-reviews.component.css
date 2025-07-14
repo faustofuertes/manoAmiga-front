@@ -284,6 +284,26 @@
     /* amarillo cuando está seleccionada */
 }
 
+.star {
+    outline: none;
+    /* Para navegadores de escritorio */
+    box-shadow: none;
+    /* Para evitar sombreado azul en algunos */
+    -webkit-tap-highlight-color: transparent;
+    /* Para Safari/Chrome mobile */
+    -webkit-focus-ring-color: transparent;
+    /* Extra para algunos casos en iOS */
+}
+
+.star-rating {
+    -webkit-tap-highlight-color: transparent;
+    /* Saca el flash azul en iOS/Android */
+    outline: none;
+    /* Saca el borde azul en algunos navegadores */
+    -webkit-focus-ring-color: transparent;
+    /* Extra para Safari */
+}
+
 .top-review label {
     margin-bottom: 10rem;
 }

@@ -56,20 +56,7 @@
     color: var(--color-principal);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .card {
-        width: 50%;
-    }
-}
-
 @media (max-width: 768px) {
-    .card {
-        width:50%;
-    }
-}
-
-@media (max-width: 480px) {
     .card {
         width: 180px;
         margin: 5px;

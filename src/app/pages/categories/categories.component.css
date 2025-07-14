@@ -51,11 +51,115 @@ label {
     transform: scale(.9);
 }
 
-.icon.active{
+.icon.active {
     filter: grayscale(0%);
     transform: scale(1.3);
     margin: 0 .5rem;
 }
+
+.cards-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Skeleton base */
+.skeleton {
+    pointer-events: none;
+    user-select: none;
+    background-color: #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Skeleton shimmer animation */
+.skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150px;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 100%;
+    }
+}
+
+/* Skeleton specific parts */
+.skeleton-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 auto;
+}
+
+.skeleton-block {
+    height: 16px;
+    margin: 10px auto;
+    border-radius: 8px;
+    background-color: #ddd;
+}
+
+.skeleton-name {
+    width: 60%;
+    height: 24px;
+}
+
+.skeleton-job {
+    width: 40%;
+    height: 16px;
+}
+
+.skeleton-location {
+    width: 50%;
+    height: 16px;
+    margin-top: 20px;
+}
+
+/* Card estilos base, mantenelos igual a los tuyos */
+.card {
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    margin-top: 3rem;
+    cursor: pointer;
+    text-align: center;
+    background-color: #f9f6f1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.skeleton-block {
+    position: relative;
+    background-color: #ddd;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.skeleton-block::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150px;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
 
 @media (max-width: 768px) {
     .container {
@@ -72,7 +176,6 @@ label {
         font-size: 20px;
     }
 
-
     img {
         height: 40px;
         transition: .3s;
@@ -80,7 +183,21 @@ label {
         filter: grayscale(100%);
     }
 
-    .right{
+    .right {
         display: none;
+    }
+
+    .type {
+        font-size: 18px;
+    }
+
+    .card {
+        width: 180px;
+        margin: 5px;
+        border-radius: 10px;
+    }
+
+    .cards-wrapper {
+        margin-top: 3rem;
     }
 }
