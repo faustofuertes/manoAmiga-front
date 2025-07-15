@@ -10,14 +10,20 @@
 
     <div class="center">
       <h1 class="type">{{ job | titlecase }}s en Mar del Plata</h1>
-      <label aria-live="polite">{{list?.length}} profesionales disponibles</label>
+      @if(!list){
+      <div class="skeleton-lenght skeleton-block"></div>
+      }
+      @if(list){
+      <label aria-live="polite">{{list.length}} profesionales disponibles</label>
+      }
     </div>
 
     <div class="right" role="menubar" aria-label="Selector de oficio">
       <img (click)="switchJob('plomero')" [ngClass]="{'active': job === 'plomero'}"
         src="assets/images/icons/plomero.webp" alt="Icono Plomero" class="icon" role="menuitem" tabindex="0" />
       <img (click)="switchJob('electricista')" [ngClass]="{'active': job === 'electricista'}"
-        src="assets/images/icons/electricista.webp" alt="Icono Electricista" class="icon" role="menuitem" tabindex="0" />
+        src="assets/images/icons/electricista.webp" alt="Icono Electricista" class="icon" role="menuitem"
+        tabindex="0" />
       <img (click)="switchJob('jardinero')" [ngClass]="{'active': job === 'jardinero'}"
         src="assets/images/icons/jardinero.webp" alt="Icono Jardinero" class="icon" role="menuitem" tabindex="0" />
       <img (click)="switchJob('pintor')" [ngClass]="{'active': job === 'pintor'}" src="assets/images/icons/pintor.webp"
@@ -41,15 +47,14 @@
       <div class="text">
         <div class="skeleton-name skeleton-block"></div>
         <div class="skeleton-job skeleton-block"></div>
-        <div class="skeleton-location skeleton-block"></div>
       </div>
     </article>
   </div>
   }
-  @if (list) {
+
   <section class="container-cards" aria-live="polite" aria-relevant="additions removals">
     <app-list [list]="list"></app-list>
   </section>
-  }
+
 
 </main>

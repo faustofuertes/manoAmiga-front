@@ -63,6 +63,7 @@ label {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 3rem;
 }
 
 /* Skeleton base */
@@ -109,19 +110,18 @@ label {
 }
 
 .skeleton-name {
-    width: 60%;
+    width: 80px;
     height: 24px;
 }
 
 .skeleton-job {
-    width: 40%;
+    width: 40px;
     height: 16px;
 }
 
-.skeleton-location {
-    width: 50%;
-    height: 16px;
-    margin-top: 20px;
+.skeleton-lenght {
+    width: 270px;
+    height: 20px;
 }
 
 /* Card estilos base, mantenelos igual a los tuyos */
@@ -133,8 +133,7 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    margin-top: 3rem;
+    margin: 10px 10px 10px 10px;
     cursor: pointer;
     text-align: center;
     background-color: #f9f6f1;
@@ -198,6 +197,12 @@ label {
     }
 
     .cards-wrapper {
-        margin-top: 3rem;
+        margin-top: 2rem;
+    }
+
+    .skeleton-lenght {
+        margin-right: auto;
+        width: 200px;
+        height: 16px;
     }
 }

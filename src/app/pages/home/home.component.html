@@ -1,19 +1,11 @@
 <main class="container">
 
-  <!-- Desktop: título con palabra dinámica animada -->
-  <h1 *ngIf="isDesktop" class="desktop-title">
-    Encontrá&nbsp;
-    <span class="job-container">
-      <span [class.animate]="animate">{{ currentJob }}</span>
-    </span>
-    &nbsp;cerca tuyo fácil y rápido.
+  @if(isDesktop){
+  <h1 class="desktop-title">
+    Soluciones para el hogar con expertos locales en Mar del Plata
   </h1>
-  <noscript>
-    <h1>
-      Encontrá plomeros, electricistas, pintores y más cerca tuyo — fácil y rápido.
-    </h1>
-  </noscript>
-
+  <h2>Conectá con electricistas, plomeros, jardineros y otros oficios</h2>
+}
 
   <!-- Mobile: título fijo sin animación -->
   @if(!isDesktop){
