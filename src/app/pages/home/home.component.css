@@ -100,10 +100,10 @@ a {
     animation: slideOutIn 1s ease;
 }
 
-h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.subtitle {
+    margin-top: .5rem;
+    font-size: 18px;
+    color: #333333;
 }
 
 @keyframes slideOutIn {
@@ -173,19 +173,6 @@ h1 {
     }
 }
 
-.desktop-title {
-    font-size: 36px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 1.2;
-}
-
-h2{
-    margin-top: .5rem;
-    font-size: 18px;
-    color: #333333;
-}
-
 .card label {
     font-weight: 500;
     padding: .2rem 1rem;
@@ -220,7 +207,7 @@ h2{
         margin: auto;
     }
 
-    h1 {
+    .title {
         width: 85%;
         display: flex;
         flex-direction: column;
@@ -229,7 +216,7 @@ h2{
         margin: 2rem 2rem .5rem 2rem;
     }
 
-    .mobile-subtitle {
+    .subtitle {
         margin: auto;
         margin-bottom: 2rem;
         width: 85%;

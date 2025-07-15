@@ -1,24 +1,13 @@
 <main class="container">
 
-  @if(isDesktop){
-  <h1 class="desktop-title">
-    Soluciones para el hogar con expertos locales en Mar del Plata
-  </h1>
-  <h2>Conectá con electricistas, plomeros, jardineros y otros oficios</h2>
-}
 
-  <!-- Mobile: título fijo sin animación -->
-  @if(!isDesktop){
-  <h1 *ngIf="!isDesktop" class="mobile-title">
+  <h1 class="title">
     Encontrá profesionales cerca tuyo.
   </h1>
-  <h2 class="mobile-subtitle">
+  <h2 class="subtitle">
     <strong>Plomeros</strong>, <strong>electricistas</strong>, <strong>jardineros</strong> y más en <strong>Mar del
       Plata</strong> — todo en un solo lugar.
   </h2>
-
-
-  }
 
 
   <button (click)="register()" class="btn-post" aria-label="Publicar tu servicio ahora">
