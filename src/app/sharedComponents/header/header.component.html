@@ -11,29 +11,30 @@
       <ul (click)="toggleMenu()">
         <!-- Botones solo visibles en mobile -->
         @if(!isAuthenticated){
-          <li class="mobile-only">
-            <button (click)="logIn()" class="btn-publicar">Iniciar sesión</button>
-          </li>
+        <li class="mobile-only">
+          <button (click)="logIn()" class="btn-publicar">Iniciar sesión</button>
+        </li>
         }
         @if(isAuthenticated){
-          <li class="mobile-only">
-            <button (click)="logOut()" class="btn-iniciarSesion">Cerrar sesión</button>
-          </li>
-          <li class="mobile-only">
-            <a [routerLink]="['/mi-perfil']" class="btn-publicar">Mi perfil</a>
-          </li>
+        <li class="mobile-only">
+          <button [routerLink]="['/mi-perfil']" class="btn-publicar">Mi perfil</button>
+        </li>
+        <li class="mobile-only">
+          <button (click)="logOut()" class="btn-iniciarSesion">Cerrar sesión</button>
+        </li>
         }
-               
+
       </ul>
     </nav>
 
     <div class="right">
       @if(!isAuthenticated){
-        <button (click)="logIn()" class="btn-publicar desktop-only" aria-label="Iniciar sesión">Ingresar</button>
+      <button (click)="logIn()" class="btn-publicar desktop-only" aria-label="Iniciar sesión">Ingresar</button>
       }
       @if(isAuthenticated){
-        <button (click)="logOut()" class="btn-iniciarSesion desktop-only" aria-label="Cerrar sesión">Cerrar sesión</button>
-        <a [routerLink]="['/mi-perfil']" class="btn-publicar desktop-only" aria-label="Ir a mi perfil">Mi perfil</a>
+      <button (click)="logOut()" class="btn-iniciarSesion desktop-only" aria-label="Cerrar sesión">Cerrar
+        sesión</button>
+      <a [routerLink]="['/mi-perfil']" class="btn-publicar desktop-only" aria-label="Ir a mi perfil">Mi perfil</a>
       }
       <button class="burger" (click)="toggleMenu()" aria-controls="menu">
         <i class="fas" [ngClass]="menuAbierto ? 'fa-times' : 'fa-bars'" aria-hidden="true"></i>

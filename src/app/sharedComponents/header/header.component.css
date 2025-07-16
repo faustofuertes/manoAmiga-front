@@ -190,4 +190,13 @@ a {
   .container {
     width: 100%;
   }
+
+  .btn-publicar {
+    width: 80%;
+  }
+
+  .btn-iniciarSesion {
+    width: 80%;
+  }
+
 }
