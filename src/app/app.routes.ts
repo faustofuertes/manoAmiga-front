@@ -7,6 +7,8 @@ import { PostFormComponent } from './components/post-form/post-form.component';
 import { AuthGuard } from '@auth0/auth0-angular';
 import { SuccessPostComponent } from './components/success-post/success-post.component';
 import { FailurePostComponent } from './components/failure-post/failure-post.component';
+import { TermsComponent } from './components/terms/terms.component';
+import { PirvacyPoliticsComponent } from './components/pirvacy-politics/pirvacy-politics.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -17,7 +19,7 @@ export const routes: Routes = [
     { path: 'publicacion-exitosa', component: SuccessPostComponent },
     { path: 'publicacion-fallida', component: FailurePostComponent },
 
-    { path: 'politica-de-privacidad', component: FailurePostComponent },
-    { path: 'eliminar-cuenta', component: FailurePostComponent },
+    { path: 'terminos-y-condiciones', component: TermsComponent },
+    { path: 'politicas-de-privacidad', component: PirvacyPoliticsComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

@@ -13,13 +13,14 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  text-align: center;
+  text-align: center; /* centrado en mobile */
 }
 
 .footer-info {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  align-items: center; /* para centrar texto en mobile */
 }
 
 .footer-brand {
@@ -38,6 +39,7 @@
 .footer-links {
   display: flex;
   gap: 1rem;
+  justify-content: center; /* centrar íconos en mobile */
 }
 
 .footer-icon {
@@ -53,7 +55,31 @@
   filter: none;
 }
 
-@media (min-width: 600px) {
+.footer-legal {
+  display: flex;
+  justify-content: center; /* centrado en mobile */
+  align-items: center;
+  gap: 0.5rem; /* espacio entre links y barra */
+  flex-wrap: wrap; /* que salte a otra línea si hace falta */
+  text-align: center;
+  width: 100%; /* que tome todo el ancho para centrar */
+}
+
+.footer-legal-link {
+  color: #6c757d;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-legal-link:hover,
+.footer-legal-link:focus {
+  color: #d32f2f;
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
   .footer-container {
     flex-direction: row;
     justify-content: space-between;
@@ -62,6 +88,15 @@
   }
 
   .footer-info {
-    align-items: flex-start;
+    align-items: flex-start; /* alineado a la izquierda en desktop */
+  }
+
+  .footer-links {
+    justify-content: flex-start; /* íconos a la izquierda */
+  }
+
+  .footer-legal {
+    justify-content: center; /* centrado en desktop */
+    width: auto;
   }
 }
