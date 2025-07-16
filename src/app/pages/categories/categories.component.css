@@ -63,7 +63,7 @@ label {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 3rem;
+    margin-top: 2.3rem;
 }
 
 /* Skeleton base */
@@ -160,6 +160,59 @@ label {
 }
 
 
+.no-results {
+    background-color: #fff3f3;
+    border: 1px solid #f4cccc;
+    padding: 2rem;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    border-radius: 10px;
+}
+
+.no-results h2 {
+    font-size: 1.5rem;
+    color: var(--color-principal);
+    margin-bottom: 1rem;
+}
+
+.no-results p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.action-link {
+    color: var(--color-principal);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.action-link:hover {
+    text-decoration: none;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #b71c1c;
+}
+
+
+
 @media (max-width: 768px) {
     .container {
         width: 100%;
@@ -191,18 +244,22 @@ label {
     }
 
     .card {
-        width: 180px;
+        width: 47%;
         margin: 5px;
         border-radius: 10px;
     }
 
     .cards-wrapper {
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 
     .skeleton-lenght {
         margin-right: auto;
         width: 200px;
         height: 16px;
+    }
+
+    .no-results {
+        border-radius: 0;
     }
 }

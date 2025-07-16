@@ -49,12 +49,28 @@
         <div class="skeleton-job skeleton-block"></div>
       </div>
     </article>
+
+    <app-list [list]="list"></app-list>
   </div>
   }
 
+  @if(list){
   <section class="container-cards" aria-live="polite" aria-relevant="additions removals">
     <app-list [list]="list"></app-list>
   </section>
+  }
+
+  @if (list?.length === 0) {
+  <div class="no-results">
+    <h2>No encontramos profesionales para este oficio… todavía.</h2>
+    <p>Mano Amiga está creciendo y pronto vas a encontrar personas disponibles en tu zona.</p>
+    <p>👉 ¿Ofrecés este servicio? <strong><a (click)="register()" class="action-link">Registrate y empezá a conseguir
+          clientes.</a></strong></p>
+    <p>👉 ¿Conocés a alguien que lo haga? <strong>Compartile Mano Amiga y ayudalo a hacerse conocer.</strong></p>
+
+    <a (click)="register()" class="cta-button">Quiero registrarme como profesional</a>
+  </div>
+  }
 
 
 </main>
