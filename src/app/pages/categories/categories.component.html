@@ -9,14 +9,21 @@
     </div>
 
     <div class="center">
-      <h1 class="type">{{ job | titlecase }}s en Mar del Plata</h1>
-      @if(!list){
+      <h1 class="type">
+        {{ job | titlecase }}{{ list?.length === 1 ? '' : 's' }} en Mar del Plata
+      </h1>
+
+      @if (!list) {
       <div class="skeleton-lenght skeleton-block"></div>
       }
-      @if(list){
-      <label aria-live="polite">{{list.length}} profesionales disponibles</label>
+
+      @if (list) {
+      <label aria-live="polite">
+        {{ list.length }} profesional{{ list.length === 1 ? '' : 'es' }} disponible{{ list.length === 1 ? '' : 's' }}
+      </label>
       }
     </div>
+
 
     <div class="right" role="menubar" aria-label="Selector de oficio">
       <img (click)="switchJob('plomero')" [ngClass]="{'active': job === 'plomero'}"

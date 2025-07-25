@@ -36,7 +36,7 @@
 
 .right {
   width: 70%;
-  text-align: left;
+  text-align: justify;
   color: gray;
   display: flex;
   flex-direction: column;
@@ -46,15 +46,13 @@
 }
 
 .status {
-  text-align: left;
+  text-align: center;
 }
 
 .btn-container {
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-top: 2rem;
 }
 
 .btn-container button {
@@ -66,13 +64,15 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  width: 180px;
 }
 
 @media screen and (max-width: 768px) {
 
-  .container{
+  .container {
     width: 300px;
   }
+
   .card {
     text-align: center;
     padding: 1.5rem;
@@ -95,5 +95,13 @@
 
   .status {
     font-size: 1.1rem;
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
+
+  .btn-container button {
+    width: 300px;
   }
 }
