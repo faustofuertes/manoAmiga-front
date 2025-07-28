@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
 
   abrirWhatsApp() {
     const numero = `549${this.publicacion?.phone}`;
-    const mensaje = `Hola ${this.publicacion?.userName} vi tu publicacion de ${this.publicacion?.job} en Mano Amiga y me gustaría hacerte una consulta...`;
+    const mensaje = `Hola ${this.publicacion?.userName} vi tu publicacion de ${this.publicacion?.job} en manoamiga.com.ar y me gustaría hacerte una consulta...`;
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, '_blank');
