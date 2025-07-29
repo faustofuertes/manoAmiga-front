@@ -91,7 +91,6 @@ select {
 
 .btn-delete {
   background-color: var(--color-principal);
-  background-color: var(--color-principal);
   color: white;
 }
 
@@ -173,24 +172,27 @@ select {
   animation-name: expandCircleError;
 }
 
-/* Animación para expandir a fondo blanco grande */
 @keyframes expandCircleSuccess {
   0% {
     transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
 
   100% {
-    transform: translate(-50%, -50%) scale(10);
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 1;
   }
 }
 
 @keyframes expandCircleError {
   0% {
     transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
 
   100% {
-    transform: translate(-50%, -50%) scale(10);
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 1;
   }
 }
 
@@ -296,30 +298,6 @@ select {
 }
 
 /* Definí los keyframes fuera del media query */
-
-@keyframes expandCircleSuccess {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(-50%, -50%) scale(20);
-    opacity: 1;
-  }
-}
-
-@keyframes expandCircleError {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(-50%, -50%) scale(20);
-    opacity: 1;
-  }
-}
 
 
 /* Celular */
