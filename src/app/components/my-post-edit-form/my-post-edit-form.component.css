@@ -91,6 +91,7 @@ select {
 
 .btn-delete {
   background-color: var(--color-principal);
+  background-color: var(--color-principal);
   color: white;
 }
 
