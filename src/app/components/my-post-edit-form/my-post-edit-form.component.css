@@ -1,4 +1,4 @@
-.container{
+.container {
   width: 750px;
 }
 
@@ -84,7 +84,7 @@ select {
 }
 
 .btn-update {
-  background-color: green;
+  background-color: #4caf50;
   color: white;
   transition: 0.2s;
 }
@@ -94,12 +94,112 @@ select {
   color: white;
 }
 
-/* Tablet */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1000;
+
+  background: rgba(0, 0, 0, 0.9);
+  /* negro semitransparente más oscuro */
+
+}
+
+
+.popup-box {
+  position: relative;
+  background: #fff;
+  padding: 30px 50px;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  width: 320px;
+  height: 140px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-check {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  stroke-width: 3;
+  z-index: 10;
+  margin-bottom: 15px;
+}
+
+.popup-message {
+  position: relative;
+  z-index: 10;
+  color: white;
+}
+
+/* El círculo que expande */
+.expanding-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.9;
+  z-index: 5;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: expandCircle;
+  animation-duration: 1.5s;
+}
+
+/* Verde para éxito */
+.expanding-circle.success {
+  background-color: #4caf50;
+  animation-name: expandCircleSuccess;
+}
+
+/* Rojo para eliminar */
+.expanding-circle.error {
+  background-color: #e53935;
+  animation-name: expandCircleError;
+}
+
+/* Animación para expandir a fondo blanco grande */
+@keyframes expandCircleSuccess {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(10);
+  }
+}
+
+@keyframes expandCircleError {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(10);
+  }
+}
+
+
 @media (max-width: 768px) {
 
-  .container{
+  .container {
     width: 100%;
   }
+
   .form-group {
     padding: 0 1rem;
     font-size: 16px;
@@ -119,7 +219,107 @@ select {
     font-size: 0.85rem;
     width: 90%;
   }
+
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .popup-box {
+    position: relative;
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 0;
+    text-align: center;
+    overflow: visible;
+    /* Para que el círculo no se corte */
+    box-shadow: none;
+    width: 100vw;
+    height: 100vh;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .expanding-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 5;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 0.6s;
+  }
+
+  .expanding-circle.success {
+    background-color: #4caf50;
+    animation-name: expandCircleSuccess;
+  }
+
+  .expanding-circle.error {
+    background-color: #e53935;
+    animation-name: expandCircleError;
+  }
+
+  .popup-check {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    stroke-width: 3;
+    z-index: 10;
+    margin-bottom: 15px;
+    color: white;
+  }
+
+  .popup-message {
+    position: relative;
+    z-index: 10;
+    font-size: 1.3rem;
+  }
 }
+
+/* Definí los keyframes fuera del media query */
+
+@keyframes expandCircleSuccess {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 1;
+  }
+}
+
+@keyframes expandCircleError {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 1;
+  }
+}
+
 
 /* Celular */
 @media (max-width: 480px) {

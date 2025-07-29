@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Publicacion } from '../../interfaces/publicacion';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -15,6 +15,9 @@ export class MyPostEditFormComponent implements OnChanges {
 
   locations: string[] = ['Mar del Plata'];
   form: FormGroup;
+
+  showSuccess = false;
+  showSuccessDelete = false;
 
   constructor(
     private fb: FormBuilder,
@@ -58,12 +61,34 @@ export class MyPostEditFormComponent implements OnChanges {
         experience: this.form.value.experience
       }
 
-      this._myPubliService.putPublicacion(this.post._id, publiActualizada).subscribe();
+      this._myPubliService.putPublicacion(this.post._id, publiActualizada).subscribe(() =>
+        this.mostrarPopupExito()
+      );
     }
 
   }
 
   eliminarProducto() {
-    this._myPubliService.deletePublicacion(this.post?._id).subscribe();
+    this._myPubliService.deletePublicacion(this.post?._id).subscribe(() => {
+      this.mostrarPopupEliminar();
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 3100);
+    });
+  }
+
+  mostrarPopupExito() {
+    this.showSuccess = true;
+    setTimeout(() => {
+      this.showSuccess = false;
+    }, 3000); // 3 segundos
+  }
+
+  mostrarPopupEliminar() {
+    this.showSuccessDelete = true;
+    setTimeout(() => {
+      this.showSuccessDelete = false;
+    }, 3000);
   }
 }
