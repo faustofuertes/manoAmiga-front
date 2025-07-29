@@ -64,7 +64,7 @@
                         *ngIf="descriptionControl.invalid && (descriptionControl.dirty || descriptionControl.touched)">
                         {{ descriptionErrorMessage }}
                     </p>
-                    <textarea minlength="20"
+                    <textarea minlength="50" maxlength="500"
                         placeholder="Ej: Plomero con más de 10 años de experiencia en reparaciones, instalaciones y mantenimiento de cañerías, sanitarios y sistemas de agua potable. Puntual, responsable y con atención a los detalles."
                         id="description" formControlName="description"></textarea>
                 </div>
@@ -96,8 +96,13 @@
             <form [formGroup]="step3Form">
                 <div class="form-group">
                     <label for="pricing"><span class="color">Tarifa</span> de visita</label>
-                    <input placeholder="15000" id="pricing" formControlName="pricing" type="number" inputmode="numeric"
-                        pattern="[0-9]*" />
+                    @if (step3Form.value.pricing > 99999) {
+                    <p class="min">
+                        El valor máximo permitido es 99999
+                    </p>
+                    }
+                    <input max="99999" placeholder="15000" id="pricing" formControlName="pricing" type="number"
+                        inputmode="numeric" pattern="[0-9]*" />
                 </div>
             </form>
             <div class="btn-container">
@@ -126,13 +131,23 @@
             <form [formGroup]="step4Form">
                 <div class="form-group">
                     <label for="schedule"><span class="color">Horarios</span> de trabajo</label>
-                    <input id="schedule" formControlName="schedule" type="text"
+                    @if (step4Form.value.schedule.length >= 50) {
+                    <p class="min">
+                        La longitud maxima es de 50 caracteres
+                    </p>
+                    }
+                    <input maxlength="50" id="schedule" formControlName="schedule" type="text"
                         placeholder="Ej: Lunes a Viernes 8:00 a 16:00" />
                 </div>
 
                 <div class="form-group">
                     <label for="experience">Años de <span class="color">experiencia</span></label>
-                    <input id="experience" formControlName="experience" type="number" placeholder="Ej: 10"
+                    @if (step4Form.value.experience > 99) {
+                    <p class="min">
+                        La experiencia maxima es 99 años
+                    </p>
+                    }
+                    <input max="99" id="experience" formControlName="experience" type="number" placeholder="Ej: 10"
                         inputmode="numeric" pattern="[0-9]*" />
                 </div>
             </form>
@@ -164,7 +179,7 @@
             <form [formGroup]="step5Form">
                 <div class="form-group">
                     <label for="phone"><span class="color">Número</span> de contacto</label>
-                    <input id="phone" formControlName="phone" type="number" placeholder="Ej: 2231234567"
+                    <input maxlength="20" id="phone" formControlName="phone" type="number" placeholder="Ej: 2231234567"
                         inputmode="numeric" pattern="[0-9]*" />
                 </div>
             </form>

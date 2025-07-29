@@ -353,6 +353,7 @@ p {
 
     .min {
         font-size: 14px !important;
+        margin: auto;
     }
 
     select {

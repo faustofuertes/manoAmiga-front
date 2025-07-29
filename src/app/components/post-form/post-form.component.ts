@@ -88,20 +88,20 @@ export class PostFormComponent {
   get descriptionControl(): AbstractControl {
     return this.step2Form.get('description')!;
   }
-  
+
   get descriptionErrorMessage(): string {
     const value = this.descriptionControl.value || '';
     const length = value.length;
-  
+
     if (length === 0) {
-      return 'Mínimo 20 caracteres';
+      return 'Mínimo 50 caracteres';
     }
-  
-    if (length > 0 && length < 20) {
-      return `Faltan ${20 - length} caracteres`;
+
+    if (length > 0 && length < 50) {
+      return `Faltan ${50 - length} caracteres`;
     }
-  
+
     return '';
   }
-  
+
 }
