@@ -126,6 +126,7 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .popup-check {
@@ -196,7 +197,6 @@ select {
   }
 }
 
-
 @media (max-width: 768px) {
 
   .container {
@@ -241,7 +241,7 @@ select {
     padding: 40px 20px;
     border-radius: 0;
     text-align: center;
-    overflow: visible;
+    overflow: visible !important;
     /* Para que el círculo no se corte */
     box-shadow: none;
     width: 100vw;
