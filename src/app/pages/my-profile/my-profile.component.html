@@ -23,6 +23,7 @@
 <div class="container">
     @if(selectedOption === 1){
     <app-profile-card [usuario]="usuario"></app-profile-card>
+    <button class="btn-delete">Eliminar cuenta</button>
     } @else if (selectedOption === 2) {
     <app-my-post-panel-control [usuario]="usuario"></app-my-post-panel-control>
     }

@@ -49,41 +49,16 @@
 /* Pantallas medianas (tablets) */
 @media (max-width: 768px) {
     .container {
-        width: 90%;
+        padding: 1rem;
+        width: 80vw;
         height: auto;
-        flex-direction: column;
-        padding: 2rem 1rem;
     }
 
     .icon {
         width: 80px;
     }
 
-    .edit-icon {
-        padding: 8px 12px;
-        font-size: 14px;
-    }
-}
-
-/* Pantallas pequeñas (celulares) */
-@media (max-width: 480px) {
-    .container {
-        width: 90%;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .icon {
-        width: 70px;
-    }
-
-    .edit-icon {
-        font-size: 13px;
-        padding: 6px 10px;
-    }
-
-    .name,
-    .email {
-        font-size: 14px;
+    .right {
+        margin: 0rem;
     }
 }
