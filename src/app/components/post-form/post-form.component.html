@@ -96,11 +96,7 @@
             <form [formGroup]="step3Form">
                 <div class="form-group">
                     <label for="pricing"><span class="color">Tarifa</span> de visita</label>
-                    @if (step3Form.value.pricing > 99999) {
-                    <p class="min">
-                        El valor máximo permitido es 99999
-                    </p>
-                    }
+
                     <input max="99999" placeholder="15000" id="pricing" formControlName="pricing" type="number"
                         inputmode="numeric" pattern="[0-9]*" />
                 </div>

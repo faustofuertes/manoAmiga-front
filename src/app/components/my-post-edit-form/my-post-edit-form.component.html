@@ -13,35 +13,69 @@
 
     <div class="form-group">
       <label class="color" for="phone">Número de contacto</label>
-      <input id="phone" formControlName="phone" type="text" placeholder="2231234567" aria-required="true" />
+      <input maxlength="20" id="phone" formControlName="phone" type="number" inputmode="numeric" pattern="[0-9]*" />
     </div>
 
     <div class="form-group">
       <label class="color" for="schedule">Horarios</label>
-      <input id="schedule" formControlName="schedule" type="text" placeholder="Ej: Lunes a Viernes 8:00 a 16:00" />
+      <input maxlength="50" id="schedule" formControlName="schedule" type="text" />
+      @if (form.value.schedule.length >= 50) {
+      <p class="min">
+        La longitud maxima es de 50 caracteres
+      </p>
+      }
     </div>
 
     <div class="form-group">
       <label class="color" for="pricing">Tarifa de visita</label>
-      <input id="pricing" placeholder="15000" formControlName="pricing" type="number" min="0" aria-required="true" />
+      <input max="99999" id="pricing" formControlName="pricing" type="number" inputmode="numeric" pattern="[0-9]*" />
+      @if (form.value.pricing > 99999) {
+      <p class="min">
+        El valor máximo permitido es 99999
+      </p>
+      }
     </div>
 
     <div class="form-group">
       <label class="color" for="experience">Años de experiencia</label>
-      <input id="experience" formControlName="experience" type="number" min="0" placeholder="Ej: 10" />
+      <input max="99" id="experience" formControlName="experience" type="number" inputmode="numeric" pattern="[0-9]*" />
+      @if (form.value.experience > 99) {
+      <p class="min">
+        La experiencia maxima es 99 años
+      </p>
+      }
     </div>
 
     <div class="form-group">
       <label class="color" for="description">Descripción</label>
-      <textarea id="description" formControlName="description" aria-multiline="true"></textarea>
+      <textarea minlength="50" maxlength="500" id="description" formControlName="description"></textarea>
+      <p class="min" *ngIf="descriptionControl.invalid && (descriptionControl.dirty || descriptionControl.touched)">
+        {{ descriptionErrorMessage }}
+      </p>
     </div>
 
     <div class="btn-container">
-      <button type="button" (click)="eliminarProducto()" class="btn-delete"
-        aria-label="Eliminar publicación">Eliminar</button>
-      <button type="button" (click)="actualizarProducto()" class="btn-update"
-        aria-label="Guardar cambios en publicación">Guardar</button>
+      <button type="button" class="btn-delete" aria-label="Eliminar publicación" [disabled]="loadingDelete"
+        (click)="eliminarProducto()">
+        <ng-container *ngIf="!loadingDelete; else loadingDeleteTpl">Eliminar</ng-container>
+        <ng-template #loadingDeleteTpl>
+          <span class="spinner"></span>
+        </ng-template>
+      </button>
+
+      <button type="button" class="btn-update" aria-label="Guardar cambios en publicación"
+        [disabled]="loadingUpdate || updated || form.invalid" (click)="actualizarProducto()">
+        <ng-container *ngIf="!loadingUpdate && !updated">Guardar</ng-container>
+        <ng-container *ngIf="loadingUpdate"><span class="spinner"></span></ng-container>
+        <ng-container *ngIf="updated">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </ng-container>
+      </button>
     </div>
+
 
   </form>
 
@@ -51,24 +85,3 @@
   <h2>Por favor seleccione una publicación para editarla.</h2>
 </div>
 }
-<!-- Popup éxito -->
-<div *ngIf="showSuccess" class="popup-overlay">
-  <div class="popup-box">
-    <div class="expanding-circle success"></div>
-    <svg class="popup-check" viewBox="0 0 24 24">
-      <path fill="none" stroke="#fff" stroke-width="3" d="M5 13l4 4L19 7" />
-    </svg>
-    <p class="popup-message">Publicación modificada con éxito</p>
-  </div>
-</div>
-
-<!-- Popup eliminar -->
-<div *ngIf="showSuccessDelete" class="popup-overlay">
-  <div class="popup-box">
-    <div class="expanding-circle error"></div>
-    <svg class="popup-check" viewBox="0 0 24 24">
-      <path fill="none" stroke="#fff" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-    <p class="popup-message">Publicación eliminada con éxito</p>
-  </div>
-</div>

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Publicacion } from '../../interfaces/publicacion';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PublicacionesService } from '../../services/publicaciones.service';
 
 @Component({
@@ -16,8 +16,9 @@ export class MyPostEditFormComponent implements OnChanges {
   locations: string[] = ['Mar del Plata'];
   form: FormGroup;
 
-  showSuccess = false;
-  showSuccessDelete = false;
+  loadingDelete = false;
+  loadingUpdate = false;
+  updated = false;
 
   constructor(
     private fb: FormBuilder,
@@ -48,6 +49,7 @@ export class MyPostEditFormComponent implements OnChanges {
 
   actualizarProducto() {
     if (this.post) {
+      this.loadingUpdate = true;
 
       const publiActualizada: Publicacion = {
         userId: this.post.userId,
@@ -59,36 +61,49 @@ export class MyPostEditFormComponent implements OnChanges {
         schedule: this.form.value.schedule,
         pricing: this.form.value.pricing,
         experience: this.form.value.experience
-      }
+      };
 
-      this._myPubliService.putPublicacion(this.post._id, publiActualizada).subscribe(() =>
-        this.mostrarPopupExito()
-      );
+      this._myPubliService.putPublicacion(this.post._id, publiActualizada).subscribe(() => {
+        this.loadingUpdate = false;
+        this.updated = true;
+
+        // Después de 1.2s vuelve al botón normal
+        setTimeout(() => {
+          this.updated = false;
+        }, 1200);
+      });
     }
-
   }
 
-  eliminarProducto() {
-    this._myPubliService.deletePublicacion(this.post?._id).subscribe(() => {
-      this.mostrarPopupEliminar();
 
+  eliminarProducto() {
+    this.loadingDelete = true;
+
+    this._myPubliService.deletePublicacion(this.post?._id).subscribe(() => {
+      // Esperá un poco para mostrar el spinner
       setTimeout(() => {
+        this.loadingDelete = false;
         window.location.reload();
-      }, 3100);
+      }, 1000);
     });
   }
 
-  mostrarPopupExito() {
-    this.showSuccess = true;
-    setTimeout(() => {
-      this.showSuccess = false;
-    }, 3000); // 3 segundos
+  get descriptionControl(): AbstractControl {
+    return this.form.get('description')!;
   }
 
-  mostrarPopupEliminar() {
-    this.showSuccessDelete = true;
-    setTimeout(() => {
-      this.showSuccessDelete = false;
-    }, 3000);
+  get descriptionErrorMessage(): string {
+    const value = this.descriptionControl.value || '';
+    const length = value.length;
+
+    if (length === 0) {
+      return 'Mínimo 50 caracteres';
+    }
+
+    if (length > 0 && length < 50) {
+      return `Faltan ${50 - length} caracteres`;
+    }
+
+    return '';
   }
 }

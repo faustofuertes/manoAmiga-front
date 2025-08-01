@@ -2,33 +2,31 @@
   <h3>Mis publicaciones.</h3>
 
   <div class="scroll-wrapper">
-    <a class="add-post" [routerLink]="['/crear-publicacion']" role="button" aria-label="Crear publicación">
+    <div class="add-post" [routerLink]="['/crear-publicacion']" aria-label="Crear publicación">
       <span>Crear publicación</span>
       <i class="fas fa-plus-circle" aria-hidden="true"></i>
-    </a>
+    </div>
+
 
     @for (publi of publicaciones; track $index) {
-      <div (click)="emitPostClicked(publi)" class="post" tabindex="0" role="button">
-        <div class="left">
-          <img
-            class="icon"
-            [src]="'assets/images/icons/' + publi.job.toLowerCase() + '.webp'"
-            alt="{{ publi.job }} icono"
-          />
-        </div>
-        <div class="right">
-          <span class="job">{{ publi.job }}</span>
-          @if(publi.isActive === true){
-            <div class="status" aria-live="polite">
-              En línea <span class="status-dot online"></span>
-            </div>
-          } @else {
-            <div class="status" aria-live="polite">
-              Fuera de línea <span class="status-dot offline"></span>
-            </div>
-          }
-        </div>
+    <div (click)="emitPostClicked(publi)" class="post" tabindex="0" role="button">
+      <div class="left">
+        <img class="icon" [src]="'assets/images/icons/' + publi.job.toLowerCase() + '.webp'"
+          alt="{{ publi.job }} icono" />
       </div>
+      <div class="right">
+        <span class="job">{{ publi.job }}</span>
+        @if(publi.isActive === true){
+        <div class="status" aria-live="polite">
+          En línea <span class="status-dot online"></span>
+        </div>
+        } @else {
+        <div class="status" aria-live="polite">
+          Fuera de línea <span class="status-dot offline"></span>
+        </div>
+        }
+      </div>
+    </div>
     }
   </div>
 </div>

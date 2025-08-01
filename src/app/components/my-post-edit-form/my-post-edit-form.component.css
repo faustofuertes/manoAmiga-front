@@ -24,9 +24,8 @@
 .form-group input,
 .form-group select,
 .form-group textarea {
-  width: 95%;
-  max-width: 600px;
-  padding: 10px;
+  width: 600px;
+  padding: 1rem;
   border-radius: 30px;
   background-color: #f0f0f0;
   border: 1px solid transparent;
@@ -35,11 +34,10 @@
   transition: .2s;
 }
 
-select {
+.form-group select {
   color: black;
   -webkit-text-fill-color: black;
-  /* fuerza color en Safari/iOS */
-  background-color: white;
+  width: 635px;
 }
 
 .form-group input:focus,
@@ -50,8 +48,10 @@ select {
 }
 
 .form-group textarea {
-  height: 100px;
+  height: 200px;
   resize: none;
+  text-align: left;
+  padding: 1rem;
 }
 
 .color {
@@ -80,6 +80,7 @@ select {
   font-weight: 600;
   font-size: 0.9rem;
   width: 200px;
+  height: 45px;
   max-width: 95%;
 }
 
@@ -94,225 +95,63 @@ select {
   color: white;
 }
 
-
-.popup-overlay {
-  position: fixed;
-  inset: 0;
+.btn-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 1000;
-
-  background: rgba(0, 0, 0, 0.9);
-  /* negro semitransparente más oscuro */
-
+  gap: 1rem;
 }
 
-
-.popup-box {
-  position: relative;
-  background: #fff;
-  padding: 30px 50px;
-  border-radius: 10px;
-  text-align: center;
-  overflow: hidden;
-  width: 320px;
-  height: 140px;
-  color: #fff;
+button {
+  padding: 0.5rem 1rem;
   font-weight: bold;
-  font-size: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.popup-check {
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
   position: relative;
-  width: 48px;
-  height: 48px;
-  stroke-width: 3;
-  z-index: 10;
-  margin-bottom: 15px;
 }
 
-.popup-message {
-  position: relative;
-  z-index: 10;
-  color: white;
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
-/* El círculo que expande */
-.expanding-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 48px;
-  height: 48px;
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top: 2px solid white;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transform: scale(1);
-  opacity: 0.9;
-  z-index: 5;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-  animation-name: expandCircle;
-  animation-duration: 1.5s;
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
 }
 
-/* Verde para éxito */
-.expanding-circle.success {
-  background-color: #4caf50;
-  animation-name: expandCircleSuccess;
-}
-
-/* Rojo para eliminar */
-.expanding-circle.error {
-  background-color: #e53935;
-  animation-name: expandCircleError;
-}
-
-@keyframes expandCircleSuccess {
-  0% {
-    transform: translate(-50%, -50%);
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(-50%, -50%);
-    transform: scale(20);
-    opacity: 1;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
-@keyframes expandCircleError {
-  0% {
-    transform: translate(-50%, -50%);
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(-50%, -50%);
-    transform: scale(20);
-    opacity: 1;
-  }
+.min {
+  font-size: 14px;
+  font-weight: 100;
+  color: var(--color-principal);
+  margin: .3rem auto;
 }
 
 @media (max-width: 768px) {
-
   .container {
     width: 100%;
-  }
-
-  .form-group {
-    padding: 0 1rem;
-    font-size: 16px;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    max-width: 600px;
-    font-size: 16px;
-  }
-
-  .btn-update,
-  .btn-delete {
-    padding: 10px 14px;
-    font-size: 0.85rem;
-    width: 90%;
-  }
-
-  .popup-overlay {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    z-index: 1000;
-
-    background: rgba(0, 0, 0, 0.5);
-  }
-
-  .popup-box {
-    position: relative;
-    background: #fff;
-    padding: 40px 20px;
-    border-radius: 0;
-    text-align: center;
-    overflow: visible !important;
-    /* Para que el círculo no se corte */
-    box-shadow: none;
-    width: 100vw;
-    height: 100vh;
-    color: #000;
-    font-weight: bold;
-    font-size: 1.1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .expanding-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transform: scale(1);
-    opacity: 1;
-    z-index: 5;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-duration: 0.6s;
-  }
-
-  .expanding-circle.success {
-    background-color: #4caf50;
-    animation-name: expandCircleSuccess;
-  }
-
-  .expanding-circle.error {
-    background-color: #e53935;
-    animation-name: expandCircleError;
-  }
-
-  .popup-check {
-    position: relative;
-    width: 48px;
-    height: 48px;
-    stroke-width: 3;
-    z-index: 10;
-    margin-bottom: 15px;
-    color: white;
-  }
-
-  .popup-message {
-    position: relative;
-    z-index: 10;
-    font-size: 1.3rem;
+    margin-top: 2rem;
   }
 }
 
-/* Definí los keyframes fuera del media query */
-
-
 /* Celular */
 @media (max-width: 480px) {
+
   .form-group {
-    font-size: 14px;
+    font-size: 160px;
     padding: 0;
-    width: 80vw;
-    margin-top: 2rem;
+    width: 90vw;
   }
 
   label {
@@ -322,27 +161,28 @@ select {
   .form-group input,
   .form-group select,
   .form-group textarea {
-    width: 300px;
-    font-size: 14px;
-    height: 40px;
+    width: 90vw;
+    font-size: 20px;
+    height: 50px;
     padding: 0;
     margin: 0;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .form-group textarea {
-    height: 100px;
+    width: 82vw;
+    height: 200px;
+    padding: 1rem;
   }
 
   .btn-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 0.5rem;
   }
 
   .btn-update,
   .btn-delete {
-    width: 90%;
-    margin-left: 0;
+    width: 90vw;
   }
 }
