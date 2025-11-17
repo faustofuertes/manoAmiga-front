@@ -9,7 +9,7 @@ import { Usuario } from '../interfaces/usuario';
 export class UsuariosService {
 
   //baseURL = "http://localhost:4000/api/usuarios"
-  baseURL = "https://manoamiga-back.onrender.com/api/usuarios"
+  baseURL = "https://manoamiga-back-b4h8.onrender.com/api/usuarios"
 
   constructor(private _http: HttpClient) { }
 
