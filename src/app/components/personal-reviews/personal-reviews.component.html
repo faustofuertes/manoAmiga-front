@@ -1,7 +1,7 @@
 <div class="container">
 
   <button type="button" (click)="toggleReview()" class="btn-review">
-    <img class="icon-make-review" src="assets/images/icons/review.webp" alt="Icono para hacer reseña" /> Hacer reseña
+    <img class="icon-make-review" src="assets/images/icons/review.webp" alt="Icono para hacer reseña" /> {{ 'reviews.makeReview' | translate }}
   </button>
 
   @for (r of reviews; track $index) {
@@ -28,7 +28,7 @@
       </header>
 
       <section class="bottom">
-        <p class="text">{{r.textReview}}</p>
+        <p class="text">{{r.textReview | autoTranslate}}</p>
       </section>
     </div>
   </article>
@@ -48,7 +48,7 @@
         <img class="icon-review" [src]="'assets/images/icons/' + job.toLowerCase() + '.webp'"
           alt="Avatar de {{postUserName}}" />
         }
-        <h3>¿Cómo fue el servicio de {{postUserName}}?</h3>
+        <h3>{{ 'reviews.howWasService' | translate }} {{postUserName}}?</h3>
 
         <div class="star-rating" role="radiogroup" aria-label="Calificación en estrellas">
           <ng-container *ngFor="let star of stars; index as i">
@@ -62,15 +62,15 @@
       </div>
 
       <div class="mid-review">
-        <label for="review" class="sr-only">Mínimo 20 caracteres</label>
+        <label for="review" class="sr-only">{{ 'reviews.minChars' | translate }}</label>
         <textarea id="review" minlength="20" class="textarea-review" formControlName="review" name="review"
-          placeholder="Contanos cómo fue tu experiencia con este profesional." aria-required="true"></textarea>
+          [placeholder]="'reviews.placeholder' | translate" aria-required="true"></textarea>
       </div>
 
       <div class="bottom-review">
         <button type="submit" (click)="submitReview()" class="btn-share" [disabled]="form.invalid"
           aria-label="Publicar reseña">
-          Publicar
+          {{ 'reviews.publish' | translate }}
         </button>
       </div>
     </form>
@@ -90,14 +90,14 @@
         <img class="loginIcon" src="assets/images/icons/logIn.webp" alt="Icono de login" />
       </div>
       <div class="mid-login">
-        <h3 id="loginTitle">Contanos tu experiencia con {{postUserName}}</h3>
-        <p>Deja tu reseña registrándote o iniciando sesión.</p>
+        <h3 id="loginTitle">{{ 'reviews.tellExperience' | translate }} {{postUserName}}</h3>
+        <p>{{ 'reviews.loginPrompt' | translate }}</p>
       </div>
       <div class="bottom-login">
         <button type="button" (click)="authenticate()" class="btn-register"
-          aria-label="Registrarse en Mano Amiga">Registrate en Mano Amiga</button>
+          aria-label="Registrarse en Mano Amiga">{{ 'reviews.register' | translate }}</button>
         <button type="button" (click)="authenticate()" class="btn-login"
-          aria-label="Iniciar sesión en Mano Amiga">Iniciar sesión</button>
+          aria-label="Iniciar sesión en Mano Amiga">{{ 'reviews.login' | translate }}</button>
       </div>
     </div>
   </div>

@@ -4,26 +4,33 @@
 
 @if(isLoading === false){
 @if(userRoles.includes('admin')){
-<div class="header">
-    <app-admin-header (optionSelected)="recivedSelectedOption($event)"></app-admin-header>
-</div>
+<app-admin-header (optionSelected)="recivedSelectedOption($event)"></app-admin-header>
 
-<div class="container">
+<div class="page-content">
     @if(selectedOption === 1){
     <app-admin-post-menu></app-admin-post-menu>
     } @else if (selectedOption === 2) {
-    <!-- Aquí va contenido para opción 2 si existe -->
     }
 </div>
 } @else {
-<div class="header">
-    <app-user-header (optionSelected)="recivedSelectedOption($event)"></app-user-header>
-</div>
+<app-user-header (optionSelected)="recivedSelectedOption($event)"></app-user-header>
 
-<div class="container">
+<div class="page-content">
     @if(selectedOption === 1){
-    <app-profile-card [usuario]="usuario"></app-profile-card>
-    <button class="btn-delete">Eliminar cuenta</button>
+    <div class="account-section">
+        <app-profile-card [usuario]="usuario"></app-profile-card>
+
+        <div class="danger-zone">
+            <div class="danger-header">
+                <i class="fas fa-exclamation-triangle danger-icon" aria-hidden="true"></i>
+                <span>{{ 'danger.title' | translate }}</span>
+            </div>
+            <p class="danger-text">{{ 'danger.text' | translate }}</p>
+            <button class="btn-delete-account" type="button">
+                <i class="fas fa-trash-alt" aria-hidden="true"></i> {{ 'danger.delete' | translate }}
+            </button>
+        </div>
+    </div>
     } @else if (selectedOption === 2) {
     <app-my-post-panel-control [usuario]="usuario"></app-my-post-panel-control>
     }

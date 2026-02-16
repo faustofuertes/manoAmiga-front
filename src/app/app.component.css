@@ -1,3 +1,6 @@
 .main-content {
-    padding-top: 5rem; /* mismo alto que el header fijo */
+    padding-top: calc(5rem + env(safe-area-inset-top, 0px));
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    min-height: 100vh;
   }

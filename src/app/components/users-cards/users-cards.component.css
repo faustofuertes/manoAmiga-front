@@ -32,8 +32,8 @@ a {
   margin: 1rem;
   cursor: pointer;
   transition: .4s;
-  background-color: #fdf9f4;
-  color: #3e3e3e;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
 }
 
 .card-container:hover {

@@ -9,18 +9,30 @@
 
     <nav class="center" [class.abierto]="menuAbierto" role="navigation" aria-label="Menú principal">
       <ul (click)="toggleMenu()">
-        <!-- Botones solo visibles en mobile -->
+        <li class="mobile-only">
+          <button type="button" class="btn-theme-mobile" (click)="openLangModal(); $event.stopPropagation()">
+            <span class="btn-lang-flag">{{ ts.currentOption.flag }}</span>
+            {{ 'header.language' | translate }}
+          </button>
+        </li>
+        <li class="mobile-only">
+          <button type="button" class="btn-theme-mobile" (click)="theme.toggle(); $event.stopPropagation()"
+            [attr.aria-label]="theme.isDark ? ('header.lightMode' | translate) : ('header.darkMode' | translate)">
+            <i class="fas" [ngClass]="theme.isDark ? 'fa-sun' : 'fa-moon'" aria-hidden="true"></i>
+            {{ theme.isDark ? ('header.lightMode' | translate) : ('header.darkMode' | translate) }}
+          </button>
+        </li>
         @if(!isAuthenticated){
         <li class="mobile-only">
-          <button (click)="logIn()" class="btn-publicar">Iniciar sesión</button>
+          <button (click)="logIn()" class="btn-publicar">{{ 'header.loginSession' | translate }}</button>
         </li>
         }
         @if(isAuthenticated){
         <li class="mobile-only">
-          <button [routerLink]="['/mi-perfil']" class="btn-publicar">Mi perfil</button>
+          <button [routerLink]="['/mi-perfil']" class="btn-publicar">{{ 'header.myProfile' | translate }}</button>
         </li>
         <li class="mobile-only">
-          <button (click)="logOut()" class="btn-iniciarSesion">Cerrar sesión</button>
+          <button (click)="logOut()" class="btn-iniciarSesion">{{ 'header.logout' | translate }}</button>
         </li>
         }
 
@@ -28,13 +40,21 @@
     </nav>
 
     <div class="right">
+      <button type="button" class="btn-lang desktop-only" (click)="openLangModal()"
+        [attr.aria-label]="'header.language' | translate" [title]="'header.language' | translate">
+        <span class="btn-lang-flag">{{ ts.currentOption.flag }}</span>
+      </button>
+      <button type="button" class="btn-theme desktop-only" (click)="theme.toggle()"
+        [attr.aria-label]="theme.isDark ? ('header.lightMode' | translate) : ('header.darkMode' | translate)"
+        [title]="theme.isDark ? ('header.lightMode' | translate) : ('header.darkMode' | translate)">
+        <i class="fas" [ngClass]="theme.isDark ? 'fa-sun' : 'fa-moon'" aria-hidden="true"></i>
+      </button>
       @if(!isAuthenticated){
-      <button (click)="logIn()" class="btn-publicar desktop-only" aria-label="Iniciar sesión">Ingresar</button>
+      <button (click)="logIn()" class="btn-publicar desktop-only" aria-label="Iniciar sesión">{{ 'header.login' | translate }}</button>
       }
       @if(isAuthenticated){
-      <button (click)="logOut()" class="btn-iniciarSesion desktop-only" aria-label="Cerrar sesión">Cerrar
-        sesión</button>
-      <a [routerLink]="['/mi-perfil']" class="btn-publicar desktop-only" aria-label="Ir a mi perfil">Mi perfil</a>
+      <button (click)="logOut()" class="btn-iniciarSesion desktop-only" aria-label="Cerrar sesión">{{ 'header.logout' | translate }}</button>
+      <a [routerLink]="['/mi-perfil']" class="btn-publicar desktop-only" aria-label="Ir a mi perfil">{{ 'header.myProfile' | translate }}</a>
       }
       <button class="burger" (click)="toggleMenu()" aria-controls="menu">
         <i class="fas" [ngClass]="menuAbierto ? 'fa-times' : 'fa-bars'" aria-hidden="true"></i>
@@ -43,3 +63,7 @@
     </div>
   </div>
 </header>
+
+@if (langModalOpen) {
+<app-language-modal (closed)="closeLangModal()"></app-language-modal>
+}

@@ -3,9 +3,8 @@
 
         @if(currentStep === 1) {
         <div class="left fade-slide-in">
-            <h2><i class="fas fa-lightbulb"></i>A saber</h2>
-            <p>En este paso, ingresá el trabajo que ofrecés y la ubicación donde se realizará. Actualmente, Mano Amiga ©
-                está disponible solo en Mar del Plata.</p>
+            <h2><i class="fas fa-lightbulb"></i>{{ 'postForm.tip' | translate }}</h2>
+            <p>{{ 'postForm.step1Tip' | translate }}</p>
         </div>
 
         <div class="right fade-slide-in">
@@ -19,33 +18,32 @@
 
             <form [formGroup]="step1Form">
                 <div class="form-group">
-                    <label for="job">¿Qué <span class="color">servicio</span> ofrecés?</label>
+                    <label for="job">{{ 'postForm.whatService' | translate }}</label>
                     <select id="job" formControlName="job" name="job">
-                        <option value="" disabled selected>Selecciona un trabajo</option>
+                        <option value="" disabled selected>{{ 'postForm.selectJob' | translate }}</option>
                         <option *ngFor="let job of jobs" [value]="job">{{ job }}</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="location">¿En <span class="color">dónde</span>? <i
+                    <label for="location">{{ 'postForm.where' | translate }} <i
                             class="fas fa-map-marker-alt"></i></label>
                     <select id="location" formControlName="location" name="location">
-                        <option value="" disabled selected>Selecciona una ciudad</option>
+                        <option value="" disabled selected>{{ 'postForm.selectCity' | translate }}</option>
                         <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
                     </select>
                 </div>
 
                 <button class="btn-forward" type="button" (click)="nextStep()"
-                    [disabled]="step1Form.invalid">Siguiente</button>
+                    [disabled]="step1Form.invalid">{{ 'postForm.next' | translate }}</button>
             </form>
         </div>
         }
 
         @if(currentStep === 2) {
         <div class="left fade-slide-in">
-            <h2><i class="fas fa-lightbulb"></i>A saber</h2>
-            <p>La descripción es lo primero que verá quien visite tu perfil. Usala para destacar tus habilidades,
-                experiencia y forma de trabajo. Ayuda a generar confianza y a que te elijan.</p>
+            <h2><i class="fas fa-lightbulb"></i>{{ 'postForm.tip' | translate }}</h2>
+            <p>{{ 'postForm.step2Tip' | translate }}</p>
         </div>
 
         <div class="right fade-slide-in">
@@ -59,29 +57,29 @@
 
             <form [formGroup]="step2Form">
                 <div class="form-group">
-                    <label for="description"><span class="color">Descripción</span> de tu aviso</label>
+                    <label for="description">{{ 'postForm.descLabel' | translate }}</label>
                     <p class="min"
                         *ngIf="descriptionControl.invalid && (descriptionControl.dirty || descriptionControl.touched)">
                         {{ descriptionErrorMessage }}
                     </p>
                     <textarea minlength="50" maxlength="500"
-                        placeholder="Ej: Plomero con más de 10 años de experiencia en reparaciones, instalaciones y mantenimiento de cañerías, sanitarios y sistemas de agua potable. Puntual, responsable y con atención a los detalles."
+                        [placeholder]="'postForm.descPlaceholder' | translate"
                         id="description" formControlName="description"></textarea>
                 </div>
             </form>
 
             <div class="btn-container">
-                <button class="btn-back" type="button" (click)="previousStep()">Volver</button>
+                <button class="btn-back" type="button" (click)="previousStep()">{{ 'postForm.back' | translate }}</button>
                 <button class="btn-forward" type="button" (click)="nextStep()"
-                    [disabled]="step2Form.invalid">Siguiente</button>
+                    [disabled]="step2Form.invalid">{{ 'postForm.next' | translate }}</button>
             </div>
         </div>
         }
 
         @if(currentStep === 3) {
         <div class="left fade-slide-in">
-            <h2><i class="fas fa-lightbulb"></i>A saber</h2>
-            <p>Podés elegir tu tarifa de visita y modificarla cuando lo desees.</p>
+            <h2><i class="fas fa-lightbulb"></i>{{ 'postForm.tip' | translate }}</h2>
+            <p>{{ 'postForm.step3Tip' | translate }}</p>
         </div>
 
         <div class="right fade-slide-in">
@@ -95,24 +93,24 @@
 
             <form [formGroup]="step3Form">
                 <div class="form-group">
-                    <label for="pricing"><span class="color">Tarifa</span> de visita</label>
+                    <label for="pricing">{{ 'postForm.pricingLabel' | translate }}</label>
 
                     <input max="99999" placeholder="15000" id="pricing" formControlName="pricing" type="number"
                         inputmode="numeric" pattern="[0-9]*" />
                 </div>
             </form>
             <div class="btn-container">
-                <button class="btn-back" type="button" (click)="previousStep()">Volver</button>
+                <button class="btn-back" type="button" (click)="previousStep()">{{ 'postForm.back' | translate }}</button>
                 <button class="btn-forward" type="button" (click)="nextStep()"
-                    [disabled]="step3Form.invalid">Siguiente</button>
+                    [disabled]="step3Form.invalid">{{ 'postForm.next' | translate }}</button>
             </div>
         </div>
         }
 
         @if(currentStep === 4) {
         <div class="left fade-slide-in">
-            <h2><i class="fas fa-lightbulb"></i>A saber</h2>
-            <p>Podés seleccionar tus horarios de trabajo y ajustarlos cuando lo necesites.</p>
+            <h2><i class="fas fa-lightbulb"></i>{{ 'postForm.tip' | translate }}</h2>
+            <p>{{ 'postForm.step4Tip' | translate }}</p>
         </div>
 
         <div class="right fade-slide-in">
@@ -126,21 +124,21 @@
 
             <form [formGroup]="step4Form">
                 <div class="form-group">
-                    <label for="schedule"><span class="color">Horarios</span> de trabajo</label>
+                    <label for="schedule">{{ 'postForm.scheduleLabel' | translate }}</label>
                     @if (step4Form.value.schedule.length >= 50) {
                     <p class="min">
-                        La longitud maxima es de 50 caracteres
+                        {{ 'postForm.maxChars50' | translate }}
                     </p>
                     }
                     <input maxlength="50" id="schedule" formControlName="schedule" type="text"
-                        placeholder="Ej: Lunes a Viernes 8:00 a 16:00" />
+                        [placeholder]="'postForm.schedulePlaceholder' | translate" />
                 </div>
 
                 <div class="form-group">
-                    <label for="experience">Años de <span class="color">experiencia</span></label>
+                    <label for="experience">{{ 'postForm.experienceLabel' | translate }}</label>
                     @if (step4Form.value.experience > 99) {
                     <p class="min">
-                        La experiencia maxima es 99 años
+                        {{ 'postForm.maxExp' | translate }}
                     </p>
                     }
                     <input max="99" id="experience" formControlName="experience" type="number" placeholder="Ej: 10"
@@ -149,18 +147,17 @@
             </form>
 
             <div class="btn-container">
-                <button class="btn-back" type="button" (click)="previousStep()">Volver</button>
+                <button class="btn-back" type="button" (click)="previousStep()">{{ 'postForm.back' | translate }}</button>
                 <button class="btn-forward" type="button" (click)="nextStep()"
-                    [disabled]="step4Form.invalid">Siguiente</button>
+                    [disabled]="step4Form.invalid">{{ 'postForm.next' | translate }}</button>
             </div>
         </div>
         }
 
         @if(currentStep === 5) {
         <div class="left fade-slide-in">
-            <h2><i class="fas fa-lightbulb"></i>A saber</h2>
-            <p>Ingresá tu número empezando con el código de Mar del Plata <strong>223</strong>, seguido de tu número sin
-                el 15 ni símbolos. Ejemplo: <strong>2231234567</strong>.</p>
+            <h2><i class="fas fa-lightbulb"></i>{{ 'postForm.tip' | translate }}</h2>
+            <p>{{ 'postForm.step5Tip' | translate }}</p>
         </div>
 
         <div class="right fade-slide-in">
@@ -174,17 +171,17 @@
 
             <form [formGroup]="step5Form">
                 <div class="form-group">
-                    <label for="phone"><span class="color">Número</span> de contacto</label>
+                    <label for="phone">{{ 'postForm.phoneLabel' | translate }}</label>
                     <input maxlength="20" id="phone" formControlName="phone" type="number" placeholder="Ej: 2231234567"
                         inputmode="numeric" pattern="[0-9]*" />
                 </div>
             </form>
             <div class="btn-container">
-                <button class="btn-back" type="button" (click)="previousStep()">Volver</button>
+                <button class="btn-back" type="button" (click)="previousStep()">{{ 'postForm.back' | translate }}</button>
                 <button class="btn-forward" type="button" (click)="onSubmit()"
                     [disabled]="step5Form.invalid || isSubmitting" [class.loading]="isSubmitting">
-                    <span class="btn-text" *ngIf="!isSubmitting">Publicar</span>
-                    <span class="btn-text" *ngIf="isSubmitting">Publicando...</span>
+                    <span class="btn-text" *ngIf="!isSubmitting">{{ 'postForm.publish' | translate }}</span>
+                    <span class="btn-text" *ngIf="isSubmitting">{{ 'postForm.publishing' | translate }}</span>
                     <span class="progress-bar" *ngIf="isSubmitting"></span>
                 </button>
             </div>

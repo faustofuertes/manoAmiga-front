@@ -1,87 +1,109 @@
 @if(post){
-<div class="container" role="form" aria-label="Formulario para editar publicación">
+<div class="card" role="form" aria-label="Formulario para editar publicación">
 
-  <form [formGroup]="form" novalidate>
+  <header class="card-header">
+    <div class="header-icon-box">
+      <img class="header-icon" [src]="'assets/images/icons/' + post.job.toLowerCase() + '.webp'" alt="{{ post.job }} icono" />
+    </div>
+    <div class="header-text">
+      <h3 class="header-title">{{ ts.t('job.' + post.job.toLowerCase()) }}</h3>
+      <span class="header-sub">{{ post.userName }}</span>
+    </div>
+  </header>
 
-    <div class="form-group">
-      <label class="color" for="location">Ubicación</label>
-      <select id="location" formControlName="location" name="location" aria-required="true">
-        <option value="" disabled selected>Selecciona una ciudad</option>
-        <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
-      </select>
+  <form [formGroup]="form" novalidate class="form-body">
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="location">{{ 'editForm.location' | translate }}</label>
+        <select id="location" formControlName="location" name="location" aria-required="true">
+          <option value="" disabled selected>{{ 'editForm.selectCity' | translate }}</option>
+          <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">{{ 'editForm.phone' | translate }}</label>
+        <input maxlength="20" id="phone" formControlName="phone" type="number" inputmode="numeric" pattern="[0-9]*" />
+      </div>
     </div>
 
-    <div class="form-group">
-      <label class="color" for="phone">Número de contacto</label>
-      <input maxlength="20" id="phone" formControlName="phone" type="number" inputmode="numeric" pattern="[0-9]*" />
+    <div class="form-row">
+      <div class="form-group">
+        <label for="schedule">{{ 'editForm.schedule' | translate }}</label>
+        <input maxlength="50" id="schedule" formControlName="schedule" type="text" />
+        @if (form.value.schedule.length >= 50) {
+        <p class="field-hint error">{{ 'editForm.maxChars50' | translate }}</p>
+        }
+      </div>
+
+      <div class="form-group half">
+        <label for="pricing">{{ 'editForm.pricing' | translate }}</label>
+        <input max="99999" id="pricing" formControlName="pricing" type="number" inputmode="numeric" pattern="[0-9]*" />
+        @if (form.value.pricing > 99999) {
+        <p class="field-hint error">{{ 'editForm.maxValue' | translate }}</p>
+        }
+      </div>
+
+      <div class="form-group half">
+        <label for="experience">{{ 'editForm.experience' | translate }}</label>
+        <input max="99" id="experience" formControlName="experience" type="number" inputmode="numeric" pattern="[0-9]*" />
+        @if (form.value.experience > 99) {
+        <p class="field-hint error">{{ 'editForm.maxYears' | translate }}</p>
+        }
+      </div>
     </div>
 
-    <div class="form-group">
-      <label class="color" for="schedule">Horarios</label>
-      <input maxlength="50" id="schedule" formControlName="schedule" type="text" />
-      @if (form.value.schedule.length >= 50) {
-      <p class="min">
-        La longitud maxima es de 50 caracteres
-      </p>
-      }
-    </div>
-
-    <div class="form-group">
-      <label class="color" for="pricing">Tarifa de visita</label>
-      <input max="99999" id="pricing" formControlName="pricing" type="number" inputmode="numeric" pattern="[0-9]*" />
-      @if (form.value.pricing > 99999) {
-      <p class="min">
-        El valor máximo permitido es 99999
-      </p>
-      }
-    </div>
-
-    <div class="form-group">
-      <label class="color" for="experience">Años de experiencia</label>
-      <input max="99" id="experience" formControlName="experience" type="number" inputmode="numeric" pattern="[0-9]*" />
-      @if (form.value.experience > 99) {
-      <p class="min">
-        La experiencia maxima es 99 años
-      </p>
-      }
-    </div>
-
-    <div class="form-group">
-      <label class="color" for="description">Descripción</label>
-      <textarea minlength="50" maxlength="500" id="description" formControlName="description"></textarea>
-      <p class="min" *ngIf="descriptionControl.invalid && (descriptionControl.dirty || descriptionControl.touched)">
-        {{ descriptionErrorMessage }}
-      </p>
+    <div class="form-group full">
+      <label for="description">{{ 'editForm.description' | translate }}</label>
+      <textarea minlength="50" maxlength="500" id="description" formControlName="description"
+        [placeholder]="'editForm.descPlaceholder' | translate"></textarea>
+      <div class="desc-footer">
+        <p class="field-hint error" *ngIf="descriptionControl.invalid && (descriptionControl.dirty || descriptionControl.touched)">
+          {{ descriptionErrorMessage }}
+        </p>
+        <span class="char-count" [class.warn]="(descriptionControl.value?.length || 0) >= 450">
+          {{ descriptionControl.value?.length || 0 }}/500
+        </span>
+      </div>
     </div>
 
     <div class="btn-container">
-      <button type="button" class="btn-delete" aria-label="Eliminar publicación" [disabled]="loadingDelete"
+      <button type="button" class="btn btn-delete" aria-label="Eliminar publicación" [disabled]="loadingDelete"
         (click)="eliminarProducto()">
-        <ng-container *ngIf="!loadingDelete; else loadingDeleteTpl">Eliminar</ng-container>
+        <ng-container *ngIf="!loadingDelete; else loadingDeleteTpl">
+          <i class="fas fa-trash-alt" aria-hidden="true"></i> {{ 'editForm.delete' | translate }}
+        </ng-container>
         <ng-template #loadingDeleteTpl>
           <span class="spinner"></span>
         </ng-template>
       </button>
 
-      <button type="button" class="btn-update" aria-label="Guardar cambios en publicación"
+      <button type="button" class="btn btn-save" aria-label="Guardar cambios en publicación"
         [disabled]="loadingUpdate || updated || form.invalid" (click)="actualizarProducto()">
-        <ng-container *ngIf="!loadingUpdate && !updated">Guardar</ng-container>
+        <ng-container *ngIf="!loadingUpdate && !updated">
+          <i class="fas fa-save" aria-hidden="true"></i> {{ 'editForm.save' | translate }}
+        </ng-container>
         <ng-container *ngIf="loadingUpdate"><span class="spinner"></span></ng-container>
         <ng-container *ngIf="updated">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
             <polyline points="20 6 9 17 4 12" />
           </svg>
+          {{ 'editForm.saved' | translate }}
         </ng-container>
       </button>
     </div>
 
-
   </form>
 
 </div>
-}@else{
-<div class="container" role="alert" aria-live="polite">
-  <h2>Por favor seleccione una publicación para editarla.</h2>
+} @else {
+<div class="empty-state" role="alert" aria-live="polite">
+  <div class="empty-icon">
+    <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+  </div>
+  <h3 class="empty-title">{{ 'editForm.emptyTitle' | translate }}</h3>
+  <p class="empty-text">{{ 'editForm.emptyText' | translate }}</p>
 </div>
 }

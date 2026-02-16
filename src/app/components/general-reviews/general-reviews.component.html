@@ -26,7 +26,7 @@
           </div>
 
         </div>
-        <div class="bottom">{{ t.texto }}</div>
+        <div class="bottom">{{ t.textoKey | translate }}</div>
         <div class="progress-bar" *ngIf="isMobile && i === current">
           <div class="progress-fill" [style.width.%]="progress"></div>
         </div>

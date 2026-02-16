@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { Publicacion } from '../../interfaces/publicacion';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatePipe } from '../../pipes/translate.pipe';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-post-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslatePipe],
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.css']
 })
@@ -27,7 +29,8 @@ export class PostFormComponent {
   constructor(
     private fb: FormBuilder,
     private _myPubliService: PublicacionesService,
-    private _router: Router
+    private _router: Router,
+    public ts: TranslateService
   ) {
     this.step1Form = this.fb.group({
       job: ['', Validators.required],
@@ -94,11 +97,11 @@ export class PostFormComponent {
     const length = value.length;
 
     if (length === 0) {
-      return 'Mínimo 50 caracteres';
+      return this.ts.t('postForm.minChars');
     }
 
     if (length > 0 && length < 50) {
-      return `Faltan ${50 - length} caracteres`;
+      return `${this.ts.t('postForm.charsLeft')} ${50 - length} ${this.ts.t('postForm.chars')}`;
     }
 
     return '';

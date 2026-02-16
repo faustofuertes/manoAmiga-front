@@ -10,7 +10,7 @@
 
     <div class="center">
       <h1 class="type">
-        {{ job | titlecase }}{{ list?.length === 1 ? '' : 's' }} en Mar del Plata
+        {{ ts.t('job.' + job) }} {{ 'categories.inMdp' | translate }}
       </h1>
 
       @if (!list) {
@@ -19,7 +19,7 @@
 
       @if (list) {
       <label aria-live="polite">
-        {{ list.length }} profesional{{ list.length === 1 ? '' : 'es' }} disponible{{ list.length === 1 ? '' : 's' }}
+        {{ filteredList?.length }} {{ 'categories.professionalsAvailable' | translate }}
       </label>
       }
     </div>
@@ -47,6 +47,31 @@
 
   </nav>
 
+  @if (list && list.length > 0) {
+  <div class="filters-row">
+    <div class="search-bar">
+      <i class="fas fa-search search-icon" aria-hidden="true"></i>
+      <input
+        type="text"
+        [(ngModel)]="searchName"
+        [placeholder]="'categories.searchPlaceholder' | translate"
+        class="search-input"
+        aria-label="Buscar por nombre"
+      />
+      @if (searchName) {
+      <button class="search-clear" (click)="searchName = ''" aria-label="Limpiar búsqueda">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      }
+    </div>
+
+    <button class="btn-sort" [class.active]="sortNewest" (click)="toggleSort()" aria-label="Ordenar por más nuevos">
+      <i class="fas fa-clock" aria-hidden="true"></i>
+      <span class="sort-label">{{ 'categories.newest' | translate }}</span>
+    </button>
+  </div>
+  }
+
   @if (!list) {
   <div class="cards-wrapper">
     <article *ngFor="let _ of [1,2,3]" class="card skeleton" tabindex="0" aria-hidden="true">
@@ -63,19 +88,18 @@
 
   @if(list){
   <section class="container-cards" aria-live="polite" aria-relevant="additions removals">
-    <app-list [list]="list"></app-list>
+    <app-list [list]="filteredList"></app-list>
   </section>
   }
 
-  @if (list?.length === 0) {
+  @if (filteredList?.length === 0) {
   <div class="no-results">
-    <h2>No encontramos profesionales para este oficio… todavía.</h2>
-    <p>Mano Amiga está creciendo y pronto vas a encontrar personas disponibles en tu zona.</p>
-    <p>👉 ¿Ofrecés este servicio? <strong><a (click)="register()" class="action-link">Registrate y empezá a conseguir
-          clientes.</a></strong></p>
-    <p>👉 ¿Conocés a alguien que lo haga? <strong>Compartile Mano Amiga y ayudalo a hacerse conocer.</strong></p>
+    <h2>{{ 'categories.noResults.title' | translate }}</h2>
+    <p>{{ 'categories.noResults.growing' | translate }}</p>
+    <p>👉 {{ 'categories.noResults.offer' | translate }} <strong><a (click)="register()" class="action-link">{{ 'categories.noResults.register' | translate }}</a></strong></p>
+    <p>👉 <strong>{{ 'categories.noResults.share' | translate }}</strong></p>
 
-    <a (click)="register()" class="cta-button">Quiero registrarme como profesional</a>
+    <a (click)="register()" class="cta-button">{{ 'categories.noResults.cta' | translate }}</a>
   </div>
   }
 

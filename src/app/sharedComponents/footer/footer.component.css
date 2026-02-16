@@ -1,9 +1,11 @@
 .footer {
-  background-color: #f8f9fa;
+  background-color: var(--bg-surface);
   padding: 2rem 1rem;
-  border-top: 1px solid #e0e0e0;
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--border-color);
   font-family: 'Inter', sans-serif;
   margin-top: 5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer-container {
@@ -24,14 +26,14 @@
 }
 
 .footer-brand {
-  color: #6c757d;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   margin: 0;
   font-weight: 600;
 }
 
 .footer-description {
-  color: #6c757d;
+  color: var(--text-secondary);
   font-size: 0.85rem;
   margin: 0;
 }
@@ -46,8 +48,8 @@
   width: 24px;
   height: 24px;
   opacity: 0.7;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  filter: grayscale(100%) brightness(0.4);
+  transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%) brightness(var(--footer-icon-brightness, 0.4));
 }
 
 .footer-links a:hover .footer-icon {
@@ -63,10 +65,11 @@
   flex-wrap: wrap; /* que salte a otra línea si hace falta */
   text-align: center;
   width: 100%; /* que tome todo el ancho para centrar */
+  color: var(--text-secondary);
 }
 
 .footer-legal-link {
-  color: #6c757d;
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;

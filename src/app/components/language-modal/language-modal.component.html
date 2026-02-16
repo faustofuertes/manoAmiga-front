@@ -1,0 +1,27 @@
+<div class="overlay" (click)="onOverlayClick($event)">
+  <div class="modal" role="dialog" aria-modal="true">
+
+    <div class="modal-header">
+      <h2>{{ 'lang.title' | translate }}</h2>
+      <button type="button" class="btn-close-modal" (click)="close()" aria-label="Cerrar">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <ul class="lang-list">
+      @for (lang of ts.languages; track lang.code) {
+      <li>
+        <button type="button" class="lang-option" [class.active]="ts.current === lang.code"
+          (click)="select(lang.code)">
+          <span class="flag">{{ lang.flag }}</span>
+          <span class="label">{{ lang.label }}</span>
+          @if (ts.current === lang.code) {
+          <i class="fas fa-check check" aria-hidden="true"></i>
+          }
+        </button>
+      </li>
+      }
+    </ul>
+
+  </div>
+</div>

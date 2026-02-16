@@ -24,10 +24,11 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: var(--bg-surface);
     border-radius: 30px;
     padding: 2rem;
     gap: 1rem;
+    color: var(--text-primary);
 }
 
 .right {
@@ -55,7 +56,8 @@ p {
     padding: 1rem;
     border-radius: 30px;
     font-size: 18px;
-    background-color: #f0f0f0;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
     border: 1px solid transparent;
     transition: .2s;
     text-align: center;
@@ -67,7 +69,7 @@ p {
 }
 
 .form-group select:valid {
-    color: black;
+    color: var(--text-primary);
 }
 
 .form-group select option[disabled] {
@@ -81,7 +83,8 @@ p {
 .form-group textarea {
     resize: none;
     margin: 1rem;
-    background-color: #f0f0f0;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
     border: none;
     border-radius: 30px;
     padding: 1rem;
@@ -113,12 +116,12 @@ p {
     padding: 1rem;
     border-radius: 30px;
     border: none;
-    background-color: #f0f0f0;
+    background-color: var(--bg-surface);
     text-align: center;
     border: 1px solid transparent;
     transition: .2s;
     font-size: 18px;
-    color: black;
+    color: var(--text-primary);
 }
 
 .form-group input:focus {
@@ -157,7 +160,7 @@ p {
 .btn-back {
     color: var(--color-principal);
     border: 1px solid var(--color-principal);
-    background-color: white;
+    background-color: var(--bg-body);
     transition: 0.2s;
 }
 
@@ -189,7 +192,7 @@ p {
     height: 5px;
     width: 80px;
     border-radius: 500px;
-    background-color: #f0f0f0;
+    background-color: var(--bg-surface);
 }
 
 .bar-color {
@@ -202,7 +205,8 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--bg-body);
+    opacity: 0.9;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,12 +1,26 @@
-<div class="container" role="region" aria-label="Información del usuario">
-    <div class="left">
+<div class="card" role="region" aria-label="Información del usuario">
+  <div class="card-banner"></div>
 
-      <img class="icon" src="assets/images/icons/userMan.webp" alt="Icono de electricista">
+  <div class="card-body">
+    <div class="avatar-ring">
+      <img class="avatar" src="assets/images/icons/userMan.webp" alt="Avatar de usuario" />
     </div>
-  
-    <div class="right">
-      <span class="name">{{ usuario?.name }}</span>
-      <span class="email">{{ usuario?.email }}</span>
+
+    <h2 class="name">{{ usuario?.name }}</h2>
+    <span class="email">
+      <i class="fas fa-envelope email-icon" aria-hidden="true"></i>
+      {{ usuario?.email }}
+    </span>
+
+    <div class="info-row">
+      <div class="info-chip">
+        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+        {{ 'profileCard.memberSince' | translate }} {{ usuario?.dateAdded | date:'MMM yyyy' }}
+      </div>
+      <div class="info-chip" [class.active]="usuario?.isActive !== false">
+        <span class="status-dot"></span>
+        {{ usuario?.isActive !== false ? ts.t('profileCard.active') : ts.t('profileCard.inactive') }}
+      </div>
     </div>
   </div>
-  
+</div>

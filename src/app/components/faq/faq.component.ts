@@ -1,45 +1,23 @@
 import { Component } from '@angular/core';
+import { TranslatePipe } from '../../pipes/translate.pipe';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-faq',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './faq.component.html',
   styleUrl: './faq.component.css'
 })
 export class FAQComponent {
   faqList = [
-    {
-      id: 0,
-      pregunta: '¿Qué es Mano Amiga y para qué sirve?',
-      respuesta: 'Mano Amiga es una plataforma que conecta personas que necesitan ayuda con tareas del hogar con profesionales independientes disponibles en su ciudad.',
-      abierta: false
-    },
-    {
-      id: 1,
-      pregunta: '¿Cómo contacto a un trabajador?',
-      respuesta: 'Buscás el oficio que necesitás, elegís una publicación y hacés clic en el botón para llamarlo o escribirle directamente.',
-      abierta: false
-    },
-    {
-      id: 2,
-      pregunta: '¿La app es gratuita?',
-      respuesta: 'Sí, es completamente gratuita tanto para quienes buscan un servicio como para los trabajadores que publican sus avisos.',
-      abierta: false
-    },
-    {
-      id: 3,
-      pregunta: '¿Cómo sé si un profesional es confiable?',
-      respuesta: 'Cada publicación incluye una descripción del servicio, experiencia del trabajador y reseñas reales de otros usuarios que lo hayan contratado.',
-      abierta: false
-    },
-    {
-      id: 4,
-      pregunta: '¿Mano Amiga participa en los trabajos o contrataciones?',
-      respuesta: 'No. Mano Amiga solo ofrece el espacio para que los profesionales publiquen sus servicios y los usuarios los contacten directamente. No intervenimos en la contratación ni en la ejecución del trabajo.',
-      abierta: false
-    }
+    { id: 0, qKey: 'faq.q0', aKey: 'faq.a0', abierta: false },
+    { id: 1, qKey: 'faq.q1', aKey: 'faq.a1', abierta: false },
+    { id: 2, qKey: 'faq.q2', aKey: 'faq.a2', abierta: false },
+    { id: 3, qKey: 'faq.q3', aKey: 'faq.a3', abierta: false },
+    { id: 4, qKey: 'faq.q4', aKey: 'faq.a4', abierta: false }
   ];
 
+  constructor(public ts: TranslateService) {}
 
   toggleOption(num: number) {
     this.faqList[num].abierta = !this.faqList[num].abierta;

@@ -3,10 +3,12 @@ import { Publicacion } from '../../interfaces/publicacion';
 import { CommonModule } from '@angular/common';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PublicacionesService } from '../../services/publicaciones.service';
+import { TranslatePipe } from '../../pipes/translate.pipe';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-my-post-edit-form',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslatePipe],
   templateUrl: './my-post-edit-form.component.html',
   styleUrl: './my-post-edit-form.component.css'
 })
@@ -22,7 +24,8 @@ export class MyPostEditFormComponent implements OnChanges {
 
   constructor(
     private fb: FormBuilder,
-    private _myPubliService: PublicacionesService
+    private _myPubliService: PublicacionesService,
+    public ts: TranslateService
   ) {
     this.form = this.fb.group({
       location: ['', Validators.required],
@@ -97,11 +100,11 @@ export class MyPostEditFormComponent implements OnChanges {
     const length = value.length;
 
     if (length === 0) {
-      return 'Mínimo 50 caracteres';
+      return this.ts.t('postForm.minChars');
     }
 
     if (length > 0 && length < 50) {
-      return `Faltan ${50 - length} caracteres`;
+      return `${this.ts.t('postForm.charsLeft')} ${50 - length} ${this.ts.t('postForm.chars')}`;
     }
 
     return '';

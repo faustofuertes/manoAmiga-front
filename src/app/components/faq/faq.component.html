@@ -1,12 +1,12 @@
 <div class="container">
-  <h2>Preguntas frecuentes.</h2>
+  <h2>{{ 'faq.title' | translate }}</h2>
 
   @for (f of faqList; track $index) {
   <div (click)="toggleOption(f.id)" class="container-faq">
     <div class="faq">
-      <label>{{ f.pregunta }}</label>
+      <label>{{ f.qKey | translate }}</label>
       <div class="respuesta" [class.abierta]="f.abierta">
-        <p>{{ f.respuesta }}</p>
+        <p>{{ f.aKey | translate }}</p>
       </div>
     </div>
   </div>

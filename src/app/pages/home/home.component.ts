@@ -5,12 +5,13 @@ import { GeneralReviewsComponent } from "../../components/general-reviews/genera
 import { FAQComponent } from "../../components/faq/faq.component";
 import { CommonModule } from '@angular/common';
 import { AuthService } from '@auth0/auth0-angular';
+import { TranslatePipe } from '../../pipes/translate.pipe';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, UsersCardsComponent, GeneralReviewsComponent, FAQComponent, CommonModule],
+  imports: [RouterLink, UsersCardsComponent, GeneralReviewsComponent, FAQComponent, CommonModule, TranslatePipe],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'] // corregí styleUrl a styleUrls (plural)
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
   jobs: string[] = ['electricistas', 'plomeros', 'jardineros', 'pintores', 'cerrajeros', 'técnicos', 'carpinteros', 'limpieza'];

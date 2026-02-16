@@ -1,32 +1,50 @@
 <div class="container">
-  <h3>Mis publicaciones.</h3>
+  <h3 class="section-title">{{ 'myPosts.title' | translate }}</h3>
 
   <div class="scroll-wrapper">
+
     <div class="add-post" [routerLink]="['/crear-publicacion']" aria-label="Crear publicación">
-      <span>Crear publicación</span>
-      <i class="fas fa-plus-circle" aria-hidden="true"></i>
+      <div class="add-icon-circle">
+        <i class="fas fa-plus" aria-hidden="true"></i>
+      </div>
+      <span class="add-label">{{ 'myPosts.new' | translate }}</span>
     </div>
 
-
     @for (publi of publicaciones; track $index) {
-    <div (click)="emitPostClicked(publi)" class="post" tabindex="0" role="button">
-      <div class="left">
-        <img class="icon" [src]="'assets/images/icons/' + publi.job.toLowerCase() + '.webp'"
+    <div (click)="emitPostClicked(publi)"
+         class="post"
+         [class.selected]="selectedPost?._id === publi._id"
+         tabindex="0" role="button">
+
+      <div class="post-icon-box">
+        <img class="post-icon" [src]="'assets/images/icons/' + publi.job.toLowerCase() + '.webp'"
           alt="{{ publi.job }} icono" />
       </div>
-      <div class="right">
-        <span class="job">{{ publi.job }}</span>
+
+      <div class="post-info">
+        <span class="post-job">{{ ts.t('job.' + publi.job.toLowerCase()) }}</span>
+        <span class="post-location">
+          <i class="fas fa-map-marker-alt loc-icon" aria-hidden="true"></i>
+          {{ publi.location }}
+        </span>
+      </div>
+
+      <div class="post-status">
         @if(publi.isActive === true){
-        <div class="status" aria-live="polite">
-          En línea <span class="status-dot online"></span>
-        </div>
+        <span class="badge online" aria-live="polite">
+          <span class="badge-dot"></span> {{ 'myPosts.active' | translate }}
+        </span>
         } @else {
-        <div class="status" aria-live="polite">
-          Fuera de línea <span class="status-dot offline"></span>
-        </div>
+        <span class="badge offline" aria-live="polite">
+          <span class="badge-dot"></span> {{ 'myPosts.inactive' | translate }}
+        </span>
         }
       </div>
     </div>
+    }
+
+    @if (publicaciones && publicaciones.length === 0) {
+    <p class="empty-msg">{{ 'myPosts.empty' | translate }}</p>
     }
   </div>
 </div>

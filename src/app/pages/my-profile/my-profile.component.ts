@@ -10,6 +10,7 @@ import { MyPostPanelControlComponent } from '../../components/my-post-panel-cont
 import { AdminHeaderComponent } from "../../components/admin-header/admin-header.component";
 import { AdminPostMenuComponent } from '../../components/admin-post-menu/admin-post-menu.component';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '../../pipes/translate.pipe';
 
 
 @Component({
@@ -20,7 +21,8 @@ import { CommonModule } from '@angular/common';
     UserHeaderComponent,
     AdminHeaderComponent,
     AdminPostMenuComponent,
-    CommonModule
+    CommonModule,
+    TranslatePipe
   ],
   templateUrl: './my-profile.component.html',
   styleUrl: './my-profile.component.css'

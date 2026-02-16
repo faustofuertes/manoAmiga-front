@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { Publicacion } from '../../interfaces/publicacion';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-list',
@@ -11,6 +12,8 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 })
 export class ListComponent implements OnChanges {
   @Input() list?: Publicacion[];
+
+  constructor(public ts: TranslateService) {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['list']) {

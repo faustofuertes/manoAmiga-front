@@ -5,22 +5,14 @@
     </div>
     <div class="right">
       <h2 id="error-title" class="status" role="alert">
-        Error al crear la publicación.
+        {{ 'failure.title' | translate }}
       </h2>
-      <p>
-        Ocurrió un error al crear la publicación. Recordá que 
-        <strong>solo se permite una publicación por tipo de trabajo</strong> 
-        (por ejemplo, una como pintor, otra como plomero, etc.). 
-        Además, <strong>no es posible crear publicaciones desde pestañas en modo incógnito</strong>, 
-        Si no tenés otra publicación activa para este oficio, por favor 
-        <strong>cerrá el modo incógnito y volvé a intentarlo</strong>.
-      </p>
-      
+      <p>{{ 'failure.text' | translate }}</p>
     </div>
   </section>
 
   <div class="btn-container">
-    <button [routerLink]="['']" class="btn-home">Inicio</button>
-    <button [routerLink]="['/mi-perfil']" class="btn-posts">Mis avisos</button>
+    <button [routerLink]="['']" class="btn-home">{{ 'success.home' | translate }}</button>
+    <button [routerLink]="['/mi-perfil']" class="btn-posts">{{ 'success.myPosts' | translate }}</button>
   </div>
 </main>

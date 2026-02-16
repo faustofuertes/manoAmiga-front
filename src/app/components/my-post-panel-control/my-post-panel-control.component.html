@@ -1,14 +1,11 @@
-<div class="container" role="main">
-    <section class="posts" aria-label="Listado de publicaciones">
-      <app-my-posts (postClickedEmitter)="recivePost($event)" [usuario]="usuario">
-      </app-my-posts>
-    </section>
-  
-    <div class="separator" aria-hidden="true"></div>
-  
-    <section class="form" aria-label="Formulario para editar publicación seleccionada">
-      <app-my-post-edit-form [post]="postRecived">
-      </app-my-post-edit-form>
-    </section>
-  </div>
-  
+<div class="panel" role="main">
+  <aside class="panel-sidebar" aria-label="Listado de publicaciones">
+    <app-my-posts (postClickedEmitter)="recivePost($event)" [usuario]="usuario">
+    </app-my-posts>
+  </aside>
+
+  <section class="panel-main" aria-label="Formulario para editar publicación seleccionada">
+    <app-my-post-edit-form [post]="postRecived">
+    </app-my-post-edit-form>
+  </section>
+</div>

@@ -4,10 +4,12 @@ import { ReviewsService } from '../../services/reviews.service';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '@auth0/auth0-angular';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TranslatePipe } from '../../pipes/translate.pipe';
+import { AutoTranslatePipe } from '../../pipes/auto-translate.pipe';
 
 @Component({
   selector: 'app-personal-reviews',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslatePipe, AutoTranslatePipe],
   templateUrl: './personal-reviews.component.html',
   styleUrl: './personal-reviews.component.css'
 })

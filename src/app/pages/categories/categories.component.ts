@@ -2,14 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { ListComponent } from "../../components/list/list.component";
 import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { Publicacion } from '../../interfaces/publicacion';
 import { Auth } from '@angular/fire/auth';
 import { AuthService } from '@auth0/auth0-angular';
+import { TranslatePipe } from '../../pipes/translate.pipe';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-categories',
-  imports: [ListComponent, CommonModule, RouterLink],
+  imports: [ListComponent, CommonModule, RouterLink, TranslatePipe, FormsModule],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })
@@ -18,13 +21,40 @@ export class CategoriesComponent implements OnInit {
   location: string | null = '';
   job: string | null = '';
   list?: Publicacion[];
+  searchName = '';
+  sortNewest = false;
+
+  get filteredList(): Publicacion[] | undefined {
+    if (!this.list) return undefined;
+    let result = this.list;
+
+    if (this.searchName.trim()) {
+      const term = this.searchName.trim().toLowerCase();
+      result = result.filter(p => (p.userName ?? '').toLowerCase().includes(term));
+    }
+
+    if (this.sortNewest) {
+      result = [...result].sort((a, b) => {
+        const da = a.dateAdded ? new Date(a.dateAdded).getTime() : 0;
+        const db = b.dateAdded ? new Date(b.dateAdded).getTime() : 0;
+        return db - da;
+      });
+    }
+
+    return result;
+  }
+
+  toggleSort() {
+    this.sortNewest = !this.sortNewest;
+  }
 
 
   constructor(
     private _publiService: PublicacionesService,
     private _ar: ActivatedRoute,
     private _router: Router,
-    private _auth: AuthService
+    private _auth: AuthService,
+    public ts: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -52,6 +82,8 @@ export class CategoriesComponent implements OnInit {
     if (this.job === job) return;
 
     this.job = job;
+    this.searchName = '';
+    this.sortNewest = false;
     this._router.navigate(['/categorias/Mar del Plata', job]);
   }
 

@@ -9,7 +9,7 @@
   <meta name="description"
     content="Encontrá plomeros, electricistas, jardineros, pintores y más en Mar del Plata. Mano Amiga conecta profesionales confiables del hogar con quienes necesitan ayuda, fácil y rápido.">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn, etc.) -->
   <meta property="og:title" content="Mano Amiga | Plomeros, Electricistas y más en Mar del Plata" />
@@ -68,10 +68,38 @@
 
     gtag('config', 'G-B2W10SGNGJ');
   </script>
+  <script>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
 </head>
 
 <body>
   <app-root></app-root>
+
+  <script type="module">
+    import Chatbox from 'https://cdn.jsdelivr.net/npm/@laburen/embeds@latest/dist/chatbox/index.min.js';
+
+    Chatbox.initBubble({
+      agentId: 'cmihjj5of3bbnn1lrgcce9i87',
+      contact: {
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'customer@email.com',
+        phoneNumber: '+33612345644',
+        userId: '42424242',
+      },
+      initialMessages: [
+        'Hello Georges how are you doing today?',
+        'How can I help you ?',
+      ],
+      context: "The user you are talking to is John. Start by Greeting him by his name.",
+    });
+  </script>
 </body>
 
 </html>

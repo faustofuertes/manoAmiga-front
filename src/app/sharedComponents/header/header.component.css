@@ -12,16 +12,19 @@ body {
 /* ---------- HEADER GENERAL ---------- */
 .header {
   width: 100%;
-  height: 5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  height: calc(5rem + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
+  box-shadow: 0 2px 6px var(--shadow);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  background-color: white;
+  background-color: var(--bg-header);
+  color: var(--text-primary);
   position: fixed;
   top: 0;
   z-index: 900;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -94,13 +97,83 @@ body {
 .btn-iniciarSesion {
   color: var(--color-principal);
   border: 1px solid var(--color-principal);
-  background-color: white;
+  background-color: var(--bg-header, white);
   transition: 0.2s;
+}
+
+/* Botón idioma */
+.btn-lang {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin-right: 0.5rem;
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+  border-radius: 10px;
+  background-color: var(--bg-surface, #f9f6f1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.btn-lang:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.btn-lang-flag {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* Toggle modo claro / oscuro */
+.btn-theme {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin-right: 0.5rem;
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+  border-radius: 10px;
+  background-color: var(--bg-surface, #f9f6f1);
+  color: var(--color-principal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.btn-theme:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.btn-theme i {
+  font-size: 1.2rem;
+}
+
+.btn-theme-mobile {
+  width: 80%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: 0.2s;
+}
+
+.btn-theme-mobile i {
+  color: var(--color-principal);
 }
 
 /* ---------- ENLACES ---------- */
 a {
-  color: black;
+  color: var(--text-primary);
   text-decoration: none;
   cursor: pointer;
 }
@@ -134,11 +207,11 @@ a {
 @media (max-width: 768px) {
   .center ul {
     position: fixed;
-    top: 5rem;
+    top: calc(5rem + env(safe-area-inset-top, 0px));
     left: 0;
     width: 100vw;
-    height: calc(100vh - 5rem);
-    background: white;
+    height: calc(100vh - 5rem - env(safe-area-inset-top, 0px));
+    background: var(--bg-header);
     z-index: 1050;
     padding-top: 2rem;
 
@@ -164,7 +237,7 @@ a {
 
   .burger {
     display: block;
-    color: black;
+    color: var(--text-primary);
   }
 
   .right {

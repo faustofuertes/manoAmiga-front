@@ -8,7 +8,7 @@
 
   <div class="center">
     <h1 class="type">
-      {{ publicacion?.job | titlecase }}s / Mar del Plata / {{ publicacion?.userName | titlecase }}
+      {{ publicacion ? ts.t('job.' + publicacion.job.toLowerCase()) : '' }} / Mar del Plata / {{ publicacion?.userName | titlecase }}
     </h1>
   </div>
 
@@ -20,10 +20,10 @@
 
     <div class="action-buttons" role="group" aria-label="Acciones de contacto">
       <button (click)="abrirWhatsApp()" class="whatsapp" aria-label="Contactar por WhatsApp">
-        WhatsApp <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        {{ 'profile.whatsapp' | translate }} <i class="fab fa-whatsapp" aria-hidden="true"></i>
       </button>
       <button (click)="llamar()" class="call-me" aria-label="Llamar por teléfono">
-        Llamame <i class="fas fa-phone-alt" aria-hidden="true"></i>
+        {{ 'profile.callMe' | translate }} <i class="fas fa-phone-alt" aria-hidden="true"></i>
       </button>
     </div>
 
@@ -41,7 +41,7 @@
       <div class="profile-name">
         @if(publicacion){
         <span class="name">{{ publicacion.userName }}</span>
-        <span class="job">{{ publicacion.job }}</span>
+        <span class="job">{{ ts.t('job.' + publicacion.job.toLowerCase()) }}</span>
         <span class="location">
           <i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ publicacion.location }}
         </span>
@@ -57,18 +57,18 @@
     @if (!publicacion) {
     <div class="skeleton skeleton-text desc"></div>
     }
-    <p class="profile-description">{{ publicacion?.description }}</p>
+    <p class="profile-description">{{ publicacion?.description | autoTranslate }}</p>
   </section>
 
   <section class="schedule" aria-label="Horarios de trabajo">
-    <h2>Horarios de trabajo</h2>
-    <p>{{ publicacion?.schedule }}</p>
+    <h2>{{ 'profile.schedule' | translate }}</h2>
+    <p>{{ publicacion?.schedule | autoTranslate }}</p>
   </section>
 
   <section class="pricing" aria-label="Información de precios y experiencia">
     <div class="box" role="group" aria-label="Precio de la visita">
       <h3 class="price">${{ publicacion?.pricing }}</h3>
-      <span>Precio visita.</span>
+      <span>{{ 'profile.visitPrice' | translate }}</span>
     </div>
 
     <div class="box" role="group" aria-label="Calificación del profesional">
@@ -77,12 +77,12 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
           d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
       </svg>
-      <span>(5.0) opiniones</span>
+      <span>(5.0) {{ 'profile.opinions' | translate }}</span>
     </div>
 
     <div class="box" role="group" aria-label="Años de experiencia">
       <h3 class="price">{{ publicacion?.experience }}</h3>
-      <span>Años de experiencia.</span>
+      <span>{{ 'profile.yearsExp' | translate }}</span>
     </div>
   </section>
 </div>

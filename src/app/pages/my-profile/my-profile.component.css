@@ -1,19 +1,88 @@
-.container {
-    margin: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    flex-direction: column;
+/* ─── Page content ─── */
+.page-content {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
 }
 
+/* ─── Account section ─── */
+.account-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* ─── Danger zone ─── */
+.danger-zone {
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(211, 47, 47, 0.25);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    background-color: rgba(211, 47, 47, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.danger-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-principal);
+}
+
+.danger-icon {
+    font-size: 14px;
+    color: var(--color-principal);
+}
+
+.danger-text {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.btn-delete-account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid var(--color-principal);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--color-principal);
+    font-weight: 600;
+    font-size: 0.88rem;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-delete-account i {
+    font-size: 14px;
+}
+
+.btn-delete-account:hover {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+/* ─── Loading overlay ─── */
 .loading-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, .9);
+    background-color: var(--bg-body);
+    opacity: 0.9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,12 +90,12 @@
 }
 
 .spinner {
-    width: 60px;
-    height: 60px;
-    border: 6px solid #ccc;
-    border-top-color: #806545;
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--color-principal);
     border-radius: 50%;
-    animation: spin 1s ease-in-out infinite;
+    animation: spin 0.8s ease-in-out infinite;
 }
 
 @keyframes spin {
@@ -35,23 +104,14 @@
     }
 }
 
-.btn-delete {
-    width: 400px;
-    height: 50px;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    background-color: var(--color-principal);
-}
-
+/* ─── Responsive ─── */
 @media (max-width: 768px) {
-    .container {
-        margin: 1rem;
+    .page-content {
+        margin: 1.5rem auto;
+        padding: 0 1rem;
     }
 
-    .btn-delete {
-        width: 80vw;
+    .danger-zone {
+        max-width: 90vw;
     }
 }

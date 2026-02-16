@@ -28,15 +28,16 @@ label {
 }
 
 .btn-back {
-    background-color: white;
+    background-color: var(--bg-body);
     border: none;
+    color: var(--text-primary);
 }
 
 .right {
     margin-left: auto;
     padding: .5rem 1.5rem;
     border-radius: 300px;
-    border: 1px solid lightgray;
+    border: 1px solid var(--border-color);
 }
 
 .icon {
@@ -70,7 +71,7 @@ label {
 .skeleton {
     pointer-events: none;
     user-select: none;
-    background-color: #eee;
+    background-color: var(--bg-surface);
     position: relative;
     overflow: hidden;
 }
@@ -98,7 +99,7 @@ label {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #ddd;
+    background-color: var(--bg-surface);
     margin: 0 auto;
 }
 
@@ -106,7 +107,7 @@ label {
     height: 16px;
     margin: 10px auto;
     border-radius: 8px;
-    background-color: #ddd;
+    background-color: var(--bg-surface);
 }
 
 .skeleton-name {
@@ -136,14 +137,15 @@ label {
     margin: 10px 10px 10px 10px;
     cursor: pointer;
     text-align: center;
-    background-color: #f9f6f1;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    box-shadow: 0 1px 3px var(--shadow), 0 0 0 1px var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .skeleton-block {
     position: relative;
-    background-color: #ddd;
+    background-color: var(--bg-surface);
     overflow: hidden;
     border-radius: 8px;
 }
@@ -159,16 +161,119 @@ label {
     animation: shimmer 1.5s infinite;
 }
 
+/* ─── Filters row ─── */
+.filters-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    max-width: 560px;
+    margin: 1.5rem auto 0;
+}
+
+/* ─── Search bar ─── */
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    gap: 0.6rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar:focus-within {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+}
+
+.search-icon {
+    font-size: 16px !important;
+    color: var(--text-secondary) !important;
+    flex-shrink: 0;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.search-clear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.search-clear i {
+    font-size: 14px !important;
+    color: var(--text-secondary) !important;
+}
+
+.search-clear:hover {
+    background-color: var(--border-color);
+}
+
+/* ─── Sort button ─── */
+.btn-sort {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    padding: 0.55rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-sort i {
+    font-size: 14px !important;
+}
+
+.btn-sort:hover {
+    border-color: var(--color-principal);
+    color: var(--color-principal);
+}
+
+.btn-sort.active {
+    background-color: var(--color-principal);
+    border-color: var(--color-principal);
+    color: #fff;
+}
 
 .no-results {
-    background-color: #fff3f3;
-    border: 1px solid #f4cccc;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
     padding: 2rem;
     max-width: 600px;
     margin: auto;
     text-align: center;
     font-family: 'Inter', sans-serif;
-    color: #333;
+    color: var(--text-primary);
     border-radius: 10px;
 }
 
@@ -261,5 +366,18 @@ label {
 
     .no-results {
         border-radius: 0;
+    }
+
+    .filters-row {
+        max-width: 90%;
+        margin: 1rem auto 0;
+    }
+
+    .sort-label {
+        display: none;
+    }
+
+    .btn-sort {
+        padding: 0.55rem 0.7rem;
     }
 }

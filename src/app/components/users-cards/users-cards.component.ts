@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '../../pipes/translate.pipe';
 
 @Component({
   selector: 'app-users-cards',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe],
   templateUrl: './users-cards.component.html',
   styleUrl: './users-cards.component.css'
 })
